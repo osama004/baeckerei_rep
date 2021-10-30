@@ -114,6 +114,7 @@
       <excludeFolder url="file://$MODULE_DIR$/erlebnisgastronomie/vendor/fakerphp/faker" />
       <excludeFolder url="file://$MODULE_DIR$/erlebnisgastronomie/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/erlebnisgastronomie/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/erlebnisgastronomie/vendor/laravel/ui" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

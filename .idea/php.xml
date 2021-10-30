@@ -114,6 +114,7 @@
       <path value="$PROJECT_DIR$/erlebnisgastronomie/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/erlebnisgastronomie/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/erlebnisgastronomie/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/erlebnisgastronomie/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
