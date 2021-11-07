@@ -17,6 +17,17 @@ Route::get('/', function () {
     return view('products');
 });
 
+Route::get('/feane', function () {
+    return view('templateFeane');
+});
+
+Route::get('/zay', function () {
+    return view('templatezay');
+});
+
+Route::get('/vegefoods', function () {
+    return view('templatevegefoods');
+});
 
 
 
