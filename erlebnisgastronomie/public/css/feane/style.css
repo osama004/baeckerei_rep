@@ -249,7 +249,7 @@ a:focus {
 }
 
 .user_option .order_online:hover {
-  background-color: #e69c00;
+  background-color: #6DC329;
 }
 
 .custom_nav-container .navbar-toggler {
@@ -365,7 +365,7 @@ a:focus {
 }
 
 .slider_section .detail-box a:hover {
-  background-color: #e69c00;
+  background-color: #6DC329;
 }
 
 .slider_section .img-box img {
@@ -412,7 +412,7 @@ a:focus {
   margin-top: 45px;
   border-radius: 5px;
   padding: 20px 15px;
-  background-color: #222831;
+  background-color: #A4A4A4;
   color: #ffffff;
 }
 
@@ -463,7 +463,7 @@ a:focus {
 }
 
 .offer_section .box .detail-box a:hover {
-  background-color: #e69c00;
+  background-color: #6DC329;
 }
 
 .offer_section .box .detail-box a svg {
@@ -499,7 +499,7 @@ a:focus {
 }
 
 .food_section .filters_menu li.active {
-  background-color: #222831;
+  background-color: #A4A4A4;
   color: #ffffff;
 }
 
@@ -511,7 +511,7 @@ a:focus {
   color: #ffffff;
   border-radius: 15px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
+  background: linear-gradient(to bottom, #f1f2f3 25px, #A4A4A4 25px);
 }
 
 .food_section .box .img-box {
@@ -612,11 +612,11 @@ a:focus {
 }
 
 .food_section .btn-box a:hover {
-  background-color: #e69c00;
+  background-color: #82eb2f;
 }
 
 .about_section {
-  background: #222831;
+  background: #A4A4A4;
   color: #ffffff;
 }
 
@@ -660,7 +660,7 @@ a:focus {
 }
 
 .about_section .detail-box a:hover {
-  background-color: #e69c00;
+  background-color: #6DC329;
 }
 
 .book_section {
@@ -721,7 +721,7 @@ a:focus {
 }
 
 .book_section .form_container button:hover {
-  background-color: #e69c00;
+  background-color: #6DC329;
 }
 
 .book_section .map_container {
@@ -788,7 +788,7 @@ a:focus {
 }
 
 .client_section .box .detail-box {
-  background-color: #222831;
+  background-color: #A4A4A4;
   color: #ffffff;
   padding: 25px 25px 15px 25px;
   border-radius: 5px;
@@ -896,12 +896,12 @@ a:focus {
 }
 
 .contact_section .form_container button:hover {
-  background-color: #e69c00;
+  background-color: #6DC329;
 }
 
 /* footer section*/
 .footer_section {
-  background-color: #222831;
+  background-color: #A4A4A4;
   color: #ffffff;
   padding: 75px 0 40px 0;
   text-align: center;
@@ -978,7 +978,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #222831;
+  color: #A4A4A4;
   width: 30px;
   height: 30px;
   border-radius: 100%;
