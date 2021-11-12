@@ -8,24 +8,24 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" href="ftco-32x32.png">
+    <link rel="shortcut icon" href="{{asset('ftco-32x32.png')}}">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('')}}css/bootstrap.css">
-    <link rel="stylesheet" href="{{asset('')}}css/animate.css">
-    <link rel="stylesheet" href="{{asset('')}}css/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{asset('')}}css/aos.css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/aos.css')}}">
 
-    <link rel="stylesheet" href="{{asset('')}}css/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
 
-    <link rel="stylesheet" href="{{asset('')}}fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="{{asset('')}}fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{asset('')}}fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="{{asset('fonts/ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fonts/fontawesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" href="{{asset('')}}css/style.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
 
@@ -108,7 +108,7 @@
         <div class="row align-items-center">
 
             <div class="col-lg-6">
-                <img src="{{asset('')}}img/hero_1.jpg" alt="Image" class="img-fluid">
+                <img src="{{asset('img/hero_1.jpg')}}" alt="Image" class="img-fluid">
             </div>
             <div class="col-lg-5 ml-auto">
                 <div class="text-left heading-wrap">
@@ -117,7 +117,7 @@
                 <!-- <h3 class="mb-4">Welcome To Our Restaurant</h3> -->
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ut enim quam laboriosam illum amet.</p>
                 <p>Obcaecati nisi ipsum possimus necessitatibus tempore, illo id facere magni quisquam quam quaerat accusamus dolores?</p>
-                <p><img src="{{asset('')}}img/signature.png" alt="Image" class="img-fluid w-25"></p>
+                <p><img src="{{asset('img/signature.png')}}" alt="Image" class="img-fluid w-25"></p>
             </div>
 
         </div>
@@ -135,13 +135,13 @@
         </div>
         <div class="row align-items-center">
             <div class="col-lg-4">
-                <img src="{{asset('')}}img/dishes_1.jpg" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="200">
+                <img src="{{asset('img/dishes_1.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="200">
             </div>
             <div class="col-lg-4">
-                <img src="{{asset('')}}img/about_1.jpg" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="200">
+                <img src="{{asset('img/about_1.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="200">
             </div>
             <div class="col-lg-4">
-                <img src="{{asset('')}}img/dishes_3.jpg" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="500">
+                <img src="{{asset('img/dishes_3.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="500">
             </div>
         </div>
     </div>
@@ -163,28 +163,28 @@
                     <p class="dishes-price">$11.50</p>
                     <h2 class="dishes-heading">Organic tomato salad, gorgonzola cheese, capers</h2>
                 </div>
-                <img src="{{asset('')}}img/dishes_1.jpg" alt="" class="img-fluid">
+                <img src="{{asset('img/dishes_1.jpg')}}" alt="" class="img-fluid">
             </a>
             <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="200">
                 <div class="text">
                     <p class="dishes-price">$12.00</p>
                     <h2 class="dishes-heading">Baked broccoli</h2>
                 </div>
-                <img src="{{asset('')}}img/dishes_2.jpg" alt="" class="img-fluid">
+                <img src="{{asset('img/dishes_2.jpg')}}" alt="" class="img-fluid">
             </a>
             <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="300">
                 <div class="text">
                     <p class="dishes-price">$11.00</p>
                     <h2 class="dishes-heading">Spicy meatballs</h2>
                 </div>
-                <img src="{{asset('')}}img/dishes_3.jpg" alt="" class="img-fluid">
+                <img src="{{asset('img/dishes_3.jpg')}}" alt="" class="img-fluid">
             </a>
             <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="400">
                 <div class="text">
                     <p class="dishes-price">$12.00</p>
                     <h2 class="dishes-heading">Eggplant parmigiana</h2>
                 </div>
-                <img src="{{asset('')}}img/dishes_4.jpg" alt="" class="img-fluid">
+                <img src="{{asset('img/dishes_4.jpg')}}" alt="" class="img-fluid">
             </a>
         </div>
     </div>
@@ -335,7 +335,7 @@
                         <blockquote class="testimonial">
                             <p>&ldquo; Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. &rdquo;</p>
                             <div class="d-flex author">
-                                <img src="{{asset('')}}img/person_1.jpg" alt="" class="mr-4">
+                                <img src="{{asset('img/person_1.jpg')}}" alt="" class="mr-4">
                                 <div class="author-info">
                                     <h4>Mellisa Howard</h4>
                                     <p>CEO, XYZ Company</p>
@@ -347,7 +347,7 @@
                         <blockquote class="testimonial">
                             <p>&ldquo; Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. &rdquo;</p>
                             <div class="d-flex author">
-                                <img src="{{asset('')}}img/person_2.jpg" alt="" class="mr-4">
+                                <img src="{{asset('img/person_2.jpg')}}" alt="" class="mr-4">
                                 <div class="author-info">
                                     <h4>Mike Richardson</h4>
                                     <p>CEO, XYZ Company</p>
@@ -359,7 +359,7 @@
                         <blockquote class="testimonial">
                             <p>&ldquo; Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. &rdquo;</p>
                             <div class="d-flex author">
-                                <img src="{{asset('')}}img/person_3.jpg" alt="" class="mr-4">
+                                <img src="{{asset('img/person_3.jpg')}}" alt="" class="mr-4">
                                 <div class="author-info">
                                     <h4>Charles White</h4>
                                     <p>CEO, XYZ Company</p>
@@ -489,18 +489,18 @@
 <!-- loader -->
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
 
-<script src="{{asset('')}}js/jquery-3.2.1.min.js"></script>
-<script src="{{asset('')}}js/popper.min.js"></script>
-<script src="{{asset('')}}js/bootstrap.min.js"></script>
-<script src="{{asset('')}}js/owl.carousel.min.js"></script>
-<script src="{{asset('')}}js/jquery.waypoints.min.js"></script>
-<script src="{{asset('')}}js/aos.js"></script>
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('js/aos.js')}}"></script>
 
-<script src="{{asset('')}}js/jquery.magnific-popup.min.js"></script>
-<script src="{{asset('')}}js/magnific-popup-options.js"></script>
+<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('js/magnific-popup-options.js')}}"></script>
 
 
-<script src="{{asset('')}}js/main.js"></script>
+<script src="{{asset('js/main.js')}}"></script>
 
 </body>
 </html>
