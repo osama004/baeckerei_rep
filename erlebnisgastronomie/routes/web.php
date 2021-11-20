@@ -21,6 +21,11 @@ Route::get('/kaffee', function () {
     return view('kaffee');
 });
 
+Route::get('/kontakt', function () {
+    return view('kontakt');
+});
+
+
 
 
 

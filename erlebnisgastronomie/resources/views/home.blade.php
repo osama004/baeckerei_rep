@@ -47,9 +47,7 @@
                         <a class="nav-link" href="kaffee">Kaffee</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -81,7 +79,13 @@
                             </div>
                         </li>
                     @endguest
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt">Contact</a>
+                    </li>
                 </ul>
+
+
 
 
 
