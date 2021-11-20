@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gourmet &mdash; Colorlib Website Template</title>
+    <title>Erlebnisgastronomie - Kontakt</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -34,8 +34,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">Erlebnisgastronomie</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
-                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -43,15 +42,22 @@
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="regionales">Regionale Produkte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="app">App</a>
+                    </li>
+
+
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -66,8 +72,7 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -84,7 +89,15 @@
                             </div>
                         </li>
                     @endguest
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="kontakt">Kontakt</a>
+                    </li>
                 </ul>
+
+
+
+
 
 
             </div>
@@ -93,6 +106,21 @@
 </header>
 <!-- END header -->
 
+<div class="slider-wrap">
+
+
+
+    <div class="slider-item row align-items-center" style="background-image: url('img/hero_1.jpg');">
+        <div class="container">
+            <div class="row justify-content-center">
+
+            </div>
+        </div>
+
+
+
+        <!-- END slider -->
+    </div>
 
 <footer class="site-footer" role="contentinfo">
 
