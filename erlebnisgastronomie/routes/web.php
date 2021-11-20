@@ -21,6 +21,18 @@ Route::get('/kaffee', function () {
     return view('kaffee');
 });
 
+Route::get('/wochenkarte', function () {
+    return view('wochenkarte');
+});
+
+Route::get('/app', function () {
+    return view('app');
+});
+
+Route::get('/regionales', function () {
+    return view('regionaleprodukte');
+});
+
 Route::get('/kontakt', function () {
     return view('kontakt');
 });
@@ -32,5 +44,7 @@ Route::get('/kontakt', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/anmelden', [App\Http\Controllers\HomeController::class, 'index'])->name('/login');
+Route::get('/registrieren', [App\Http\Controllers\HomeController::class, 'index'])->name('/register');
+
 

@@ -41,10 +41,19 @@
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="home">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="kaffee">Kaffee</a>
+                        <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="regionales">Regionale Produkte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="app">App</a>
                     </li>
 
 
@@ -81,10 +90,9 @@
                     @endguest
 
                     <li class="nav-item">
-                        <a class="nav-link" href="kontakt">Contact</a>
+                        <a class="nav-link" href="kontakt">Kontakt</a>
                     </li>
                 </ul>
-
 
 
 

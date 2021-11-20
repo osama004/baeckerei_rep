@@ -40,15 +40,22 @@
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="home">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="kaffee">Kaffee</a>
+                        <a class="nav-link active" href="kaffee">Kaffee & Produkte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="regionales">Regionale Produkte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="app">App</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -80,6 +87,10 @@
                             </div>
                         </li>
                     @endguest
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt">Kontakt</a>
+                    </li>
                 </ul>
 
 

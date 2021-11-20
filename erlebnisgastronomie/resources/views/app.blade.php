@@ -46,12 +46,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="regionales">Regionale Produkte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="app">App</a>
+                    </li>
 
 
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
                             </li>
                         @endif
 
@@ -528,8 +537,3 @@
 
 </body>
 </html>
-
-
-
-
-
