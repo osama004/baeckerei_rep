@@ -32,7 +32,7 @@
 <header role="banner">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Erlebnisgastronomie</a>
+            <a class="navbar-brand" href="/">Erlebnisgastronomie</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,13 +60,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
+                                <a class="nav-link active" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
                             </li>
                         @endif
                     @else
