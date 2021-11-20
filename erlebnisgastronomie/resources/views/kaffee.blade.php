@@ -28,6 +28,89 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
+<header role="banner">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="home">Erlebnisgastronomie</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample05">
+                <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="kaffee">Kaffee</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
+                            </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Ausloggen') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+
+
+
+
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- END header -->
+
+<div class="slider-wrap">
+    <section class="home-slider owl-carousel">
+
+
+        <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+            <div class="container">
+                <div class="row slider-text align-items-center justify-content-center">
+                    <div class="col-md-8 text-center col-sm-12 ">
+                        <h1 data-aos="fade-up mb-5">Eat, Drinks at Gourmet</h1>
+                        <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-white btn-outline-white">Get Started</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+    <!-- END slider -->
+</div>
 <section class="section bg-light  top-slant-white bottom-slant-gray">
 
     <div class="clearfix mb-5 pb-5">
