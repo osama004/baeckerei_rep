@@ -125,9 +125,11 @@ header {
 			position: relative;
 		}
 		.nav-link {
-			padding: 1.7rem 1rem;
+            padding: 1.7rem 1rem;
 			outline: none!important;
-			font-size: 1rem;
+            font-family: $font-heading;
+            font-size: 2rem;
+            font-style: italic;
 			// text-transform: uppercase;
 			// letter-spacing: .2em;
 			color: rgba(255,255,255,1)!important;
@@ -1519,6 +1521,8 @@ header {
 			a {
 				color: $black;
 				font-style: italic;
+                font-family: $font-heading;
+                font-size: 2rem;
 			}
 		}
 	}
