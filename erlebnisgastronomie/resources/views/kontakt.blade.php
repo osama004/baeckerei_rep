@@ -109,17 +109,15 @@
 <div class="slider-wrap">
 
 
-
-    <div class="slider-item row align-items-center" style="background-image: url('img/hero_1.jpg');">
+    <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
         <div class="container">
-            <div class="row justify-content-center">
-
+            <div class="row slider-text align-items-center justify-content-center">
+                <div class="col-md-8 text-center col-sm-12 ">
+                    <h1 data-aos="fade-up mb-5">Kontakt</h1>
+                </div>
             </div>
         </div>
-
-
-
-        <!-- END slider -->
+    </div>
     </div>
 
 <footer class="site-footer" role="contentinfo">

@@ -103,24 +103,15 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-    <section class="home-slider owl-carousel">
-
-
-        <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
-            <div class="container">
-                <div class="row slider-text align-items-center justify-content-center">
-                    <div class="col-md-8 text-center col-sm-12 ">
-                        <h1 data-aos="fade-up mb-5">Eat, Drinks at Gourmet</h1>
-                        <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-white btn-outline-white">Get Started</a></p>
-                    </div>
+    <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center">
+                <div class="col-md-8 text-center col-sm-12 ">
+                    <h1 data-aos="fade-up mb-5">Wochenkarte</h1>
                 </div>
             </div>
         </div>
-
-
-
-    </section>
-    <!-- END slider -->
+    </div>
 </div>
 <section class="section bg-light  top-slant-white bottom-slant-gray">
 
