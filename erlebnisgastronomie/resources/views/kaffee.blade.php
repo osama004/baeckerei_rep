@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gourmet &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{asset('ftco-32x32.png')}}">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+
+
+    <link rel="stylesheet" href="{{asset('fonts/ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fonts/fontawesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+</head>
+<body>
+<section class="section bg-light  top-slant-white bottom-slant-gray">
+
+    <div class="clearfix mb-5 pb-5">
+        <div class="container-fluid">
+            <div class="row" data-aos="fade">
+                <div class="col-md-12 text-center heading-wrap">
+                    <h2>Unsere Kaffees</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image order-2" style="background-image: url('img/dishes_4.jpg');" data-aos="fade"></div>
+                    <div class="text order-1">
+                        <h3>KAFFEE FILLER EINS </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$12.00</p>
+                    </div>
+
+                </div>
+
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image" style="background-image: url('img/dishes_1.jpg');" data-aos="fade"></div>
+                    <div class="text">
+                        <h3>KAFFEE FILLER DREI</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$12.00</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image order-2" style="background-image: url('img/dishes_2.jpg');" data-aos="fade"></div>
+                    <div class="text order-1">
+                        <h3>KAFFEE FILLER ZWEI</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$18.00</p>
+
+                    </div>
+
+                </div>
+
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image" style="background-image: url('img/dishes_3.jpg');" data-aos="fade"></div>
+                    <div class="text">
+                        <h3>KAFFEE FILLER VIER</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$16.00</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image order-2" style="background-image: url('img/dishes_4.jpg');" data-aos="fade"></div>
+                    <div class="text order-1">
+                        <h3>KAFFEE FILLER FÜNF</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$12.00</p>
+                    </div>
+
+                </div>
+
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image" style="background-image: url('img/dishes_1.jpg');" data-aos="fade"></div>
+                    <div class="text">
+                        <h3>KAFFEE FILLER SIEBEN</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$12.00</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image order-2" style="background-image: url('img/dishes_2.jpg');" data-aos="fade"></div>
+                    <div class="text order-1">
+                        <h3>KAFFEE FILLER SECHS</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$18.00</p>
+
+                    </div>
+
+                </div>
+
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image" style="background-image: url('img/dishes_3.jpg');" data-aos="fade"></div>
+                    <div class="text">
+                        <h3>KAFFEE FILLER ACHT</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$16.00</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</section> <!-- .section -->
+
+<footer class="site-footer" role="contentinfo">
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-4 mb-5">
+                <h3>About Us</h3>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
+                <ul class="list-unstyled footer-link d-flex footer-social">
+                    <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+
+            </div>
+            <div class="col-md-5 mb-5">
+                <div class="mb-5">
+                    <h3>Opening Hours</h3>
+                    <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
+                </div>
+                <div>
+                    <h3>Contact Info</h3>
+                    <ul class="list-unstyled footer-link">
+                        <li class="d-block">
+                            <span class="d-block text-black">Address:</span>
+                            <span>34 Street Name, City Name Here, United States</span></li>
+                        <li class="d-block"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
+                        <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 mb-5">
+                <h3>Quick Links</h3>
+                <ul class="list-unstyled footer-link">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Disclaimers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-md-center text-left">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('js/aos.js')}}"></script>
+
+<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('js/magnific-popup-options.js')}}"></script>
+
+
+<script src="{{asset('js/main.js')}}"></script>
+
+</body>
+</html>

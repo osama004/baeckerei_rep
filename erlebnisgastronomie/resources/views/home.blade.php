@@ -44,7 +44,7 @@
                         <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="recipes.html">Recipes</a>
+                        <a class="nav-link" href="kaffee">Kaffee</a>
                     </li>
 
                     <li class="nav-item">
