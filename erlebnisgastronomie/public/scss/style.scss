@@ -20,9 +20,9 @@ body {
 a {
 	transition: .3s all ease;
 	text-decoration: none;
-	&:hover {
-		text-decoration: none;
-	}
+    &:hover {
+        text-decoration: none;
+    }
 }
 h1, h2, h3, h4, h5 {
 	color: $black;
@@ -136,10 +136,21 @@ header {
 			@include media-breakpoint-down(lg) {
 				padding: .5rem 0rem;
 			}
-			&.active {
+
+
+
+            &.active {
+
 				color: $primary !important;
 			}
-		}
+            &.hover
+            {
+                transition: .3s all ease;
+                color: $primary !important;
+
+            }
+
+            }
 
 		.dropdown-menu {
 			font-size: 14px;
@@ -1508,14 +1519,18 @@ header {
 			border-bottom: none;
 			padding-bottom: 0;
 		}
-		a {
+		a:hover {
 			display: block;
 			span {
+
 				position: absolute;
 				right: 0;
 				top: 0;
 				color: #ccc;
 			}
+
+
+
 		}
 		&.active {
 			a {
@@ -1524,6 +1539,8 @@ header {
                 font-family: $font-heading;
                 font-size: 2rem;
 			}
+
 		}
+
 	}
 }

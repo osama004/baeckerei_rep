@@ -222,7 +222,7 @@ a {
 }
 
 a:hover {
-    color: #b75100;
+    color: #7EB438;
     text-decoration: underline
 }
 
@@ -3024,7 +3024,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-link:hover {
-    color: #b75100;
+    color: #7EB438;
     text-decoration: underline;
     background-color: transparent;
     border-color: transparent
@@ -4649,7 +4649,7 @@ tbody.collapse.show {
 }
 
 .page-link:focus, .page-link:hover {
-    color: #b75100;
+    color: #7EB438;
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #ddd
