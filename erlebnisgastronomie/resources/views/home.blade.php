@@ -37,7 +37,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExample05">
+                <div class="collapse navbar-collapse" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
                     <li class="nav-item">
@@ -109,26 +109,9 @@
 
 
         <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
-            <div class="container">
-                <div class="row slider-text align-items-center justify-content-center">
-                    <div class="col-md-8 text-center col-sm-12 ">
-                        <h1 data-aos="fade-up mb-5">Eat, Drinks at Gourmet</h1>
-                        <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-white btn-outline-white">Get Started</a></p>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
-        <div class="slider-item" style="background-image: url('img/hero_2.jpg');">
-            <div class="container">
-                <div class="row slider-text align-items-center justify-content-center">
-                    <div class="col-md-8 text-center col-sm-12 ">
-                        <h1 data-aos="fade-up mb-5">Enjoy delicious food at Gourmet</h1>
-                        <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-white btn-outline-white">Get Started</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </section>
     <!-- END slider -->

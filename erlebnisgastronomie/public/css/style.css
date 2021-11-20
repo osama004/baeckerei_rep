@@ -11,7 +11,7 @@ body {
     color: #868e96
 }
 
-a {
+a{
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease;
@@ -1723,6 +1723,16 @@ header .navbar .cta-btn a:hover {
 .categories li.active a, .sidelink li.active a {
     color: #000;
     font-style: italic
+}
+
+li.nav-item a:hover{
+    transition: ease 0.3s;
+    color: #A1E944 !important;
+}
+li.nav-item a{
+    font-style: italic;
+    font-family: "DM Serif Display", serif;
+
 }
 
 /*# sourceMappingURL=style.css.map */

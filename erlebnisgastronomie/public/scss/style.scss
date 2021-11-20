@@ -137,18 +137,10 @@ header {
 				padding: .5rem 0rem;
 			}
 
-
-
             &.active {
 
 				color: $primary !important;
 			}
-            &.hover
-            {
-                transition: .3s all ease;
-                color: $primary !important;
-
-            }
 
             }
 
