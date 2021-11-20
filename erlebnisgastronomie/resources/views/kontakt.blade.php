@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap"
+        rel="stylesheet">
 
     <link rel="shortcut icon" href="{{asset('ftco-32x32.png')}}">
 
@@ -32,8 +33,9 @@
 <header role="banner">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Erlebnisgastronomie</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="/">Erlebnisgastronomie</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -64,7 +66,8 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -84,14 +87,11 @@
                 </ul>
 
 
-
-
             </div>
         </div>
     </nav>
 </header>
 <!-- END header -->
-
 
 
 <footer class="site-footer" role="contentinfo">
@@ -100,7 +100,8 @@
         <div class="row mb-5">
             <div class="col-md-4 mb-5">
                 <h3>About Us</h3>
-                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor
+                    blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
                 <ul class="list-unstyled footer-link d-flex footer-social">
                     <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
                     <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
@@ -120,8 +121,10 @@
                         <li class="d-block">
                             <span class="d-block text-black">Address:</span>
                             <span>34 Street Name, City Name Here, United States</span></li>
-                        <li class="d-block"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
-                        <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                        <li class="d-block"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span>
+                        </li>
+                        <li class="d-block"><span
+                                class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
                     </ul>
                 </div>
             </div>
@@ -142,7 +145,9 @@
             <div class="col-12 text-md-center text-left">
                 <p>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                    All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
                 </p>
@@ -153,7 +158,13 @@
 <!-- END footer -->
 
 <!-- loader -->
-<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
+<div id="loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#cf1d16"/>
+    </svg>
+</div>
 
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
