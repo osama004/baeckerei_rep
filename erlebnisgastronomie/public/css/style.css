@@ -180,8 +180,8 @@ header .navbar .dropdown-menu {
     border: none;
     -webkit-box-shadow: 0 2px 30px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 30px 0px rgba(0, 0, 0, 0.2);
-    min-width: 13em;
-    margin-top: -10px
+    margin-top: -4rem;
+    margin-left: 84.3rem;
 }
 
 header .navbar .dropdown-menu:before {
@@ -220,7 +220,7 @@ header .navbar .dropdown-menu a {
 }
 
 header .navbar .cta-btn a {
-    background: #ff7404;
+    background: #A1E944;
     color: #fff !important;
     text-transform: uppercase;
     font-size: .8rem;
@@ -234,7 +234,7 @@ header .navbar .cta-btn a {
 
 header .navbar .cta-btn a:hover {
     background: #fff;
-    color: #ff7404 !important;
+    color: #A1E944 !important;
     -webkit-box-shadow: 2px 0 30px -5px rgba(0, 0, 0, 0.2);
     box-shadow: 2px 0 30px -5px rgba(0, 0, 0, 0.2)
 }
