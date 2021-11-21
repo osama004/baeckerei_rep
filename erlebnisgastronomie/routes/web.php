@@ -57,7 +57,7 @@ Route::get('/kontakt', function () {
 
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/anmelden', [App\Http\Controllers\HomeController::class, 'index'])->name('/login');
 Route::get('/registrieren', [App\Http\Controllers\HomeController::class, 'index'])->name('/register');
