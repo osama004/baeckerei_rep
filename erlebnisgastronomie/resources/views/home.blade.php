@@ -38,66 +38,84 @@
             </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExample05">
-                <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
 
+                        <div class="divider"></div>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="regionales">Regionale Produkte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="app">App</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
+                        </li>
+
+                        <div class="divider"></div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="wochenkarte">Wochenkarte</a>
+                        </li>
+
+                        <div class="divider"></div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="regionales">Regionale Produkte</a>
+                        </li>
+
+                        <div class="divider"></div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="app">App</a>
+                        </li>
+
+                        <div class="divider"></div>
 
 
                     @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
+                                </li>
+
+                                <div class="divider"></div>
+
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
+                                </li>
+
+                                    <div class="divider"></div>
+
+                                @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->firstname }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Ausloggen') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+
+                                    </form>
+                                </div>
                             </li>
-                        @endif
+                            <div class="divider"></div>
 
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
-                            </li>
-                        @endif
-                    @else
+                        @endguest
 
-                    @endguest
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontakt">Kontakt</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->firstname }}
-                        </a>
-
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" >
-                                {{ __('Ausloggen') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt">Kontakt</a>
+                        </li>
+                    </ul>
 
 
 

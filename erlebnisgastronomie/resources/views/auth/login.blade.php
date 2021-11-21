@@ -41,32 +41,53 @@
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                     </li>
+
+                    <div class="divider"></div>
+
                     <li class="nav-item">
                         <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
                     </li>
+
+                    <div class="divider"></div>
+
                     <li class="nav-item">
                         <a class="nav-link" href="wochenkarte">Wochenkarte</a>
                     </li>
+
+                    <div class="divider"></div>
+
                     <li class="nav-item">
                         <a class="nav-link" href="regionales">Regionale Produkte</a>
                     </li>
+
+                    <div class="divider"></div>
+
                     <li class="nav-item">
                         <a class="nav-link" href="app">App</a>
                     </li>
 
+                    <div class="divider"></div>
+
+
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
                             </li>
+
+                            <div class="divider"></div>
+
                         @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
                             </li>
+
+                            <div class="divider"></div>
+
                         @endif
                     @else
                         <li class="nav-item dropdown">
@@ -87,6 +108,8 @@
                                 </form>
                             </div>
                         </li>
+                        <div class="divider"></div>
+
                     @endguest
 
                     <li class="nav-item">
