@@ -204,8 +204,9 @@ header .navbar .dropdown-menu:before {
 }
 
 header .navbar .dropdown-menu .dropdown-item:hover {
-    background: #ff7404;
-    color: #fff
+    background: rgba(153,153,153, .3);
+
+    color: black;
 }
 
 header .navbar .dropdown-menu .dropdown-item.active {
@@ -1729,13 +1730,12 @@ header .navbar .cta-btn a:hover {
     font-style: italic
 }
 
-li.nav-item a:hover{
+li.nav-item a:hover:not(.dropdown-item){
     transition: ease 0.3s;
     color: #A1E944 !important;
 }
-li.nav-item a{
+li.nav-item a {
     font-family: "DM Serif Display", serif;
 
 }
-
 /*# sourceMappingURL=style.css.map */
