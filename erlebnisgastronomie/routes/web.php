@@ -63,3 +63,5 @@ Route::get('/anmelden', [App\Http\Controllers\HomeController::class, 'index'])->
 Route::get('/registrieren', [App\Http\Controllers\HomeController::class, 'index'])->name('/register');
 
 
+
+

@@ -56,7 +56,6 @@
                         <a class="nav-link" href="app">App</a>
                     </li>
 
-
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -84,6 +83,7 @@
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
+
                                 </form>
                             </div>
                         </li>

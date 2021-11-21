@@ -43,10 +43,4 @@ class Customer extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    /*
-     public function sendEmailVerificationNotification()
-    {
-        $this->notify(new App\Models\CustomVerifyEmail);
-    }
-    */
 }
