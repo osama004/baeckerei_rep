@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-class UsersController extends Controller
+class CustomersController extends Controller
 {
     //
     public function index()
@@ -18,7 +18,7 @@ class UsersController extends Controller
 
       hardcode statt dynamisch, irrelevant
         */
-        $users = DB::table('users')->get();
-        return view("users", compact ("users"));
+        $customers= DB::table('customers')->get();
+        return view("customers", compact ("customers"));
     }
 }

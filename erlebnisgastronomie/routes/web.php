@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // if user NOT!!! logged in
+    /*
+    if (!Auth::check()){
+        return redirect('/login');
+    }
+    */
     return view('home');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
+
+
 Route::get('/kaffee', function () {
+
     return view('kaffee');
 });
 
