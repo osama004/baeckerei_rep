@@ -327,7 +327,7 @@ button, select {
 input[type=checkbox], input[type=radio] {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0
+    padding: 0;
 }
 
 input[type=date], input[type=datetime-local], input[type=month], input[type=time] {
@@ -674,7 +674,8 @@ pre code {
     background-color: #FFFFFF;
     opacity: 1;
     max-width: 700px;
-    outline: 5px solid #A1E944;
+
+    box-shadow: 0 0 5px 5px #7EB438;
 
 }
 
@@ -2555,8 +2556,8 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #dd6300;
-    border-color: #d05d00
+    background-color: #7EB438;
+    border-color: #7EB438
 }
 
 .btn-primary.focus, .btn-primary:focus {
@@ -4390,6 +4391,7 @@ tbody.collapse.show {
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     background-color: #FFFFFF;
     opacity: 1;
+
 }
 
 .card-header:first-child {
@@ -8852,7 +8854,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 a.text-primary:focus, a.text-primary:hover {
-    color: #d05d00 !important
+    color: #7EB438 !important
 }
 
 .text-secondary {
@@ -8930,5 +8932,6 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
     visibility: hidden !important
 }
+
 
 /*# sourceMappingURL=bootstrap.css.map */
