@@ -662,6 +662,20 @@ pre code {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px
+
+}
+.col-login
+{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #FFFFFF;
+    opacity: 1;
+    max-width: 700px;
+    outline: 5px solid #A1E944;
+
 }
 
 .col {
@@ -2225,7 +2239,8 @@ select.form-control:focus::-ms-value {
 .form-check {
     position: relative;
     display: block;
-    margin-bottom: 0.5rem
+    margin-bottom: 0.5rem;
+
 }
 
 .form-check.disabled .form-check-label {
@@ -2240,16 +2255,19 @@ select.form-control:focus::-ms-value {
 .form-check-input {
     position: absolute;
     margin-top: 0.25rem;
-    margin-left: -1.25rem
+    margin-left: -1.25rem;
 }
 
 .form-check-inline {
     display: inline-block;
-    margin-right: 0.75rem
+    margin-right: 0.75rem;
+
 }
 
 .form-check-inline .form-check-label {
-    vertical-align: middle
+    vertical-align: middle;
+    background-color: #A1E944;
+
 }
 
 .valid-feedback {
@@ -3366,7 +3384,7 @@ tbody.collapse.show {
 [data-toggle=buttons] > .btn-group > .btn input[type=checkbox], [data-toggle=buttons] > .btn-group > .btn input[type=radio], [data-toggle=buttons] > .btn input[type=checkbox], [data-toggle=buttons] > .btn input[type=radio] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
-    pointer-events: none
+    pointer-events: none;
 }
 
 .input-group {
@@ -4341,7 +4359,7 @@ tbody.collapse.show {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1.25rem
+    padding: 1.25rem;
 }
 
 .card-title {
@@ -4369,7 +4387,9 @@ tbody.collapse.show {
     padding: 0.75rem 1.25rem;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #FFFFFF;
+    opacity: 1;
 }
 
 .card-header:first-child {

@@ -112,7 +112,7 @@
         <div class="slider-item row align-items-center" style="background-image: url('img/hero_1.jpg');">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-md-8 align-items-center">
+                        <div class="col-login align-items-center">
                                 <div class="card-header">{{ __('Login') }}</div>
 
                                 <div class="card-body align-items-center">
