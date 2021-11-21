@@ -127,14 +127,13 @@ header {
 		.nav-link {
             padding: 1.7rem 1rem;
 			outline: none!important;
-            font-family: $font-heading;
             font-size: 2rem;
             font-style: italic;
 			// text-transform: uppercase;
 			// letter-spacing: .2em;
 			color: rgba(255,255,255,1)!important;
 			@include media-breakpoint-down(lg) {
-				padding: .5rem 0rem;
+				padding: 0.5rem 0rem;
 			}
 
             &.active {

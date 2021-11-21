@@ -160,7 +160,7 @@ header .navbar {
 header .navbar .nav-link {
     padding: 1.7rem 1rem;
     outline: none !important;
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: white !important
 }
 
@@ -604,9 +604,9 @@ header .navbar .cta-btn a:hover {
 }
 
 .owl-carousel.centernonloop2 .owl-dots .owl-dot.active > span, .owl-carousel.centernonloop .owl-dots .owl-dot.active > span {
-    background: #ff7404;
-    -webkit-box-shadow: 0 1px 5px 0px rgba(255, 116, 4, 0.3);
-    box-shadow: 0 1px 5px 0px rgba(255, 116, 4, 0.3)
+    background: #A1E944;
+    -webkit-box-shadow: 0 1px 5px 0px rgb(109, 158, 46);
+    box-shadow: 0 1px 5px 0px rgb(109, 158, 46)
 }
 
 .owl-carousel.centernonloop2 .owl-dots .owl-dot:active, .owl-carousel.centernonloop2 .owl-dots .owl-dot:focus, .owl-carousel.centernonloop .owl-dots .owl-dot:active, .owl-carousel.centernonloop .owl-dots .owl-dot:focus {
