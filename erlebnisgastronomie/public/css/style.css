@@ -117,6 +117,10 @@ header .navbar-brand {
     font-family: "DM Serif Display", serif;
     font-size: 2rem
 }
+header .navbar-brand:hover {
+    transition: ease 0.3s;
+    color: #A1E944 !important;
+}
 
 header .navbar-brand.absolute {
     position: absolute
@@ -1730,7 +1734,6 @@ li.nav-item a:hover{
     color: #A1E944 !important;
 }
 li.nav-item a{
-    font-style: italic;
     font-family: "DM Serif Display", serif;
 
 }

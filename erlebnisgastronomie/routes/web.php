@@ -37,9 +37,6 @@ Route::get('/kontakt', function () {
     return view('kontakt');
 });
 
-Route::get('/password/reset', function () {
-    return view('reset');
-});
 
 
 
