@@ -41,7 +41,7 @@
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
 
                     <div class="divider"></div>
@@ -74,7 +74,7 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
+                                <a class="nav-link active" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
                             </li>
 
                             <div class="divider"></div>
