@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,10 @@ Route::get('/kontakt', function () {
     return view('kontakt');
 });
 
+
+Route::get('/contact us',[ContactController::class,'contact']);
+
+Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
 
 
 
