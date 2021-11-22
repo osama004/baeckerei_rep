@@ -53,7 +53,7 @@ Route::get('/kontakt', function () {
 });
 
 
-Route::get('/contact us',[ContactController::class,'contact']);
+Route::get('/contactus',[ContactController::class,'contact']);
 
 Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
 

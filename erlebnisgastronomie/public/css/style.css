@@ -1713,8 +1713,9 @@ header .navbar .cta-btn a:hover {
 }
 
 li.nav-item a:hover:not(.dropdown-item){
-    transition: ease 0.3s;
+    transition: ease 0.2s;
     color: #A1E944 !important;
+    transform: scale(1.025);
 }
 li.nav-item a {
     white-space: nowrap;

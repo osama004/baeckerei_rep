@@ -136,7 +136,9 @@
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
-                    <h1 data-aos="fade-up mb-5">Kontakt</h1>
+                    <li class="nav-item">
+                    <h1 data-aos="fade-up mb-5"><a class="nav-link" href="contactus">Kontaktieren sie uns!</a></h1>
+                    </li>
                 </div>
             </div>
         </div>
