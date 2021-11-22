@@ -55,9 +55,7 @@ Route::get('/kontakt', function () {
 Route::get('/profile', function () {
     return view('userprofile');
 });
-Route::get('/test', function () {
-    return view('logintest');
-});
+
 
 
 Route::get('/contactus',[ContactController::class,'contact']);

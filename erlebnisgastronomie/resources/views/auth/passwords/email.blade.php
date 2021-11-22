@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+    <link href="{{asset('/css/all.min.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
@@ -39,43 +40,80 @@
 
             <div class="collapse navbar-collapse" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
+
+                    <div class="divider"></div>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="../kaffee">Kaffee & Produkte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../wochenkarte">Wochenkarte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../regionales">Regionale Produkte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../app">App</a>
+                        <a class="nav-link" href="/kaffee">Kaffee & Produkte</a>
                     </li>
 
+                    <div class="divider"></div>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/wochenkarte">Wochenkarte</a>
+                    </li>
+
+                    <div class="divider"></div>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/regionales">Regionale Produkte</a>
+                    </li>
+
+                    <div class="divider"></div>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/app">App</a>
+                    </li>
+
+                    <div class="divider"></div>
+
+
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kontakt">Kontakt</a>
+                    </li>
+
+                    <div class="divider"></div>
 
                     @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
-                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item dropdown">
+                                    <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fas fa-user"></i>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/login" >
+                                            Login
+                                        </a>
+
+                                        <a class="dropdown-item" href="/register" >
+                                            Registrieren
+                                        </a>
+
+
+
+                                    </div>
+                                </li>
+                            @endif
                         @endif
 
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
-                            </li>
-                        @endif
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->firstname }}
+                                <i class="fas fa-user" style="color: #A1E944"></i>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="profile" >
+                                    Mein Profil
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -88,16 +126,7 @@
                             </div>
                         </li>
                     @endguest
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../kontakt">Kontakt</a>
-                    </li>
                 </ul>
-
-
-
-
-
 
             </div>
         </div>
@@ -113,7 +142,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-login align-items-center">
-                    <div class="card">
+                    <div class="resetcard">
                         <div class="card-header">{{ __('Passwort zurücksetzen') }}</div>
 
                         <div class="card-body">

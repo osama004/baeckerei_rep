@@ -1714,7 +1714,7 @@ header .navbar .cta-btn a:hover {
 }
 
 li.nav-item a:hover:not(.dropdown-item){
-    transition: ease 0.2s;
+    transition: 0.2s;
     color: #A1E944 !important;
     transform: scale(1.025);
 }
@@ -1769,12 +1769,12 @@ li.nav-item a {
 /* On mouse-over, add a grey background color */
 .logincheckbox:hover input ~ .checkmark {
     background-color: #ccc;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .logincheckbox input:checked ~ .checkmark
 {
-    transition: 0.3s;
+    transition: 0.2s;
     background-color: #A1E944;
 
 }
@@ -1806,4 +1806,11 @@ li.nav-item a {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.fa-user:hover
+{
+    transform: scale(1.025);
+    transition: 0.2s;
+
 }
