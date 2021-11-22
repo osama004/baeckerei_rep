@@ -31,9 +31,9 @@ Route::get('/home', function () {
 
 
 
-Route::get('/kaffee', function () {
+Route::get('/kaffee&products', function () {
 
-    return view('kaffee');
+    return view('kaffee&products');
 });
 
 Route::get('/wochenkarte', function () {
@@ -43,10 +43,13 @@ Route::get('/wochenkarte', function () {
 Route::get('/app', function () {
     return view('app');
 });
-
+/*
 Route::get('/regionales', function () {
     return view('regionaleprodukte');
 });
+*/
+
+Route::get('/regionales', [\App\Http\Controllers\RegionalProductsController::class , 'index']);
 
 Route::get('/kontakt', function () {
     return view('kontakt');
@@ -62,6 +65,8 @@ Route::get('/contactus',[ContactController::class,'contact']);
 
 Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
 
+
+Route::get('/products',[\App\Http\Controllers\ProductsController::class, 'index']);
 
 
 

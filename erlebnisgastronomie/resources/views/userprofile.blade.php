@@ -46,7 +46,7 @@
                         <div class="divider"></div>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
+                            <a class="nav-link" href="kaffee&products">Kaffee & Produkte</a>
                         </li>
 
                         <div class="divider"></div>
@@ -133,7 +133,7 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+    <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                     <h1><a style="text-decoration: none">Willkommen, </a><a style="text-transform:capitalize; text-decoration: none"> {{ Auth::user()->firstname }}</a><a style="text-decoration: none">!</a></h1>

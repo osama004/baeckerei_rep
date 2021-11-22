@@ -40,10 +40,6 @@
             <div class="collapse navbar-collapse" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
-
-
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
@@ -51,7 +47,7 @@
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="kaffee">Kaffee & Produkte</a>
+                        <a class="nav-link active" href="kaffee&products">Kaffee & Produkte</a>
                     </li>
 
                     <div class="divider"></div>
@@ -142,7 +138,7 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+    <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
@@ -169,7 +165,7 @@
         <div class="row no-gutters">
             <div class="col-md-6">
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('img/dishes_4.jpg');" data-aos="fade"></div>
+                    <div class="bg-image order-2" style="background-image: url('images/dishes_4.jpg');" data-aos="fade"></div>
                     <div class="text order-1">
                         <h3>KAFFEE FILLER EINS </h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
@@ -179,7 +175,7 @@
                 </div>
 
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('img/dishes_1.jpg');" data-aos="fade"></div>
+                    <div class="bg-image" style="background-image: url('images/dishes_1.jpg');" data-aos="fade"></div>
                     <div class="text">
                         <h3>KAFFEE FILLER DREI</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
@@ -193,7 +189,7 @@
 
             <div class="col-md-6">
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('img/dishes_2.jpg');" data-aos="fade"></div>
+                    <div class="bg-image order-2" style="background-image: url('images/dishes_2.jpg');" data-aos="fade"></div>
                     <div class="text order-1">
                         <h3>KAFFEE FILLER ZWEI</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
@@ -204,7 +200,7 @@
                 </div>
 
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('img/dishes_3.jpg');" data-aos="fade"></div>
+                    <div class="bg-image" style="background-image: url('images/dishes_3.jpg');" data-aos="fade"></div>
                     <div class="text">
                         <h3>KAFFEE FILLER VIER</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
@@ -220,7 +216,7 @@
         <div class="row no-gutters">
             <div class="col-md-6">
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('img/dishes_4.jpg');" data-aos="fade"></div>
+                    <div class="bg-image order-2" style="background-image: url('images/dishes_4.jpg');" data-aos="fade"></div>
                     <div class="text order-1">
                         <h3>KAFFEE FILLER FÜNF</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
@@ -228,9 +224,9 @@
                     </div>
 
                 </div>
-
+                <!-- background-image: url('images/dishes_1.jpg'); -->
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('img/dishes_1.jpg');" data-aos="fade"></div>
+                    <div class="bg-image" style="background-image:url('images/dishes_1.jpg');" data-aos="fade"></div>
                     <div class="text">
                         <h3>KAFFEE FILLER SIEBEN</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
@@ -244,7 +240,7 @@
 
             <div class="col-md-6">
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('img/dishes_2.jpg');" data-aos="fade"></div>
+                    <div class="bg-image order-2" style="background-image: url('images/dishes_2.jpg');" data-aos="fade"></div>
                     <div class="text order-1">
                         <h3>KAFFEE FILLER SECHS</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
@@ -255,7 +251,7 @@
                 </div>
 
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('img/dishes_3.jpg');" data-aos="fade"></div>
+                    <div class="bg-image" style="background-image: url('images/dishes_3.jpg');" data-aos="fade"></div>
                     <div class="text">
                         <h3>KAFFEE FILLER ACHT</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>

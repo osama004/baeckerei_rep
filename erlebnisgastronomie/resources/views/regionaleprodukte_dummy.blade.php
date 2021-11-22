@@ -134,7 +134,7 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
+    <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
@@ -200,17 +200,38 @@
                 </div>
             </div>
         </div>
-    <!-- {{asset('images/dishes_1.jpg')}}" -->
         <div class="owl-carousel centernonloop">
-        @foreach($products as $product)
             <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="100">
                 <div class="text">
-                    <p class="dishes-price">{{$product -> price}}</p>
-                    <h2 class="dishes-heading">{{$product -> name}}</h2>
+                    <p class="dishes-price">$12.00</p>
+                    <h2 class="dishes-heading">Chess what</h2>
                 </div>
                 <img src="{{asset('images/dishes_1.jpg')}}" alt="" class="img-fluid">
             </a>
-        @endforeach
+
+
+            <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="200">
+                <div class="text">
+                    <p class="dishes-price">$12.00</p>
+                    <h2 class="dishes-heading">Baked broccoli</h2>
+                </div>
+                <img src="{{asset('images/dishes_2.jpg')}}" alt="" class="img-fluid">
+            </a>
+            <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="300">
+                <div class="text">
+                    <p class="dishes-price">$11.00</p>
+                    <h2 class="dishes-heading">Spicy meatballs</h2>
+                </div>
+                <img src="{{asset('images/dishes_3.jpg')}}" alt="" class="img-fluid">
+            </a>
+            <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="400">
+                <div class="text">
+                    <p class="dishes-price">$12.00</p>
+                    <h2 class="dishes-heading">Eggplant parmigiana</h2>
+                </div>
+                <img src="{{asset('images/dishes_4.jpg')}}" alt="" class="img-fluid">
+            </a>
+            -->
         </div>
     </div>
 
@@ -231,18 +252,105 @@
     <div class="container">
 
         <div class="row no-gutters">
-            @foreach($products as $product)
             <div class="col-md-6">
                 <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_4.jpg');" data-aos="fade"></div>
+                    <div class="bg-image order-2" style="background-image: url('img/dishes_4.jpg');" data-aos="fade"></div>
                     <div class="text order-1">
-                        <h3>{{$product -> name}}</h3>
-                        <p>{{$product -> description}}</p>
-                        <p class="text-primary h3">{{$product -> price}}</p>
+                        <h3>Baked new Zealand mussels </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$12.00</p>
                     </div>
+
                 </div>
+
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image" style="background-image: url('img/dishes_1.jpg');" data-aos="fade"></div>
+                    <div class="text">
+                        <h3>Spicy Calamari and beans</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$12.00</p>
+
+                    </div>
+
+                </div>
+
             </div>
-            @endforeach
+
+            <div class="col-md-6">
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image order-2" style="background-image: url('img/dishes_2.jpg');" data-aos="fade"></div>
+                    <div class="text order-1">
+                        <h3>Bacon wrapped wild gulf prawns</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$18.00</p>
+
+                    </div>
+
+                </div>
+
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image" style="background-image: url('img/dishes_3.jpg');" data-aos="fade"></div>
+                    <div class="text">
+                        <h3>Seared ahi tuna fillet*, honey-ginger sauce</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$16.00</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image order-2" style="background-image: url('img/dishes_4.jpg');" data-aos="fade"></div>
+                    <div class="text order-1">
+                        <h3>Baked new Zealand mussels </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$12.00</p>
+                    </div>
+
+                </div>
+
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image" style="background-image: url('img/dishes_1.jpg');" data-aos="fade"></div>
+                    <div class="text">
+                        <h3>Spicy Calamari and beans</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$12.00</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image order-2" style="background-image: url('img/dishes_2.jpg');" data-aos="fade"></div>
+                    <div class="text order-1">
+                        <h3>Bacon wrapped wild gulf prawns</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$18.00</p>
+
+                    </div>
+
+                </div>
+
+                <div class="sched d-block d-lg-flex">
+                    <div class="bg-image" style="background-image: url('img/dishes_3.jpg');" data-aos="fade"></div>
+                    <div class="text">
+                        <h3>Seared ahi tuna fillet*, honey-ginger sauce</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">$16.00</p>
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
 
@@ -331,7 +439,7 @@
         <div class="row">
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="blog d-block">
-                    <a class="bg-image d-block" href="single.html" style="background-image: url('images/dishes_1.jpg');"></a>
+                    <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_1.jpg');"></a>
                     <div class="text">
                         <h3><a href="single.html">How To Bake A Good Taste Food</a></h3>
                         <p class="sched-time">
@@ -347,7 +455,7 @@
             </div>
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="blog d-block">
-                    <a class="bg-image d-block" href="single.html" style="background-image: url('images/dishes_2.jpg');"></a>
+                    <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_2.jpg');"></a>
                     <div class="text">
                         <h3><a href="single.html">How To Bake A Good Taste Food</a></h3>
                         <p class="sched-time">
