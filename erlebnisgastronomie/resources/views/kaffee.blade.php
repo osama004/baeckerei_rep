@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+    <link href="{{asset('/css/all.min.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
@@ -38,6 +39,10 @@
 
             <div class="collapse navbar-collapse" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+
+
+
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
@@ -70,35 +75,49 @@
                     <div class="divider"></div>
 
 
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt">Kontakt</a>
+                    </li>
+
+                    <div class="divider"></div>
+
                     @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
-                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item dropdown">
+                                    <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fas fa-user"></i>
+                                    </a>
 
-                            <div class="divider"></div>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="login" >
+                                            Login
+                                        </a>
 
+                                        <a class="dropdown-item" href="register" >
+                                            Registrieren
+                                        </a>
+
+
+
+                                    </div>
+                                </li>
+                            @endif
                         @endif
 
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
-                            </li>
-
-                            <div class="divider"></div>
-
-                        @endif
                     @else
                         <li class="nav-item dropdown">
                             <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->firstname }}
+                                <i class="fas fa-user"></i>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="profile" >
                                     Mein Profil
                                 </a>
-
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -107,19 +126,10 @@
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
-
                                 </form>
-
-
                             </div>
                         </li>
-                        <div class="divider"></div>
-
                     @endguest
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontakt">Kontakt</a>
-                    </li>
                 </ul>
 
 

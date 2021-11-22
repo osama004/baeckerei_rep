@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Erlebnisgastronomie - Regionale Produkte</title>
+    <title>Erlebnisgastronomie</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="{{asset('fonts/fontawesome/css/font-awesome.min.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap" rel="stylesheet">
 
+    <link href="{{asset('/css/all.min.css')}}" rel="stylesheet">
     <link rel="shortcut icon" href="{{asset('ftco-32x32.png')}}">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
@@ -16,13 +17,12 @@
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
-    <link href="{{asset('/css/all.min.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
 
     <link rel="stylesheet" href="{{asset('fonts/ionicons/css/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('fonts/fontawesome/css/font-awesome.min.css')}}">
+
     <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
 
     <!-- Theme Style -->
@@ -38,95 +38,105 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExample05">
-                <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="regionales">Regionale Produkte</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="app">App</a>
-                    </li>
-
-                    <div class="divider"></div>
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
 
 
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontakt">Kontakt</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
 
-                    <div class="divider"></div>
+                        <div class="divider"></div>
 
-                    @guest
-                        @if (Route::has('login'))
-                            @if (Route::has('register'))
-                                <li class="nav-item dropdown">
-                                    <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <i class="fas fa-user"></i>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
+                        </li>
+
+                        <div class="divider"></div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="wochenkarte">Wochenkarte</a>
+                        </li>
+
+                        <div class="divider"></div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="regionales">Regionale Produkte</a>
+                        </li>
+
+                        <div class="divider"></div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="app">App</a>
+                        </li>
+
+                        <div class="divider"></div>
+
+
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt">Kontakt</a>
+                        </li>
+
+                        <div class="divider"></div>
+
+                        @guest
+                            @if (Route::has('login'))
+                                @if (Route::has('register'))
+                                    <li class="nav-item dropdown">
+                                        <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <i class="fas fa-user"></i>
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="login" >
+                                                Login
+                                            </a>
+
+                                            <a class="dropdown-item" href="register" >
+                                                Registrieren
+                                            </a>
+
+
+
+                                        </div>
+                                    </li>
+                                @endif
+                            @endif
+
+                        @else
+                            <li class="nav-item dropdown">
+                                <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fas fa-user"></i>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="profile" >
+                                        Mein Profil
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Ausloggen') }}
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="login" >
-                                            Login
-                                        </a>
-
-                                        <a class="dropdown-item" href="register" >
-                                            Registrieren
-                                        </a>
-
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
 
 
-                                    </div>
-                                </li>
-                            @endif
-                        @endif
 
-                    @else
-                        <li class="nav-item dropdown">
-                            <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fas fa-user"></i>
-                            </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile" >
-                                    Mein Profil
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Ausloggen') }}
-                                </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                </ul>
             </div>
         </div>
     </nav>
@@ -138,7 +148,7 @@
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
-                    <h1 data-aos="fade-up mb-5">Regionale Produkte</h1>
+                    <h1 data-aos="fade-up mb-5">HOME</h1>
                 </div>
             </div>
         </div>
