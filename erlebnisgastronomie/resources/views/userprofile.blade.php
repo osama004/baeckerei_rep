@@ -91,11 +91,15 @@
                                 @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->firstname }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="profile" >
+                                        Mein Profil
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -107,9 +111,7 @@
 
                                     </form>
 
-                                    <a class="dropdown-item" href="profile" >
-                                       Mein Profil
-                                    </a>
+
                                 </div>
                             </li>
                             <div class="divider"></div>

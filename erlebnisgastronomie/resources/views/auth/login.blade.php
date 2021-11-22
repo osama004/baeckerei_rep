@@ -26,6 +26,7 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
 </head>
 <body>
 
@@ -173,9 +174,11 @@
                                         <div class="form-group row">
                                             <div class="col-md-6 offset-md-4">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                                    <label class="form-check-label" for="remember">
+
+                                                    <label class="logincheckbox" for="remember">
+                                                        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                                        <span class="checkmark"></span>
                                                         {{ __('Daten merken') }}
                                                     </label>
                                                 </div>
