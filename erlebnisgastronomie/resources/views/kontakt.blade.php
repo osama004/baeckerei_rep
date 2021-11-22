@@ -168,11 +168,12 @@
                                </div>
                                <div class="form-group">
                                    <label for="email">E-Mail-Addresse</label>
+                                   <!--<input type="text"name="email"class="form-control"/>-->
                                    <input type="text"name="email"class="form-control" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b"/>
                                </div>
                                <div class="form-group">
                                    <label for="phone">Telefonnummer</label>
-                                   <input type="text"name="phone"class="form-control" pattern="\(?\+\(?43\)?[ ()]?([- ()]?\d[- ()]?){11}"/>
+                                   <input type="text"name="phone"class="form-control" pattern="\(?\+\(?43\)?[ ()]?([- ()]?\d[- ()]?){11}" title="+43 ***********"/>
                                </div>
                                <div class="form-group">
                                    <label for="msg">Message</label>
