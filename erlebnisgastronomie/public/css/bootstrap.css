@@ -112,7 +112,7 @@ html {
 }
 
 @-ms-viewport {
-    width: device-width
+    width: device-width;
 }
 
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -3037,16 +3037,15 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-link {
-    font-weight: 400;
+    font-weight: 600;
     color: #A1E944;
-    background-color: transparent
+    transition: ease-in-out 0.2s;
+
 }
 
 .btn-link:hover {
     color: #7EB438;
-    text-decoration: underline;
-    background-color: transparent;
-    border-color: transparent
+ transition: ease-in-out 0.2s;
 }
 
 .btn-link.focus, .btn-link:focus {
