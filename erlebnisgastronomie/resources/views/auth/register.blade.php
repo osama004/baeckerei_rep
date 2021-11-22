@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Erlebnisgastronomie - Registrieren</title>
+    <title>EG - Registrieren</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -217,8 +217,8 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            {{ __('Register') }}
+                                        <button type="submit" class="btn btn-primary" href="verify">
+                                            {{ __('Registrieren') }}
                                         </button>
                                     </div>
                                 </div>
