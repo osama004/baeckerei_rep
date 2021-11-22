@@ -106,6 +106,10 @@
                                         @csrf
 
                                     </form>
+
+                                    <a class="dropdown-item" href="profile" >
+                                       Mein Profil
+                                    </a>
                                 </div>
                             </li>
                             <div class="divider"></div>

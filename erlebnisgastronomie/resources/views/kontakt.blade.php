@@ -1,13 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Erlebnisgastronomie - Kontakt</title>
+    <title>Erlebnisgastronomie - App</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="{{asset('ftco-32x32.png')}}">
 
@@ -92,7 +91,7 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->firstname }}
                             </a>
 
@@ -107,6 +106,10 @@
                                     @csrf
 
                                 </form>
+
+                                <a class="dropdown-item" href="profile" >
+                                    Mein Profil
+                                </a>
                             </div>
                         </li>
                         <div class="divider"></div>
@@ -132,18 +135,51 @@
 <div class="slider-wrap">
 
 
+
     <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
-        <div class="container">
-            <div class="row slider-text align-items-center justify-content-center">
-                <div class="col-md-8 text-center col-sm-12 ">
-                    <li class="nav-item">
-                    <h1 data-aos="fade-up mb-5"><a class="nav-link" href="contactus">Kontaktieren sie uns!</a></h1>
-                    </li>
-                </div>
-            </div>
-        </div>
+       <div class="container">
+           <div class ="row">
+               <div class="col-md-6 offset-md-3">
+                   <div class="card">
+                       <div class = "card-header">
+                           Kontaktieren sie uns!
+                       </div>
+                       <div class="card-body">
+
+                           @if(Session::has('message_sent'))
+                               <div class ="alert alert-success" role="alert">
+                                   {{Session::get('message_sent')}}
+                               </div>
+                           @endif
+                           <form method="POST" action="{{route('contact.send')}}" enctype="multipart/form-data">
+                               @csrf
+                               <div class="form-group">
+                                   <label for="name">Name</label>
+                                   <input type="text"name="name"class="form-control"/>
+                               </div>
+                               <div class="form-group">
+                                   <label for="email">E-Mail-Addresse</label>
+                                   <input type="text"name="email"class="form-control"/>
+                               </div>
+                               <div class="form-group">
+                                   <label for="phone">Telefonnummer</label>
+                                   <input type="text"name="phone"class="form-control"/>
+                               </div>
+                               <div class="form-group">
+                                   <label for="msg">Message</label>
+                                   <textarea name="msg" class="form-control"></textarea>
+                               </div>
+                               <button type="senden" class="btn btn-primary float-right">Senden</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
     </div>
-    </div>
+
+</div>
+
+
 
 <footer class="site-footer" role="contentinfo">
 
@@ -151,8 +187,7 @@
         <div class="row mb-5">
             <div class="col-md-4 mb-5">
                 <h3>About Us</h3>
-                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor
-                    blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
                 <ul class="list-unstyled footer-link d-flex footer-social">
                     <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
                     <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
@@ -172,10 +207,8 @@
                         <li class="d-block">
                             <span class="d-block text-black">Address:</span>
                             <span>34 Street Name, City Name Here, United States</span></li>
-                        <li class="d-block"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span>
-                        </li>
-                        <li class="d-block"><span
-                                class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                        <li class="d-block"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
+                        <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
                     </ul>
                 </div>
             </div>
@@ -192,18 +225,13 @@
 
             </div>
         </div>
+
     </div>
 </footer>
 <!-- END footer -->
 
 <!-- loader -->
-<div id="loader" class="show fullscreen">
-    <svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#cf1d16"/>
-    </svg>
-</div>
+<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
 
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>

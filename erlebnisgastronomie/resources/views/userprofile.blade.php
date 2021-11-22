@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Erlebnisgastronomie - App</title>
+    <title>Erlebnisgastronomie</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -37,90 +37,89 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExample05">
-                <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
 
-                    <div class="divider"></div>
+                        <div class="divider"></div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
+                        </li>
 
-                    <div class="divider"></div>
+                        <div class="divider"></div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wochenkarte">Wochenkarte</a>
+                        </li>
 
-                    <div class="divider"></div>
+                        <div class="divider"></div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="regionales">Regionale Produkte</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="regionales">Regionale Produkte</a>
+                        </li>
 
-                    <div class="divider"></div>
+                        <div class="divider"></div>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="app">App</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="app">App</a>
+                        </li>
 
-                    <div class="divider"></div>
+                        <div class="divider"></div>
 
 
                     @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
-                            </li>
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Einloggen') }}</a>
+                                </li>
 
-                            <div class="divider"></div>
+                                <div class="divider"></div>
 
-                        @endif
+                            @endif
 
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
-                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
+                                </li>
 
-                            <div class="divider"></div>
+                                    <div class="divider"></div>
 
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->firstname }}
-                            </a>
+                                @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->firstname }}
+                                </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Ausloggen') }}
-                                </a>
+                                        {{ __('Ausloggen') }}
+                                    </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
 
-                                </form>
+                                    </form>
 
-                                <a class="dropdown-item" href="profile" >
-                                    Mein Profil
-                                </a>
-                            </div>
+                                    <a class="dropdown-item" href="profile" >
+                                       Mein Profil
+                                    </a>
+                                </div>
+                            </li>
+                            <div class="divider"></div>
+
+                        @endguest
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt">Kontakt</a>
                         </li>
-                        <div class="divider"></div>
-
-                    @endguest
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontakt">Kontakt</a>
-                    </li>
-                </ul>
-
+                    </ul>
 
 
 
@@ -133,22 +132,14 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-
-
-
-        <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
-            <div class="container">
-                <div class="row slider-text align-items-center justify-content-center">
-                    <div class="col-md-8 text-center col-sm-12 ">
-                        <h1 data-aos="fade-up mb-5">Coming soon...</h1>
-                    </div>
-                </div>
+    <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center">
+                    <h1><a style="text-decoration: none">Willkommen, </a><a style="text-transform:capitalize; text-decoration: none"> {{ Auth::user()->firstname }}</a><a style="text-decoration: none">!</a></h1>
             </div>
         </div>
-
+    </div>
 </div>
-
-
 
 <footer class="site-footer" role="contentinfo">
 
@@ -194,7 +185,6 @@
 
             </div>
         </div>
-
     </div>
 </footer>
 <!-- END footer -->

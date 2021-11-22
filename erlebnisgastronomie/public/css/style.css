@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5 {
     font-family: "DM Serif Display", serif
 }
 
+
 .btn, .form-control {
     outline: none;
     -webkit-box-shadow: none !important;
@@ -1729,3 +1730,4 @@ li.nav-item a {
     height: 20px;
     margin-top: 2.3rem;
 }
+

@@ -90,7 +90,7 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->firstname }}
                             </a>
 
@@ -105,6 +105,10 @@
                                     @csrf
 
                                 </form>
+
+                                <a class="dropdown-item" href="profile" >
+                                    Mein Profil
+                                </a>
                             </div>
                         </li>
                         <div class="divider"></div>
