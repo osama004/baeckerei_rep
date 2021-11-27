@@ -29,7 +29,9 @@ Route::get('/home', function () {
     return view('home');
 });
 
-
+Route::get('/kaffee', function () {
+    return view('kaffee&products');
+});
 
 Route::get('/kaffee&products', function () {
 

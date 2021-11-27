@@ -178,13 +178,13 @@
         </div>
         <div class="row align-items-center">
             <div class="col-lg-4">
-                <img src="{{asset('images/dishes_1.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="200">
+                <img src="{{asset('storage/storage_images/dishes_1.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="200">
             </div>
             <div class="col-lg-4">
-                <img src="{{asset('images/about_1.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="200">
+                <img src="{{asset('storage/storage_images/about_1.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="200">
             </div>
             <div class="col-lg-4">
-                <img src="{{asset('images/dishes_3.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="500">
+                <img src="{{asset('storage/storage_images/dishes_3.jpg')}}" alt="Image" class="img-fluid about_img_1" data-aos="fade" data-aos-delay="500">
             </div>
         </div>
     </div>
