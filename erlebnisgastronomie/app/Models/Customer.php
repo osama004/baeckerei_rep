@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\address;
 
 class Customer extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    protected $table = 'customers';
 
     /**
      * The attributes that are mass assignable.
@@ -24,6 +27,8 @@ class Customer extends Authenticatable implements MustVerifyEmail
         'password',
         'address',
     ];
+
+
 
     /**
      * The attributes that should be hidden for serialization.

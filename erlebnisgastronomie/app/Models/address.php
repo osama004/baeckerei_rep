@@ -9,6 +9,8 @@ class address extends Model
 {
     use HasFactory;
 
+    protected $table ='addresses';
+
     protected $fillable = [
         'postcode',
         'steet_haus_nr',
