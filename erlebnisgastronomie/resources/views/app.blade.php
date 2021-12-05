@@ -146,7 +146,7 @@
 
 <div class="slider-wrap">
    <!-- storage/storage_images/hero_1.jpg  url('')-->
-        <div class="slider-item" style="background-image: url('storage/storage_images/hero_1.jpg');">
+        <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
             <div class="container">
                 <div class="row slider-text align-items-center justify-content-center">
                     <div class="col-md-8 text-center col-sm-12 ">

@@ -144,7 +144,7 @@
 
 
 
-        <div class="slider-item row align-items-center" style="background-image: url('img/hero_1.jpg');">
+        <div class="slider-item row align-items-center" style="background-image: url('images/hero_1.jpg');">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-login align-items-center">
