@@ -144,7 +144,8 @@ header .navbar-brand span {
 header .navbar {
     background: black !important;
     padding-top: .5rem;
-    padding-bottom: .5rem
+    padding-bottom: .5rem;
+    margin-right: 15rem;
 }
 
 @media (min-width: 768px) {

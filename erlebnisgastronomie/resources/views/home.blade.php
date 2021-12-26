@@ -34,6 +34,10 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">Erlebnisgastronomie</a>
+            <a href="https://www.twitter.com" class="p-2"><span class="fa fa-twitter"></span></a>
+            <a href="https://www.facebook.com" class="p-2"><span class="fa fa-facebook"></span></a>
+            <a href="https://www.instagram.com" class="p-2"><span class="fa fa-instagram"></span></a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -144,7 +148,6 @@
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
                     <h1 data-aos="fade-up mb-5">HOME</h1>
-                </div>
             </div>
         </div>
     </div>
@@ -489,12 +492,6 @@
                 <div class="mb-5">
                     <h3>Opening Hours</h3>
                     <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
-                    <ul class="list-unstyled footer-link d-flex footer-social">
-                        <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
-                    </ul>
                 </div>
 
             </div>
