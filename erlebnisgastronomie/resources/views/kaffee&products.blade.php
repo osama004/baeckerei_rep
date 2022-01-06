@@ -285,12 +285,6 @@
                 <div class="mb-5">
                     <h3>Opening Hours</h3>
                     <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
-                    <ul class="list-unstyled footer-link d-flex footer-social">
-                        <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
-                    </ul>
                 </div>
 
             </div>
