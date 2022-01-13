@@ -96,6 +96,10 @@
                                         <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             <i class="fas fa-user"></i>
                                         </a>
+                                    </li>
+                                    <div class="divider"></div>
+
+
 
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="login" >
@@ -109,7 +113,13 @@
 
 
                                         </div>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </a>
                                     </li>
+
                                 @endif
                             @endif
 
@@ -133,6 +143,12 @@
                                         @csrf
                                     </form>
                                 </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="regionales">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
                             </li>
                         @endguest
                     </ul>
