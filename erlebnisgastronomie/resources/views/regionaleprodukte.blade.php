@@ -150,66 +150,6 @@
 
 
 
-<section class="section ">
-
-    <div class="clearfix mb-5 pb-5">
-        <div class="container-fluid mb-5">
-            <div class="row" data-aos="fade">
-                <div class="col-md-12 text-center heading-wrap">
-                    <h2>Special Menu</h2>
-                </div>
-            </div>
-        </div>
-    <!-- {{asset('images/dishes_1.jpg')}}" -->
-        <div class="owl-carousel centernonloop">
-        @foreach($products as $product)
-            <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="100">
-                <div class="text">
-                    <p class="dishes-price">{{$product -> price}}</p>
-                    <h2 class="dishes-heading">{{$product -> name}}</h2>
-                </div>
-                <img src="{{asset('images/dishes_1.jpg')}}" alt="" class="img-fluid">
-            </a>
-        @endforeach
-        </div>
-    </div>
-
-</section> <!-- .section -->
-
-<section class="section bg-light  top-slant-white bottom-slant-gray">
-
-    <div class="clearfix mb-5 pb-5">
-        <div class="container-fluid">
-            <div class="row" data-aos="fade">
-                <div class="col-md-12 text-center heading-wrap">
-                    <h2>Our Menu</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-
-        <div class="row no-gutters">
-            @foreach($products as $product)
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_4.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>{{$product -> name}}</h3>
-                        <p>{{$product -> description}}</p>
-                        <p class="text-primary h3">{{$product -> price}}</p>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-
-
-    </div>
-</section> <!-- .section -->
-
-
 <footer class="site-footer" role="contentinfo">
 
     <div class="container">
