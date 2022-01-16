@@ -96,8 +96,8 @@
                                         <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             <i class="fas fa-user"></i>
                                         </a>
-                                    </li>
-                                    <div class="divider"></div>
+
+
 
 
 
@@ -109,11 +109,9 @@
                                             <a class="dropdown-item" href="register" >
                                                 Registrieren
                                             </a>
-
-
-
                                         </div>
-
+                                    </li>
+                                    <div class="divider"></div>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">
                                             <i class="fas fa-shopping-cart"></i>
