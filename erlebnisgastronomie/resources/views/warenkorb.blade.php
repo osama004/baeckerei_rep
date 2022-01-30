@@ -164,7 +164,7 @@
                        <div class="card-body">
 
 
-                               <button type="senden" class="btn btn-primary float-right">Senden</button>
+                               <button type="senden" class="btn btn-primary float-right">Bestellen</button>
                        </div>
                    </div>
                </div>
