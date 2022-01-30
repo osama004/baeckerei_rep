@@ -171,26 +171,26 @@
         </div>
     </div>
 
-
-
     <div class="container">
-        @foreach($products as $product)
+        @foreach($sandwiches as $sandwich)
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <div class="bg-image order-2 speisekarte"  data-aos="fade">
                         <img
-                            src="images/{{$product->image}}"
+                            src="images/{{$sandwich->image}}"
                             alt="" style="">
                     </div>
                     <div class="text order-1">
-                        <h3> {{$product->name}}</h3>
+                        <h3> {{$sandwich->name}}</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">{{$product->price}}</p>
+                        <p class="text-primary h3">{{$sandwich->price}}</p>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
+
+
 
 
 
