@@ -128,6 +128,18 @@
                             </div>
                         </li>
                     @endguest
+                    <div class="divider"></div>
+                    <li class="nav-item dropdown active">
+                        <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="warenkorb" >
+                                Warenkorb
+                            </a>
+                        </div>
+                    </li>
                 </ul>
 
 
@@ -242,7 +254,6 @@
         <!-- END slider -->
     </div>
 
-
     <footer class="site-footer" role="contentinfo">
 
         <div class="container">
@@ -255,24 +266,18 @@
                 </div>
                 <div class="col-md-5 mb-5">
                     <div class="mb-5">
-                        <h3>Opening Hours</h3>
+                        <h3>Öffnungszeiten</h3>
                         <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
-                        <ul class="list-unstyled footer-link d-flex footer-social">
-                            <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
-                            <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
-                        </ul>
                     </div>
 
                 </div>
                 <div class="col-md-3 mb-5">
-                    <h3>Contact Info</h3>
+                    <h3>Kontaktdaten</h3>
                     <ul class="list-unstyled footer-link">
                         <li class="d-block">
-                            <span class="d-block text-black">Address:</span>
-                            <span>34 Street Name, City Name Here, United States</span></li>
-                        <li class="d-block"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
+                            <span class="d-block text-black">Adresse:</span>
+                            <span>Jägerstraße 62, 1200 Wien Österreich </span></li>
+                        <li class="d-block"><span class="d-block text-black">Telefon:</span><span>+1 242 4942 290</span></li>
                         <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
                     </ul>
                 </div>

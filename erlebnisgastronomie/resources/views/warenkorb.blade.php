@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>EG - Anmeldung</title>
+    <title>EG - Kontakt</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+    <link href="{{asset('/css/all.min.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
@@ -27,7 +27,6 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
 </head>
 <body>
 
@@ -44,6 +43,11 @@
 
             <div class="collapse navbar-collapse" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+
+
+
+
+
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
@@ -51,7 +55,7 @@
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
+                        <a class="nav-link" href="kaffee&products">Kaffee & Produkte</a>
                     </li>
 
                     <div class="divider"></div>
@@ -110,8 +114,8 @@
 
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fas fa-user" style="color: #A1E944"></i>
+                            <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fas fa-user"></i>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -133,7 +137,7 @@
                     <div class="divider"></div>
                     <li class="nav-item dropdown active">
                         <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-shopping-cart" style = "color: #A1E944"></i>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -142,10 +146,8 @@
                             </a>
                         </div>
                     </li>
+
                 </ul>
-
-
-
 
 
 
@@ -159,118 +161,64 @@
 
 
 
-        <div class="slider-item row align-items-center" style="background-image: url('images/hero_1.jpg');">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-login align-items-center">
-                                <div class="card-header">{{ __('Login') }}</div>
-
-                                <div class="card-body align-items-center">
-                                    <form method="POST" action="{{ route('login') }}">
-                                        @csrf
-
-                                        <div class="form-group row">
-                                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Addresse') }}</label>
-
-                                            <div class="col-md-6">
-                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                                @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Passwort') }}</label>
-
-                                            <div class="col-md-6">
-                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                                @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <div class="col-md-6 offset-md-4">
-                                                <div class="form-check">
+    <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
+       <div class="container">
+           <div class ="row">
+               <div class="col-md-6 offset-md-3">
+                   <div class="card">
+                       <div class = "card-header">
+                           Ihr Warenkorb:
+                       </div>
+                       <div class="card-body">
 
 
-                                                    <label class="logincheckbox" for="remember">
-                                                        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                        <span class="checkmark"></span>
-                                                        {{ __('Daten merken') }}
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
+                               <button type="senden" class="btn btn-primary float-right">Senden</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
 
-                                        <div class="form-group row mb-0">
-                                            <div class="col-md-8 offset-md-4">
-                                                <button type="submit" class="btn btn-primary">
-                                                    {{ __('Einloggen') }}
-                                                </button>
-
-                                                @if (Route::has('password.request'))
-                                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                        {{ __('Passwort vergessen?') }}
-                                                    </a>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-    <!-- END slider -->
 </div>
 
 
-    <footer class="site-footer" role="contentinfo">
 
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-4 mb-5">
-                    <h3>About Us</h3>
-                    <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
+<footer class="site-footer" role="contentinfo">
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-4 mb-5">
+                <h3>About Us</h3>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
 
 
-                </div>
-                <div class="col-md-5 mb-5">
-                    <div class="mb-5">
-                        <h3>Öffnungszeiten</h3>
-                        <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
-                    </div>
-
-                </div>
-                <div class="col-md-3 mb-5">
-                    <h3>Kontaktdaten</h3>
-                    <ul class="list-unstyled footer-link">
-                        <li class="d-block">
-                            <span class="d-block text-black">Adresse:</span>
-                            <span>Jägerstraße 62, 1200 Wien Österreich </span></li>
-                        <li class="d-block"><span class="d-block text-black">Telefon:</span><span>+1 242 4942 290</span></li>
-                        <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-
-                </div>
             </div>
+            <div class="col-md-5 mb-5">
+                <div class="mb-5">
+                    <h3>Öffnungszeiten</h3>
+                    <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
+                </div>
 
+            </div>
+            <div class="col-md-3 mb-5">
+                <h3>Kontaktdaten</h3>
+                <ul class="list-unstyled footer-link">
+                    <li class="d-block">
+                        <span class="d-block text-black">Adresse:</span>
+                        <span>Jägerstraße 62, 1200 Wien Österreich </span></li>
+                    <li class="d-block"><span class="d-block text-black">Telefon:</span><span>+1 242 4942 290</span></li>
+                    <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+
+            </div>
         </div>
-    </footer>
+
+    </div>
+</footer>
+<!-- END footer -->
 
 <!-- loader -->
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
@@ -287,11 +235,6 @@
 
 
 <script src="{{asset('js/main.js')}}"></script>
-</div>
+
 </body>
 </html>
-
-
-
-
-

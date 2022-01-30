@@ -112,11 +112,8 @@
                                         </div>
                                     </li>
                                     <div class="divider"></div>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">
-                                            <i class="fas fa-shopping-cart"></i>
-                                        </a>
-                                    </li>
+
+
 
                                 @endif
                             @endif
@@ -143,12 +140,20 @@
                                 </div>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="regionales">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </a>
-                            </li>
+
                         @endguest
+
+                        <li class="nav-item dropdown">
+                            <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="warenkorb" >
+                                    Warenkorb
+                                </a>
+                            </div>
+                        </li>
                     </ul>
             </div>
         </div>

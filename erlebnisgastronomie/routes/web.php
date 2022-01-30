@@ -61,6 +61,10 @@ Route::get('/profile', function () {
     return view('userprofile');
 });
 
+Route::get('/warenkorb', function () {
+    return view('warenkorb');
+});
+
 
 
 Route::get('/contactus',[ContactController::class,'contact']);
