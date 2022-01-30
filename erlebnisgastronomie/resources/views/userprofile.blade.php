@@ -128,6 +128,14 @@
                                 </div>
                             </li>
                         @endguest
+                        <div class="divider"></div>
+
+                        <li class="nav-item" href="warenkorb">
+                            <a class="nav-link" href="warenkorb">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+
+                        </li>
                     </ul>
             </div>
         </div>
