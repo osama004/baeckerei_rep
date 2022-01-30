@@ -1815,5 +1815,10 @@ li.nav-item a {
 {
     transform: scale(1.025);
     transition: 0.2s;
-
 }
+
+.speisekarte img {
+    width: 50%;
+}
+
+

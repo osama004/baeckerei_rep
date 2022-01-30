@@ -29,15 +29,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/kaffee', function () {
-    return view('kaffee&products');
-});
-
-Route::get('/kaffee&products', function () {
-
-    return view('kaffee&products');
-});
-
 Route::get('/wochenkarte', function () {
     return view('wochenkarte');
 });
@@ -72,7 +63,9 @@ Route::get('/contactus',[ContactController::class,'contact']);
 Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
 
 
-Route::get('/products',[\App\Http\Controllers\ProductsController::class, 'index']);
+//Route::get('/products',[\App\Http\Controllers\ProductsController::class, 'index']);
+//Route::get('/products',[\App\Http\Controllers\ProductsController::class,'index'])->name('productsGet');
+Route::get('/kaffee&products', [\App\Http\Controllers\ProductsController::class, 'index']);
 
 
 

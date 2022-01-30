@@ -10,9 +10,20 @@ use mysql_xdevapi\Table;
 
 class ProductsController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index():View
     {
+        $sandwiches = Product::all()
+            ->where('kategorie', '=', 1)
+            ->firstOrFail();
+
         $products = Product::all();
       return view("kaffee&products", compact("products"));
+
+
+
     }
+
 }

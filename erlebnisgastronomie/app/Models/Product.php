@@ -12,7 +12,7 @@ class Product extends Model
     protected $table ='products';
 
     protected $fillable = [
-        "product_id", "name" , "price" , "description" ,"image"
+        "product_id", "name" , "price" , "image"
     ];
 
     public function getPriceAttribute($price) {

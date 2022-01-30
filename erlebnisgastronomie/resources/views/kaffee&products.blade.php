@@ -165,118 +165,34 @@
         <div class="container-fluid">
             <div class="row" data-aos="fade">
                 <div class="col-md-12 text-center heading-wrap">
-                    <h2>Unsere Kaffees</h2>
+                    <h2>Unsere Speisekarte</h2>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container">
-
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_4.jpg');" data-aos="fade"></div>
+        @foreach($products as $product)
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto text-center">
+                    <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                        <img
+                            src="images/{{$product->image}}"
+                            alt="" style="">
+                    </div>
                     <div class="text order-1">
-                        <h3>KAFFEE FILLER EINS </h3>
+                        <h3> {{$product->name}}</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$12.00</p>
+                        <p class="text-primary h3">{{$product->price}}</p>
                     </div>
-
                 </div>
-
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('images/dishes_1.jpg');" data-aos="fade"></div>
-                    <div class="text">
-                        <h3>KAFFEE FILLER DREI</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$12.00</p>
-
-                    </div>
-
-                </div>
-
             </div>
-
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_2.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>KAFFEE FILLER ZWEI</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$18.00</p>
-
-                    </div>
-
-                </div>
-
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('images/dishes_3.jpg');" data-aos="fade"></div>
-                    <div class="text">
-                        <h3>KAFFEE FILLER VIER</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$16.00</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_4.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>KAFFEE FILLER FÜNF</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$12.00</p>
-                    </div>
-
-                </div>
-                <!-- background-image: url('images/dishes_1.jpg'); -->
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image:url('images/dishes_1.jpg');" data-aos="fade"></div>
-                    <div class="text">
-                        <h3>KAFFEE FILLER SIEBEN</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$12.00</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_2.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>KAFFEE FILLER SECHS</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$18.00</p>
-
-                    </div>
-
-                </div>
-
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('images/dishes_3.jpg');" data-aos="fade"></div>
-                    <div class="text">
-                        <h3>KAFFEE FILLER ACHT</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$16.00</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-
+        @endforeach
     </div>
+
+
+
+
 </section> <!-- .section -->
 
 <footer class="site-footer" role="contentinfo">
