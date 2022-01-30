@@ -171,6 +171,8 @@
         </div>
     </div>
 
+
+
     <div class="container">
         @foreach($products as $product)
             <div class="row">

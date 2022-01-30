@@ -15,9 +15,9 @@ class ProductsController extends Controller
      */
     public function index():View
     {
-        $sandwiches = Product::all()
-            ->where('kategorie', '=', 1)
-            ->firstOrFail();
+      //  $sandwiches = Product::all()
+       //     ->where('category_id', '=', 1)
+          //  ->firstOrFail();
 
         $products = Product::all();
       return view("kaffee&products", compact("products"));
