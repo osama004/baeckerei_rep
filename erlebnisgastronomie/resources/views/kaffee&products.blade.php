@@ -190,6 +190,62 @@
         @endforeach
     </div>
 
+    <div class="container">
+        @foreach($breads as $bread)
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto text-center">
+                    <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                        <img
+                            src="images/{{$bread->image}}"
+                            alt="" style="">
+                    </div>
+                    <div class="text order-1">
+                        <h3> {{$bread->name}}</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">{{$bread->price}}</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+    <div class="container">
+        @foreach($sweets as $sweet)
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto text-center">
+                    <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                        <img
+                            src="images/{{$sweet->image}}"
+                            alt="" style="">
+                    </div>
+                    <div class="text order-1">
+                        <h3> {{$sweet->name}}</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">{{$sweet->price}}</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+    <div class="container">
+        @foreach($others as $other)
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto text-center">
+                    <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                        <img
+                            src="images/{{$other->image}}"
+                            alt="" style="">
+                    </div>
+                    <div class="text order-1">
+                        <h3> {{$other->name}}</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                        <p class="text-primary h3">{{$other->price}}</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
 
 
