@@ -212,7 +212,6 @@
     </div>
 
 <footer class="site-footer" role="contentinfo">
-
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-4 mb-5">
@@ -222,11 +221,8 @@
 
             </div>
             <div class="col-md-5 mb-5">
-                <div class="mb-5">
                     <h3>Öffnungszeiten</h3>
                     <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
-                </div>
-
             </div>
             <div class="col-md-3 mb-5">
                 <h3>Kontaktdaten</h3>
@@ -238,16 +234,14 @@
                     <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
                 </ul>
             </div>
-            <div class="col-md-3">
-
-            </div>
         </div>
 
     </div>
 </footer>
 
 <!-- loader -->
-<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
+<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg>
+</div>
 
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>

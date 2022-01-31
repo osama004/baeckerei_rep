@@ -1193,7 +1193,7 @@ header .navbar .cta-btn a:hover {
     padding: 5em 0
 }
 
-.site-footer:before {
+/*.site-footer:before {
     content: "";
     width: 100%;
     height: 240px;
@@ -1209,6 +1209,8 @@ header .navbar .cta-btn a:hover {
     -ms-transform-origin: top left;
     transform-origin: top left
 }
+*/
+
 
 .site-footer p:last-child {
     margin-bottom: 0
