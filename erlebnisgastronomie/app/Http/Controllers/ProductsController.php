@@ -33,5 +33,4 @@ class ProductsController extends Controller
         return view("kaffee&products", compact( "sandwiches", "breads", "sweets", "others"));
 
     }
-
 }

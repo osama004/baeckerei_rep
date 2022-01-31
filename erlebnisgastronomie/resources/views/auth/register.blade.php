@@ -49,7 +49,7 @@
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
+                        <a class="nav-link" href="kaffee&products">Kaffee & Produkte</a>
                     </li>
 
                     <div class="divider"></div>

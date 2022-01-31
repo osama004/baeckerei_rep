@@ -55,7 +55,7 @@
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="kaffee">Kaffee & Produkte</a>
+                        <a class="nav-link" href="kaffee&products">Kaffee & Produkte</a>
                     </li>
 
                     <div class="divider"></div>
@@ -176,7 +176,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-4 mb-5">
-                <h3>About Us</h3>
+                <h3>Über uns</h3>
                 <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
 
 

@@ -284,7 +284,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-4 mb-5">
-                <h3>About Us</h3>
+                <h3>Über uns</h3>
                 <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
 
 
