@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,10 +72,10 @@ Route::get('/kaffee&products', [\App\Http\Controllers\ProductsController::class,
 
 
 
-Auth::routes(['verify' => true]);
+Auth::routes(['verify' => false]);
 
-Route::get('/anmelden', [App\Http\Controllers\HomeController::class, 'index'])->name('/login');
-Route::get('/registrieren', [App\Http\Controllers\HomeController::class, 'index'])->name('/register');
+Route::get('/anmelden', [HomeController::class, 'index'])->name('/login');
+Route::get('/registrieren', [HomeController::class, 'index'])->name('/register');
 
 
 
