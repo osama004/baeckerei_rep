@@ -170,81 +170,134 @@
             </div>
         </div>
     </div>
-
+<h1 style="margin-left: 18em; margin-bottom: 1em"> Sandwiches</h1>
     <div class="container">
+        <div class="row">
         @foreach($sandwiches as $sandwich)
-            <div class="row">
-                <div class="col-md-6 ml-auto mr-auto text-center">
-                    <div class="bg-image order-2 speisekarte"  data-aos="fade">
-                        <img
-                            src="images/{{$sandwich->image_id}}"
-                            alt="" style="">
-                    </div>
+                <div class="col-md-6 ml-auto mr-auto text-center"style="margin-top: 1em">
+                    <div class="row">
+
+                        <div class="col-md-6 ml-auto mr-auto text-center">
                     <div class="text order-1">
-                        <h3> {{$sandwich->name}}</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">{{$sandwich->price}}</p>
+                        <h3> {{$sandwich->name}} </h3>
+                        <p>{{$sandwich->description}}
+                            <i class="fas fa-info-circle"></i>
+                        </p>
+                        <p class="text-primary h3">{{$sandwich->price}}
+                            <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                        </p>
+                    </div>
+                        </div>
+
+                        <div class="col-md-6 ml-auto mr-auto text-center">
+                            <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                                <img
+                                    src="images/{{$sandwich->image_id}}"
+                                    alt="" style="">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
         @endforeach
+        </div>
     </div>
+    <h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Brote</h1>
 
     <div class="container">
+        <div class="row">
         @foreach($breads as $bread)
-            <div class="row">
-                <div class="col-md-6 ml-auto mr-auto text-center">
-                    <div class="bg-image order-2 speisekarte"  data-aos="fade">
-                        <img
-                            src="images/{{$bread->image_id}}"
-                            alt="" style="">
+            <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="row">
+
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <div class="text order-1">
+                            <h3> {{$bread->name}}</h3>
+                            <p>{{$bread->description}}
+                                <i class="fas fa-info-circle"></i>
+                            </p>
+                            <p class="text-primary h3">{{$bread->price}}
+                                <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                            </p>
+                        </div>
                     </div>
-                    <div class="text order-1">
-                        <h3> {{$bread->name}}</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">{{$bread->price}}</p>
+
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                            <img
+                                src="images/{{$bread->image_id}}"
+                                alt="" style="">
+                        </div>
                     </div>
                 </div>
             </div>
         @endforeach
+        </div>
     </div>
 
-    <div class="container">
-        @foreach($sweets as $sweet)
-            <div class="row">
-                <div class="col-md-6 ml-auto mr-auto text-center">
-                    <div class="bg-image order-2 speisekarte"  data-aos="fade">
-                        <img
-                            src="images/{{$sweet->image_id}}"
-                            alt="" style="">
-                    </div>
-                    <div class="text order-1">
-                        <h3> {{$sweet->name}}</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">{{$sweet->price}}</p>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
+    <h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Süßspeisen</h1>
 
     <div class="container">
-        @foreach($others as $other)
-            <div class="row">
-                <div class="col-md-6 ml-auto mr-auto text-center">
-                    <div class="bg-image order-2 speisekarte"  data-aos="fade">
-                        <img
-                            src="images/{{$other->image_id}}"
-                            alt="" style="">
-                    </div>
-                    <div class="text order-1">
-                        <h3> {{$other->name}}</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">{{$other->price}}</p>
+        <div class="row">
+            @foreach($sweets as $sweet)
+                <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                    <div class="row">
+
+                        <div class="col-md-6 ml-auto mr-auto text-center">
+                            <div class="text order-1">
+                                <h3> {{$sweet->name}}</h3>
+                                <p>{{$sweet->description}}
+                                    <i class="fas fa-info-circle"></i>
+                                </p>
+                                <p class="text-primary h3">{{$sweet->price}}
+                                    <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 ml-auto mr-auto text-center">
+                            <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                                <img
+                                    src="images/{{$sweet->image_id}}"
+                                    alt="" style="">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
+    </div>
+
+    <h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Sonstiges</h1>
+
+    <div class="container">
+        <div class="row">
+            @foreach($others as $other)
+                <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                    <div class="row">
+
+                        <div class="col-md-6 ml-auto mr-auto text-center">
+                            <div class="text order-1">
+                                <h3> {{$other->name}}</h3>
+                                <p>{{$other->description}}
+                                    <i class="fas fa-info-circle"></i>
+                                </p>
+                                <p class="text-primary h3">{{$other->price}}
+                                    <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 ml-auto mr-auto text-center">
+                            <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                                <img
+                                    src="images/{{$other->image_id}}"
+                                    alt="" style="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 
 
