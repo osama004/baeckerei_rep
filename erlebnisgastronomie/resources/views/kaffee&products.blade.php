@@ -177,7 +177,7 @@
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <div class="bg-image order-2 speisekarte"  data-aos="fade">
                         <img
-                            src="images/{{$sandwich->image}}"
+                            src="images/{{$sandwich->image_id}}"
                             alt="" style="">
                     </div>
                     <div class="text order-1">
@@ -196,7 +196,7 @@
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <div class="bg-image order-2 speisekarte"  data-aos="fade">
                         <img
-                            src="images/{{$bread->image}}"
+                            src="images/{{$bread->image_id}}"
                             alt="" style="">
                     </div>
                     <div class="text order-1">
@@ -215,7 +215,7 @@
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <div class="bg-image order-2 speisekarte"  data-aos="fade">
                         <img
-                            src="images/{{$sweet->image}}"
+                            src="images/{{$sweet->image_id}}"
                             alt="" style="">
                     </div>
                     <div class="text order-1">
@@ -234,7 +234,7 @@
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <div class="bg-image order-2 speisekarte"  data-aos="fade">
                         <img
-                            src="images/{{$other->image}}"
+                            src="images/{{$other->image_id}}"
                             alt="" style="">
                     </div>
                     <div class="text order-1">
