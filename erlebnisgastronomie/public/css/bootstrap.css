@@ -5327,14 +5327,15 @@ button.close {
 
 .modal {
     position: fixed;
-    top: 0;
+    top: 25%;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1050;
     display: none;
     overflow: hidden;
-    outline: 0
+    outline: 0;
+
 }
 
 .modal.fade .modal-dialog {
@@ -8942,6 +8943,7 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
     visibility: hidden !important
 }
+
 
 
 /*# sourceMappingURL=bootstrap.css.map */

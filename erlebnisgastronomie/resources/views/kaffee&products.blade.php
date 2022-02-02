@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap"
+        rel="stylesheet">
 
     <link rel="shortcut icon" href="{{asset('ftco-32x32.png')}}">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" >
-    <link rel="stylesheet" href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u')}}" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+    <link rel="stylesheet"
+          href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u')}}"
+          crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/all.min.css')}}" >
+    <link rel="stylesheet" href="{{asset('/css/all.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
@@ -37,7 +40,8 @@
             <a href="https://www.twitter.com" class="p-2"><span class="fa fa-twitter"></span></a>
             <a href="https://www.facebook.com" class="p-2"><span class="fa fa-facebook"></span></a>
             <a href="https://www.instagram.com" class="p-2"><span class="fa fa-instagram"></span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -75,9 +79,6 @@
                     <div class="divider"></div>
 
 
-
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="kontakt">Kontakt</a>
                     </li>
@@ -88,19 +89,20 @@
                         @if (Route::has('login'))
                             @if (Route::has('register'))
                                 <li class="nav-item dropdown">
-                                    <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a style="text-transform:capitalize" id="navbarDropdown"
+                                       class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false" v-pre>
                                         <i class="fas fa-user"></i>
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="login" >
+                                        <a class="dropdown-item" href="login">
                                             Login
                                         </a>
 
-                                        <a class="dropdown-item" href="register" >
+                                        <a class="dropdown-item" href="register">
                                             Registrieren
                                         </a>
-
 
 
                                     </div>
@@ -110,12 +112,14 @@
 
                     @else
                         <li class="nav-item dropdown">
-                            <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a style="text-transform:capitalize" id="navbarDropdown" class="nav-link dropdown-toggle"
+                               href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                               v-pre>
                                 <i class="fas fa-user"></i>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile" >
+                                <a class="dropdown-item" href="profile">
                                     Mein Profil
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -141,8 +145,6 @@
                 </ul>
 
 
-
-
             </div>
         </div>
     </nav>
@@ -161,71 +163,72 @@
     </div>
 </div>
 
-    <div class="clearfix mb-5 pb-5">
-        <div class="container-fluid">
-            <div class="row" data-aos="fade">
-                <div class="col-md-12 text-center heading-wrap">
-                    <h2>Unsere Speisekarte</h2>
-                </div>
+<div class="clearfix mb-5 pb-5">
+    <div class="container-fluid">
+        <div class="row" data-aos="fade">
+            <div class="col-md-12 text-center heading-wrap">
+                <h2>Unsere Speisekarte</h2>
             </div>
         </div>
     </div>
+</div>
 <h1 style="margin-left: 18em; margin-bottom: 1em"> Sandwiches</h1>
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
         @foreach($sandwiches as $sandwich)
-                <div class="col-md-6 ml-auto mr-auto text-center"style="margin-top: 1em">
-                    <div class="row">
-                        <div class="col-md-6 ml-auto mr-auto text-center">
-                    <div class="text order-1">
-                        <h3> {{$sandwich->name}} </h3>
-                        <p>{{$sandwich->description}}
-                                  <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$sandwich->product_id}}"></i>
-                        </p>
-                        <p class="text-primary h3">{{$sandwich->price}}
-                            <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
-                        </p>
-                    </div>
+            <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <div class="text order-1">
+                            <h3> {{$sandwich->name}} </h3>
+                            <p>{{$sandwich->description}}
+                                <i class="fas fa-info-circle" data-toggle="modal"
+                                   data-target="#myModal{{$sandwich->product_id}}"></i>
+                            </p>
+                            <p class="text-primary h3">{{$sandwich->price}}
+                                <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                            </p>
                         </div>
+                    </div>
 
-                        <div class="col-md-6 ml-auto mr-auto text-center">
-                            <div class="bg-image order-2 speisekarte"  data-aos="fade">
-                                <img
-                                    src="images/{{$sandwich->image_id}}"
-                                    alt="" style="">
-                            </div>
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <div class="bg-image order-2 speisekarte" data-aos="fade">
+                            <img
+                                src="images/{{$sandwich->image_id}}"
+                                alt="" style="">
                         </div>
                     </div>
                 </div>
-
+            </div>
             <!-- modal popup-->
-                <div class="modal fade" id="myModal{{$sandwich->product_id}}" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">{{$sandwich->name}}</h4>
-                                <i style="margin-left:1em; margin-top:5px">{{$sandwich->price}}</i>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <div class="modal-body">
-                               <p>{{$sandwich->description}}</p>
-                                <p>Allergene:</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            </div>
+            <div class="modal fade" id="myModal{{$sandwich->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">{{$sandwich->name}}</h4>
+                            <i style="margin-left:1em; margin-top:5px">{{$sandwich->price}}</i>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{$sandwich->description}}</p>
+                            <p>Allergene:</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
+            </div>
 
 
-            @endforeach
-        </div>
+        @endforeach
     </div>
-    <h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Brote</h1>
+</div>
+<h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Brote</h1>
 
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
         @foreach($breads as $bread)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
                 <div class="row">
@@ -234,7 +237,8 @@
                         <div class="text order-1">
                             <h3> {{$bread->name}}</h3>
                             <p>{{$bread->description}}
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$bread->product_id}}"></i>
+                                <i class="fas fa-info-circle" data-toggle="modal"
+                                   data-target="#myModal{{$bread->product_id}}"></i>
                             </p>
                             <p class="text-primary h3">{{$bread->price}}
                                 <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
@@ -243,7 +247,7 @@
                     </div>
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="bg-image order-2 speisekarte"  data-aos="fade">
+                        <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
                                 src="images/{{$bread->image_id}}"
                                 alt="" style="">
@@ -252,133 +256,138 @@
                 </div>
             </div>
 
-                <!-- modal popup-->
-                <div class="modal fade" id="myModal{{$bread->product_id}}" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">{{$bread->name}}</h4>
-                                <i style="margin-left:1em; margin-top:5px">{{$bread->price}}</i>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>{{$bread->description}}</p>
-                                <p>Allergene:</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            </div>
+            <!-- modal popup-->
+            <div class="modal fade" id="myModal{{$bread->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">{{$bread->name}}</h4>
+                            <i style="margin-left:1em; margin-top:5px">{{$bread->price}}</i>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{$bread->description}}</p>
+                            <p>Allergene:</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
+            </div>
         @endforeach
-        </div>
     </div>
+</div>
 
-    <h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Süßspeisen</h1>
+<h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Süßspeisen</h1>
 
-    <div class="container">
-        <div class="row">
-            @foreach($sweets as $sweet)
-                <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
-                    <div class="row">
+<div class="container">
+    <div class="row">
+        @foreach($sweets as $sweet)
+            <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="row">
 
-                        <div class="col-md-6 ml-auto mr-auto text-center">
-                            <div class="text order-1">
-                                <h3> {{$sweet->name}}</h3>
-                                <p>{{$sweet->description}}
-                                    <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$sweet->product_id}}"></i>
-                                </p>
-                                <p class="text-primary h3">{{$sweet->price}}
-                                    <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
-                                </p>
-                            </div>
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <div class="text order-1">
+                            <h3> {{$sweet->name}}</h3>
+                            <p>{{$sweet->description}}
+                                <i class="fas fa-info-circle" data-toggle="modal"
+                                   data-target="#myModal{{$sweet->product_id}}"></i>
+                            </p>
+                            <p class="text-primary h3">{{$sweet->price}}
+                                <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                            </p>
                         </div>
+                    </div>
 
-                        <div class="col-md-6 ml-auto mr-auto text-center">
-                            <div class="bg-image order-2 speisekarte"  data-aos="fade">
-                                <img
-                                    src="images/{{$sweet->image_id}}"
-                                    alt="" style="">
-                            </div>
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <div class="bg-image order-2 speisekarte" data-aos="fade">
+                            <img
+                                src="images/{{$sweet->image_id}}"
+                                alt="" style="">
                         </div>
                     </div>
                 </div>
-                <!-- modal popup-->
-                <div class="modal fade" id="myModal{{$sweet->product_id}}" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">{{$sweet->name}}</h4>
-                                <i style="margin-left:1em; margin-top:5px">{{$sweet->price}}</i>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>{{$sweet->description}}</p>
-                                <p>Allergene:</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            </div>
+            </div>
+            <!-- modal popup-->
+            <div class="modal fade" id="myModal{{$sweet->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">{{$sweet->name}}</h4>
+                            <i style="margin-left:1em; margin-top:5px">{{$sweet->price}}</i>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{$sweet->description}}</p>
+                            <p>Allergene:</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
+</div>
 
-    <h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Sonstiges</h1>
+<h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Sonstiges</h1>
 
-    <div class="container">
-        <div class="row">
-            @foreach($others as $other)
-                <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
-                    <div class="row">
+<div class="container">
+    <div class="row">
+        @foreach($others as $other)
+            <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="row">
 
-                        <div class="col-md-6 ml-auto mr-auto text-center">
-                            <div class="text order-1">
-                                <h3> {{$other->name}}</h3>
-                                <p>{{$other->description}}
-                                    <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$other->product_id}}"></i>
-                                </p>
-                                <p class="text-primary h3">{{$other->price}}
-                                    <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
-                                </p>
-                            </div>
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <div class="text order-1">
+                            <h3> {{$other->name}}</h3>
+                            <p>{{$other->description}}
+                                <i class="fas fa-info-circle" data-toggle="modal"
+                                   data-target="#myModal{{$other->product_id}}"></i>
+                            </p>
+                            <p class="text-primary h3">{{$other->price}}
+                                <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                            </p>
                         </div>
+                    </div>
 
-                        <div class="col-md-6 ml-auto mr-auto text-center">
-                            <div class="bg-image order-2 speisekarte"  data-aos="fade">
-                                <img
-                                    src="images/{{$other->image_id}}"
-                                    alt="" style="">
-                            </div>
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <div class="bg-image order-2 speisekarte" data-aos="fade">
+                            <img
+                                src="images/{{$other->image_id}}"
+                                alt="" style="">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- modal popup-->
-                <div class="modal fade" id="myModal{{$other->product_id}}" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">{{$other->name}}</h4>
-                                <i style="margin-left:1em; margin-top:5px">{{$other->price}}</i>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>{{$other->description}}</p>
-                                <p>Allergene:</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            </div>
+            <!-- modal popup-->
+            <div class="modal fade" id="myModal{{$other->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">{{$other->name}}</h4>
+                            <i style="margin-left:1em; margin-top:5px">{{$other->price}}</i>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{$other->description}}</p>
+                            <p>Allergene:</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
@@ -387,7 +396,8 @@
         <div class="row mb-5">
             <div class="col-md-4 mb-5">
                 <h3>Über uns</h3>
-                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor
+                    blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
 
 
             </div>
@@ -404,8 +414,10 @@
                     <li class="d-block">
                         <span class="d-block text-black">Adresse:</span>
                         <span>Jägerstraße 62, 1200 Wien Österreich </span></li>
-                    <li class="d-block"><span class="d-block text-black">Telefon:</span><span>+1 242 4942 290</span></li>
-                    <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                    <li class="d-block"><span class="d-block text-black">Telefon:</span><span>+1 242 4942 290</span>
+                    </li>
+                    <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-3">
@@ -428,8 +440,10 @@
 
 <script src="{{asset('js/main.js')}}"></script>
 
-<script src="{{asset('https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous')}}"></script>
-<script src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa')}}"></script>
+<script
+    src="{{asset('https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous')}}"></script>
+<script
+    src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa')}}"></script>
 <script src="{{asset('js/respond.js')}}"></script>
 
 
