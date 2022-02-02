@@ -10,13 +10,14 @@
 
     <link rel="shortcut icon" href="{{asset('ftco-32x32.png')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" >
+    <link rel="stylesheet" href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u')}}" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
-    <link href="{{asset('/css/all.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('/css/all.min.css')}}" >
 
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
@@ -159,7 +160,6 @@
         </div>
     </div>
 </div>
-<section class="section bg-light  top-slant-white bottom-slant-gray">
 
     <div class="clearfix mb-5 pb-5">
         <div class="container-fluid">
@@ -176,14 +176,11 @@
         @foreach($sandwiches as $sandwich)
                 <div class="col-md-6 ml-auto mr-auto text-center"style="margin-top: 1em">
                     <div class="row">
-
                         <div class="col-md-6 ml-auto mr-auto text-center">
                     <div class="text order-1">
                         <h3> {{$sandwich->name}} </h3>
                         <p>{{$sandwich->description}}
-                            <button id="myBtn" class="infobutton">
-                                  <i class="fas fa-info-circle"></i>
-                            </button>
+                                  <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal"></i>
                         </p>
                         <p class="text-primary h3">{{$sandwich->price}}
                             <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
@@ -201,18 +198,26 @@
                     </div>
                 </div>
 
-
-
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <p>Some text in the Modal..</p>
+            <!-- modal popup-->
+                <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">{{$sandwich->name}}</h4>
+                                <i style="margin-left:1em; margin-top:5px">{{$sandwich->price}}</i>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                               <p>{{$sandwich->description}}</p>
+                                <p>Allergene:</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
+
 
             @endforeach
         </div>
@@ -229,7 +234,7 @@
                         <div class="text order-1">
                             <h3> {{$bread->name}}</h3>
                             <p>{{$bread->description}}
-                                <i class="fas fa-info-circle"></i>
+                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal"></i>
                             </p>
                             <p class="text-primary h3">{{$bread->price}}
                                 <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
@@ -246,6 +251,26 @@
                     </div>
                 </div>
             </div>
+
+                <!-- modal popup-->
+                <div class="modal fade" id="myBtn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">{{$bread->name}}</h4>
+                                <i style="margin-left:1em; margin-top:5px">{{$bread->price}}</i>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{$bread->description}}</p>
+                                <p>Allergene:</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         @endforeach
         </div>
     </div>
@@ -316,12 +341,7 @@
         </div>
     </div>
 
-
-
-
-
-</section> <!-- .section -->
-
+<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
 
     <div class="container">
@@ -368,32 +388,11 @@
 
 
 <script src="{{asset('js/main.js')}}"></script>
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+<script src="{{asset('https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous')}}"></script>
+<script src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa')}}"></script>
+<script src="{{asset('js/respond.js')}}"></script>
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
 </body>
 </html>
