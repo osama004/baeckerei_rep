@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\RegionalProductsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -43,7 +45,7 @@ Route::get('/regionales', function () {
 });
 */
 
-Route::get('/regionales', [\App\Http\Controllers\RegionalProductsController::class , 'index']);
+Route::get('/regionales', [RegionalProductsController::class , 'index']);
 
 Route::get('/kontakt', function () {
     return view('kontakt');
@@ -64,15 +66,15 @@ Route::get('/contactus',[ContactController::class,'contact']);
 Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
 
 
-//Route::get('/products',[\App\Http\Controllers\ProductsController::class, 'index']);
-//Route::get('/products',[\App\Http\Controllers\ProductsController::class,'index'])->name('productsGet');
-Route::get('/kaffee&products', [\App\Http\Controllers\ProductsController::class, 'index']);
+//Route::get('/products',[ProductsController::class, 'index']);
+//Route::get('/products',[ProductsController::class,'index'])->name('productsGet');
+Route::get('/kaffee&products', [ProductsController::class, 'index']);
 
 
 
 
 
-Auth::routes(['verify' => false]);
+Auth::routes(['verify' => true]);
 
 Route::get('/anmelden', [HomeController::class, 'index'])->name('/login');
 Route::get('/registrieren', [HomeController::class, 'index'])->name('/register');

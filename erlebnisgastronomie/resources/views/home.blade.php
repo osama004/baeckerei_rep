@@ -97,10 +97,6 @@
                                             <i class="fas fa-user"></i>
                                         </a>
 
-
-
-
-
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="login" >
                                                 Login
@@ -112,8 +108,6 @@
                                         </div>
                                     </li>
                                     <div class="divider"></div>
-
-
 
                                 @endif
                             @endif
@@ -162,11 +156,11 @@
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
                     <h1 data-aos="fade-up mb-5">HOME</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <section class="section bg-light py-5  bottom-slant-gray">
     <div class="container">

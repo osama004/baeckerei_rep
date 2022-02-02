@@ -14,6 +14,8 @@ class Customer extends Authenticatable implements MustVerifyEmail
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = 'customers';
+    protected $primaryKey = 'customer_id';
+    // otherwise it is column 'id'
 
     /**
      * The attributes that are mass assignable.
