@@ -180,7 +180,7 @@
                     <div class="text order-1">
                         <h3> {{$sandwich->name}} </h3>
                         <p>{{$sandwich->description}}
-                                  <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal"></i>
+                                  <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$sandwich->product_id}}"></i>
                         </p>
                         <p class="text-primary h3">{{$sandwich->price}}
                             <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
@@ -199,7 +199,7 @@
                 </div>
 
             <!-- modal popup-->
-                <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal fade" id="myModal{{$sandwich->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
