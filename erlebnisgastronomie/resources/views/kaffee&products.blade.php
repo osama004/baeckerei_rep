@@ -234,7 +234,7 @@
                         <div class="text order-1">
                             <h3> {{$bread->name}}</h3>
                             <p>{{$bread->description}}
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal"></i>
+                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$bread->product_id}}"></i>
                             </p>
                             <p class="text-primary h3">{{$bread->price}}
                                 <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
@@ -253,7 +253,7 @@
             </div>
 
                 <!-- modal popup-->
-                <div class="modal fade" id="myBtn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal fade" id="myModal{{$bread->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -287,7 +287,7 @@
                             <div class="text order-1">
                                 <h3> {{$sweet->name}}</h3>
                                 <p>{{$sweet->description}}
-                                    <i class="fas fa-info-circle"></i>
+                                    <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$sweet->product_id}}"></i>
                                 </p>
                                 <p class="text-primary h3">{{$sweet->price}}
                                     <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
@@ -300,6 +300,25 @@
                                 <img
                                     src="images/{{$sweet->image_id}}"
                                     alt="" style="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal popup-->
+                <div class="modal fade" id="myModal{{$sweet->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">{{$sweet->name}}</h4>
+                                <i style="margin-left:1em; margin-top:5px">{{$sweet->price}}</i>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{$sweet->description}}</p>
+                                <p>Allergene:</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -320,7 +339,7 @@
                             <div class="text order-1">
                                 <h3> {{$other->name}}</h3>
                                 <p>{{$other->description}}
-                                    <i class="fas fa-info-circle"></i>
+                                    <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$other->product_id}}"></i>
                                 </p>
                                 <p class="text-primary h3">{{$other->price}}
                                     <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
@@ -333,6 +352,26 @@
                                 <img
                                     src="images/{{$other->image_id}}"
                                     alt="" style="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- modal popup-->
+                <div class="modal fade" id="myModal{{$other->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">{{$other->name}}</h4>
+                                <i style="margin-left:1em; margin-top:5px">{{$other->price}}</i>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{$other->description}}</p>
+                                <p>Allergene:</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
