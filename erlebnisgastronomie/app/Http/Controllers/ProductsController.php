@@ -15,18 +15,29 @@ class ProductsController extends Controller
      */
     public function index():View
     {
-        $sandwiches = Product::all()
-           ->where('category_id', '=', 1);
+        $sandwiches = DB::table('products')
+            ->join('categories', 'product_id', '=', 'categories.category_id')
+            ->where('products.category_id', '=', 1)
+            ->get()->toArray();
+           // -
 
-        $sweets = Product::all()
-            ->where('category_id', '=', 2);
 
 
-        $breads = Product::all()
-            ->where('category_id', '=', 3);
+        $sweets = DB::table('products')
+            ->join('categories', 'product_id', '=', 'categories.category_id')
+            ->where('products.category_id', '=', 2)
+            ->get()->toArray();
 
-        $others = Product::all()
-            ->where('category_id', '=', 4);
+
+        $breads = DB::table('products')
+            ->join('categories', 'product_id', '=', 'categories.category_id')
+            ->where('products.category_id', '=', 3)
+            ->get()->toArray();
+
+        $others = DB::table('products')
+            ->join('categories', 'product_id', '=', 'categories.category_id')
+            ->where('products.category_id', '=', 4)
+            ->get()->toArray();
 
 
        // $products = Product::all();

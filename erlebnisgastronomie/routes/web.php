@@ -77,6 +77,7 @@ Route::get('/kaffee&products', [ProductsController::class, 'index']);
 Auth::routes(['verify' => true]);
 
 Route::get('/anmelden', [HomeController::class, 'index'])->name('/login');
+Route::get('/userprofile', [HomeController::class, 'indexLogin'])->name('/userprofile');
 Route::get('/registrieren', [HomeController::class, 'index'])->name('/register');
 
 

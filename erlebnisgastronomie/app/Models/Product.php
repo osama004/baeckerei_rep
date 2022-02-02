@@ -10,9 +10,10 @@ class Product extends Model
     use HasFactory;
 
     protected $table ='products';
+    protected $primaryKey = 'product_id';
 
     protected $fillable = [
-        "product_id", "name" , "price" , "image"
+        "name" , "price" , "image"
     ];
 
     public function getPriceAttribute($price) {

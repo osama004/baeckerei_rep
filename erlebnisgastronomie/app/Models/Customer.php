@@ -27,7 +27,7 @@ class Customer extends Authenticatable implements MustVerifyEmail
         'lastname',
         'email',
         'password',
-        'address',
+        //'address',
     ];
 
 
