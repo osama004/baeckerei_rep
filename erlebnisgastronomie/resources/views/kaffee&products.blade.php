@@ -180,7 +180,7 @@
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h3> {{$sandwich->name}} </h3>
+                            <h3> {{$sandwich->bezeichnung}} </h3>
                             <p>{{$sandwich->description}}
                                 <i class="fas fa-info-circle" data-toggle="modal"
                                    data-target="#myModal{{$sandwich->product_id}}"></i>
@@ -205,7 +205,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$sandwich->name}}</h4>
+                            <h4 class="modal-title" id="myModalLabel">{{$sandwich->bezeichnung}}</h4>
                             <i style="margin-left:1em; margin-top:5px">{{$sandwich->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
@@ -235,7 +235,7 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h3> {{$bread->name}}</h3>
+                            <h3> {{$bread->bezeichnung}}</h3>
                             <p>{{$bread->description}}
                                 <i class="fas fa-info-circle" data-toggle="modal"
                                    data-target="#myModal{{$bread->product_id}}"></i>
@@ -261,7 +261,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$bread->name}}</h4>
+                            <h4 class="modal-title" id="myModalLabel">{{$bread->bezeichnung}}</h4>
                             <i style="margin-left:1em; margin-top:5px">{{$bread->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
@@ -290,7 +290,7 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h3> {{$sweet->name}}</h3>
+                            <h3> {{$sweet->bezeichnung}}</h3>
                             <p>{{$sweet->description}}
                                 <i class="fas fa-info-circle" data-toggle="modal"
                                    data-target="#myModal{{$sweet->product_id}}"></i>
@@ -315,7 +315,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$sweet->name}}</h4>
+                            <h4 class="modal-title" id="myModalLabel">{{$sweet->bezeichnung}}</h4>
                             <i style="margin-left:1em; margin-top:5px">{{$sweet->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
@@ -344,7 +344,7 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h3> {{$other->name}}</h3>
+                            <h3> {{$other->bezeichnung}}</h3>
                             <p>{{$other->description}}
                                 <i class="fas fa-info-circle" data-toggle="modal"
                                    data-target="#myModal{{$other->product_id}}"></i>
@@ -370,7 +370,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$other->name}}</h4>
+                            <h4 class="modal-title" id="myModalLabel">{{$other->bezeichnung}}</h4>
                             <i style="margin-left:1em; margin-top:5px">{{$other->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
