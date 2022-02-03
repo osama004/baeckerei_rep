@@ -5,22 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class address extends Model
+class product_ingredient extends Model
 {
     use HasFactory;
 
-    protected $table ='addresses';
-    protected $primaryKey = 'address_id';
+    protected $table = 'product_ingredients';
+    protected $primaryKey = ['ingredient_id', 'product_id'];
+    public $incrementing = false;
     public $timestamps = false; // so, we don't need created_at and updated_at columns
 
     protected $fillable = [
-        'postcode',
-        'steet_haus_nr',
-        'stairway_nr',
-        'apartment_nr',
-        'city'
+        'quantity' , 'unit_of_measure'
     ];
 
-
+    public function index() {
+        //
+    }
 
 }

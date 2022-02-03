@@ -5,22 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class address extends Model
+class courier_info extends Model
 {
     use HasFactory;
 
-    protected $table ='addresses';
-    protected $primaryKey = 'address_id';
+    protected $table = 'courier_infos';
+    protected $primaryKey = 'courier_id';
     public $timestamps = false; // so, we don't need created_at and updated_at columns
 
     protected $fillable = [
-        'postcode',
-        'steet_haus_nr',
-        'stairway_nr',
-        'apartment_nr',
-        'city'
+        'firstname', 'lastname', 'phone_number', 'delivery_type'
     ];
 
-
-
+    public function index() {
+        // return view('allergens');
+    }
 }
