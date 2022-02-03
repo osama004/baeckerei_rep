@@ -172,7 +172,7 @@
         </div>
     </div>
 </div>
-<h1 style="margin-left: 18em; margin-bottom: 1em"> Sandwiches</h1>
+<h1 class="product-category"> Sandwiches</h1>
 <div class="container">
     <div class="row">
         @foreach($sandwiches as $sandwich)
@@ -225,7 +225,7 @@
         @endforeach
     </div>
 </div>
-<h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Brote</h1>
+<h1 class="product-category"> Brote</h1>
 
 <div class="container">
     <div class="row">
@@ -280,7 +280,7 @@
     </div>
 </div>
 
-<h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Süßspeisen</h1>
+<h1 class="product-category"> Süßspeisen</h1>
 
 <div class="container">
     <div class="row">
@@ -334,7 +334,7 @@
     </div>
 </div>
 
-<h1 style="margin-left: 18em; margin-bottom: 1em; margin-top: 2em"> Sonstiges</h1>
+<h1 class="product-category"> Sonstiges</h1>
 
 <div class="container">
     <div class="row">
