@@ -55,9 +55,9 @@ class ProductsController extends Controller
         $request->session()->put('cart', $cart);
 
         // it shows the cart object (for debugging)
-        dump($cart);
+        //dump($cart);
 
-
+        return redirect()->route('kaffee&products');
 
 
     }

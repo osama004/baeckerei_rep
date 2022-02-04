@@ -137,8 +137,8 @@
 
                         @endguest
 
-                        <li class="nav-item" href="warenkorb">
-                            <a class="nav-link" href="warenkorb">
+                        <li class="nav-item" href="shoppingcart">
+                            <a class="nav-link" href="shoppingcart">
                               <i class="fas fa-shopping-cart"></i>
                             </a>
 

@@ -55,8 +55,8 @@ Route::get('/profile', function () {
     return view('userprofile');
 });
 
-Route::get('/warenkorb', function () {
-    return view('warenkorb');
+Route::get('/shoppingcart', function () {
+    return view('shoppingcart');
 });
 
 
@@ -68,7 +68,7 @@ Route::post('/send-message',[ContactController::class,'sendEmail'])->name('conta
 
 //Route::get('/products',[ProductsController::class, 'index']);
 //Route::get('/products',[ProductsController::class,'index'])->name('productsGet');
-Route::get('/kaffee&products', [ProductsController::class, 'index']);
+Route::get('/kaffee&products', [ProductsController::class, 'index']) ->name('kaffee&products');
 
 Route::get('/kaffee&products/addToCart/{product_id}', [ProductsController::class, 'addProductToCart'])->name('AddToCartProduct');
 
