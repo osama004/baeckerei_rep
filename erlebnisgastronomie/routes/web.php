@@ -70,6 +70,9 @@ Route::post('/send-message',[ContactController::class,'sendEmail'])->name('conta
 //Route::get('/products',[ProductsController::class,'index'])->name('productsGet');
 Route::get('/kaffee&products', [ProductsController::class, 'index']);
 
+Route::get('/kaffee&products/addToCart/{product_id}', [ProductsController::class, 'addProductToCart'])->name('AddToCartProduct');
+
+
 
 
 
@@ -79,6 +82,7 @@ Auth::routes(['verify' => true]);
 Route::get('/anmelden', [HomeController::class, 'index'])->name('/login');
 Route::get('/userprofile', [HomeController::class, 'indexLogin'])->name('/userprofile');
 Route::get('/registrieren', [HomeController::class, 'index'])->name('/register');
+
 
 
 

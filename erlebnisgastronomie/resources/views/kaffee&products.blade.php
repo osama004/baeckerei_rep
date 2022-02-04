@@ -185,8 +185,11 @@
                                 <i class="fas fa-info-circle" data-toggle="modal"
                                    data-target="#myModal{{$sandwich->product_id}}"></i>
                             </p>
+                            {{$sandwich->product_id}}
                             <p class="text-primary h3">{{$sandwich->price}}
-                                <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                                <i  class="fas fa-cart-arrow-down" style="margin-left:2em">
+                                    <button onclick="location.href='{{route('AddToCartProduct',['product_id'=>$sandwich->product_id])}}'" >add</button>
+                                </i>
                             </p>
                         </div>
                     </div>
@@ -194,7 +197,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
-                                src="images/{{$sandwich->image_id}}"
+                                src="images/{{$sandwich->image}}"
                                 alt="" style="">
                         </div>
                     </div>
@@ -249,7 +252,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
-                                src="images/{{$bread->image_id}}"
+                                src="images/{{$bread->image}}"
                                 alt="" style="">
                         </div>
                     </div>
@@ -304,7 +307,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
-                                src="images/{{$sweet->image_id}}"
+                                src="images/{{$sweet->image}}"
                                 alt="" style="">
                         </div>
                     </div>
@@ -358,7 +361,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
-                                src="images/{{$other->image_id}}"
+                                src="images/{{$other->image}}"
                                 alt="" style="">
                         </div>
                     </div>
