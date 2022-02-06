@@ -215,6 +215,7 @@
                             <p>{{$sandwich->description}}</p>
                             <p>Allergene:<br></p>
                             @foreach($allergens as $allergen)
+                                @continue($allergen -> product_id != $sandwich->product_id)
                                 <p>{{$allergen -> name}}  {{$allergen -> type}}    {{$allergen ->describe_type}}</p>
                             @endforeach
                         </div>

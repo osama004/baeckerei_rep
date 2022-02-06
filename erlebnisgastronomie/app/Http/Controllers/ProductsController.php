@@ -43,8 +43,9 @@ class ProductsController extends Controller
             ->join('ingredients_allergens', 'allergens.allergen_id', 'ingredients_allergens.allergen_id')
             ->join('ingredients', 'ingredients_allergens.ingredient_id', 'ingredients.ingredient_id')
             ->join('products_ingredients', 'ingredients.ingredient_id', 'products_ingredients.ingredient_id')
-            ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type'])
-            ->get( ['ingredients.name', 'allergens.type', 'allergens.describe_type']) ->toArray();
+            ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
+            ->get( ['ingredients.name', 'allergens.type', 'allergens.describe_type' , 'products_ingredients.product_id'])
+            ->toArray();
 
 
 
