@@ -6,6 +6,7 @@ use App\Http\Controllers\RegionalProductsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AllergenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +70,7 @@ Route::post('/send-message',[ContactController::class,'sendEmail'])->name('conta
 //Route::get('/products',[ProductsController::class, 'index']);
 //Route::get('/products',[ProductsController::class,'index'])->name('productsGet');
 Route::get('/kaffee&products', [ProductsController::class, 'index']) ->name('kaffee&products');
-
+//Route::get('/kaffee&products', [AllergenController::class, 'index']) ->name('productsAllergen');
 Route::get('/kaffee&products/addToCart/{product_id}', [ProductsController::class, 'addProductToCart'])->name('AddToCartProduct');
 
 

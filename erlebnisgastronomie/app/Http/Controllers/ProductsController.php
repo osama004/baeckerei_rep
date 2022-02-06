@@ -39,9 +39,17 @@ class ProductsController extends Controller
             ->where('products.category_id', '=', 4)
             ->get()->toArray();
 
+        $allergens = DB::table('allergens')
+            ->join('ingredients_allergens', 'allergens.allergen_id', 'ingredients_allergens.allergen_id')
+            ->join('ingredients', 'ingredients_allergens.ingredient_id', 'ingredients.ingredient_id')
+            ->join('products_ingredients', 'ingredients.ingredient_id', 'products_ingredients.ingredient_id')
+            ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type'])
+            ->get( ['ingredients.name', 'allergens.type', 'allergens.describe_type']) ->toArray();
+
+
 
        // $products = Product::all();
-        return view("kaffee&products", compact( "sandwiches", "breads", "sweets", "others"));
+        return view("kaffee&products", compact( "sandwiches", "breads", "sweets", "others", "allergens"));
 
     }
 

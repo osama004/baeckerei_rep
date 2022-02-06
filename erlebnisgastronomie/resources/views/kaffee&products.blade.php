@@ -213,7 +213,10 @@
                         </div>
                         <div class="modal-body">
                             <p>{{$sandwich->description}}</p>
-                            <p>Allergene:</p>
+                            <p>Allergene:<br></p>
+                            @foreach($allergens as $allergen)
+                                <p>{{$allergen -> name}}  {{$allergen -> type}}    {{$allergen ->describe_type}}</p>
+                            @endforeach
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
