@@ -182,11 +182,24 @@
                                            <a class="cart_quantity_down" href=""> - </a>
                                        </div>
                                    </td>
+                                   <td class="cart_total">
+                                       <p class="cart_total_price">{{$item['totalSinglePrice']}}</p>
+                                   </td>
 
                                </tr>
+                               <ul class="col-sm-6">
+                                   <div class="total_area">
+                                       <ul>
+                                           <li>Quantity<span>{{$cartItems->totalQuantity}}</span></li>
+                                           <li>Shipping Cost <span>Free</span></li>
+                                           <li>Total <span>{{$cartItems->totalPrice}}</span></li>
+                                       </ul>
+                                   </div>
+
+                               </div>
                            @endforeach
                        </div>
-                               <button type="submit" class="btn btn-primary float-right">Bestellen</button>
+                               <button type="submit" class="btn btn-primary float-right" >Bestellen</button>
                    </div>
                </div>
            </div>
