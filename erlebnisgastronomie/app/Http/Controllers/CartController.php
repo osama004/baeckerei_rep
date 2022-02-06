@@ -19,7 +19,7 @@ class CartController extends Controller
         // Cart is empty
         else {
             //echo 'cart is empty';
-            return  redirect()->route('shoppingcart');
+            return  redirect()->route('kaffee&products');
         }
     }
 
