@@ -137,6 +137,8 @@
 
                         @endguest
 
+                        <div class="divider"></div>
+
                         <li class="nav-item" href="shoppingcart">
                             <a class="nav-link" href="shoppingcart">
                               <i class="fas fa-shopping-cart"></i>
