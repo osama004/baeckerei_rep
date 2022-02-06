@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>EG - Kaffee & Produkte</title>
+    <title>Kaffee & Produkte</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -36,7 +36,7 @@
 <header role="banner">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">Erlebnisgastronomie</a>
+            <a class="navbar-brand" href="/">Bäckquem</a>
             <a href="https://www.twitter.com" class="p-2"><span class="fa fa-twitter"></span></a>
             <a href="https://www.facebook.com" class="p-2"><span class="fa fa-facebook"></span></a>
             <a href="https://www.instagram.com" class="p-2"><span class="fa fa-instagram"></span></a>
@@ -135,16 +135,12 @@
                         </li>
                     @endguest
                     <div class="divider"></div>
-
-                    <li class="nav-item" href="shoppingcart">
-                        <a class="nav-link" href="shoppingcart">
+                    <li class="nav-item" href="warenkorb">
+                        <a class="nav-link" href="warenkorb">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
-
                     </li>
                 </ul>
-
-
             </div>
         </div>
     </nav>
@@ -180,16 +176,18 @@
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h3> {{$sandwich->bezeichnung}} </h3>
+                            <h4>{{$sandwich->title}}  </h4>
                             <p>{{$sandwich->description}}
-                                <i class="fas fa-info-circle" data-toggle="modal"
-                                   data-target="#myModal{{$sandwich->product_id}}"></i>
-                            </p>
-                            {{$sandwich->product_id}}
-                            <p class="text-primary h3">{{$sandwich->price}}
-                                <i  class="fas fa-cart-arrow-down" style="margin-left:2em">
-                                    <button onclick="location.href='{{route('AddToCartProduct',['product_id'=>$sandwich->product_id])}}'" >add</button>
-                                </i>
+                                <button class="infobutton">
+                                    <i class="fas fa-info-circle" data-toggle="modal"
+                                       data-target="#myModal{{$sandwich->product_id}}"></i>
+                                </button>
+                            </p >
+                            <p class="h4">
+                                {{$sandwich->price}} €
+                                    <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$sandwich->product_id])}}'" >
+                                        <i  class="fas fa-cart-arrow-down"> </i>
+                                    </button>
                             </p>
                         </div>
                     </div>
@@ -208,8 +206,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$sandwich->bezeichnung}}</h4>
-                            <i style="margin-left:1em; margin-top:5px">{{$sandwich->price}}</i>
+                            <h4 class="modal-title" id="myModalLabel">{{$sandwich->title}}</h4>
+                            <i style="margin-left:1em; margin-top:5px">€{{$sandwich->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
                         </div>
@@ -238,13 +236,17 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h3> {{$bread->bezeichnung}}</h3>
+                            <h4> {{$bread->title}}</h4>
                             <p>{{$bread->description}}
-                                <i class="fas fa-info-circle" data-toggle="modal"
-                                   data-target="#myModal{{$bread->product_id}}"></i>
+                                <button class="infobutton">
+                                    <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$bread->product_id}}"></i>
+                                </button>
                             </p>
-                            <p class="text-primary h3">{{$bread->price}}
-                                <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                            <p class="text-primary h4">
+                                {{$bread->price}} €
+                                <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$bread->product_id])}}'" >
+                                    <i  class="fas fa-cart-arrow-down"> </i>
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -264,8 +266,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$bread->bezeichnung}}</h4>
-                            <i style="margin-left:1em; margin-top:5px">{{$bread->price}}</i>
+                            <h4 class="modal-title" id="myModalLabel">{{$bread->title}}</h4>
+                            <i style="margin-left:1em; margin-top:5px">€{{$bread->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
                         </div>
@@ -293,13 +295,18 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h3> {{$sweet->bezeichnung}}</h3>
+                            <h4> {{$sweet->title}}</h4>
                             <p>{{$sweet->description}}
-                                <i class="fas fa-info-circle" data-toggle="modal"
-                                   data-target="#myModal{{$sweet->product_id}}"></i>
+                                <button class="infobutton">
+                                    <i class="fas fa-info-circle" data-toggle="modal"
+                                       data-target="#myModal{{$sweet->product_id}}"></i>
+                                </button>
                             </p>
-                            <p class="text-primary h3">{{$sweet->price}}
-                                <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                            <p class="text-primary h4">
+                                {{$sweet->price}} €
+                                <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$sweet->product_id])}}'" >
+                                    <i  class="fas fa-cart-arrow-down"> </i>
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -318,8 +325,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$sweet->bezeichnung}}</h4>
-                            <i style="margin-left:1em; margin-top:5px">{{$sweet->price}}</i>
+                            <h4 class="modal-title" id="myModalLabel">{{$sweet->title}}</h4>
+                            <i style="margin-left:1em; margin-top:5px">€{{$sweet->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
                         </div>
@@ -347,13 +354,18 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h3> {{$other->bezeichnung}}</h3>
+                            <h4> {{$other->title}}</h4>
                             <p>{{$other->description}}
-                                <i class="fas fa-info-circle" data-toggle="modal"
-                                   data-target="#myModal{{$other->product_id}}"></i>
+                                <button class="infobutton">
+                                    <i class="fas fa-info-circle" data-toggle="modal"
+                                       data-target="#myModal{{$other->product_id}}"></i>
+                                </button>
                             </p>
-                            <p class="text-primary h3">{{$other->price}}
-                                <i class="fas fa-cart-arrow-down" style="margin-left:2em"></i>
+                            <p class="text-primary h4">
+                                {{$other->price}} €
+                                <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$other->product_id])}}'" >
+                                    <i  class="fas fa-cart-arrow-down"> </i>
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -373,8 +385,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$other->bezeichnung}}</h4>
-                            <i style="margin-left:1em; margin-top:5px">{{$other->price}}</i>
+                            <h4 class="modal-title" id="myModalLabel">{{$other->title}}</h4>
+                            <i style="margin-left:1em; margin-top:5px">€{{$other->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
                         </div>

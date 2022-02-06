@@ -546,7 +546,7 @@
 }
 
 .fa-info-circle:before {
-    content: "\f05a"
+    content: "\f05a";
 }
 
 .fa-crosshairs:before {
@@ -2162,7 +2162,7 @@
 }
 
 .fa-cart-arrow-down:before {
-    content: "\f218"
+    content: "\f218";
 }
 
 .fa-diamond:before {

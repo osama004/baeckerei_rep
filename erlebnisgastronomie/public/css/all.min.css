@@ -1023,7 +1023,7 @@
 }
 
 .fa-cart-arrow-down:before {
-    content: "\f218"
+    content: "\f218";
 }
 
 .fa-cart-plus:before {
@@ -3039,7 +3039,8 @@
 }
 
 .fa-info-circle:before {
-    content: "\f05a"
+    content: "\f05a";
+    color: grey;
 }
 
 .fa-innosoft:before {
@@ -6106,5 +6107,5 @@
 }
 
 .fa, .fas {
-    font-weight: 900
+    font-weight: 900;
 }

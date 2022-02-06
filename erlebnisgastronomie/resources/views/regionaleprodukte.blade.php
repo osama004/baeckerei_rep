@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>EG - Regionale Produkte</title>
+    <title>Regionale Produkte</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,7 +33,7 @@
 <header role="banner">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">Erlebnisgastronomie</a>
+            <a class="navbar-brand" href="/">Bäckquem</a>
             <a href="https://www.twitter.com" class="p-2"><span class="fa fa-twitter"></span></a>
             <a href="https://www.facebook.com" class="p-2"><span class="fa fa-facebook"></span></a>
             <a href="https://www.instagram.com" class="p-2"><span class="fa fa-instagram"></span></a>
