@@ -6,7 +6,7 @@ class Cart
 {
     public $items; // array of products ['product_id' => ['quantity' => , 'price', 'data' => [....]]
     public $totalQuantity ;
-    public $totalPrice ;
+    public $totalPrice  ;
 
     public function __construct($previousCart)
     {
@@ -19,8 +19,7 @@ class Cart
     public function addItem($product_id, $product) {
 
         // the price is string "30 €". it should be converted back to int
-        $price = (int) str_replace("€", '',$product->price);
-
+        $price = (float) str_replace("€", '',$product->price);
         // check if product exists in items (cart)
         if (array_key_exists($product_id, $this->items)) {
             $productToAdd = $this->items[$product_id];
@@ -35,6 +34,9 @@ class Cart
         $this->items[$product_id] = $productToAdd;
         $this->totalQuantity++;
         $this->totalPrice = $this->totalPrice + $price;
+
+
+
     }
 
     public function updatePriceAndQuantity()
