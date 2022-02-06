@@ -1,8 +1,8 @@
-
-<!DOCTYPE html>
+@extends('layouts.index')
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Kontakt</title>
+    <title>Warenkorb</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
-
+@section('content')
 <header role="banner">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
@@ -43,10 +43,6 @@
 
             <div class="collapse navbar-collapse" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-
-
-
-
 
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
@@ -147,12 +143,8 @@
         </div>
     </nav>
 </header>
-<!-- END header -->
 
 <div class="slider-wrap">
-
-
-
     <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
        <div class="container">
            <div class ="row">
@@ -163,14 +155,13 @@
                        </div>
                        <div class="card-body">
                            @foreach($cartItems ->items as $item)
+                               <div style="margin-top: 15px">
                                <tr>
-                                   <td class="cart_product">
-                                       <a href=""><img src="images/{{$item['data']['image']}}"  width="100" height="100"alt=""></a>
-                                   </td>
                                    <td class="cart_description">
-                                       <h4><a href="">{{$item['data']['title']}}</a></h4>
+                                       <h4><a href="">{{$item['data']['title']}}</a>
+                                           <a class="cart_quantity_delete" href="{{ route('DeleteItemFromCart',['product_id' => $item['data']['product_id']]) }}"><i class="fa fa-times"></i></a>
+                                       </h4>
                                        <p>{{$item['data']['description']}} </p>
-                                       <p> id: {{$item['data']['product_id']}}</p>
                                    </td>
                                    <td class="cart_price">
                                        <p>{{$item['data']['price']}}</p>
@@ -182,25 +173,21 @@
                                            <a class="cart_quantity_down" href=""> - </a>
                                        </div>
                                    </td>
-                                   <td class="cart_total">
-                                       <p class="cart_total_price">{{$item['totalSinglePrice']}}</p>
-                                   </td>
                                    <td class="cart_delete">
-                                       <a class="cart_quantity_delete" href="{{ route('DeleteItemFromCart',['product_id' => $item['data']['product_id']]) }}"><i class="fa fa-times"></i></a>
                                    </td>
 
                                </tr>
+                               </div>
+                           @endforeach
                                <ul class="col-sm-6">
                                    <div class="total_area">
                                        <ul>
-                                           <li>Quantity<span>{{$cartItems->totalQuantity}}</span></li>
-                                           <li>Shipping Cost <span>Free</span></li>
-                                           <li>Total <span>{{$cartItems->totalPrice}}</span></li>
+                                           <li>Anzahl der Items: <span>{{$cartItems->totalQuantity}}</span></li>
+                                           <li>Gesamtpreis: <span>{{$cartItems->totalPrice}}€</span></li>
                                        </ul>
                                    </div>
 
-                                </ul>
-                           @endforeach
+                               </ul>
                        </div>
                                <button type="submit" class="btn btn-primary float-right" >Bestellen</button>
                    </div>
@@ -210,46 +197,8 @@
     </div>
 
 </div>
+@endsection
 
-
-
-<footer class="site-footer" role="contentinfo">
-
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-md-4 mb-5">
-                <h3>Über uns</h3>
-                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
-
-
-            </div>
-            <div class="col-md-5 mb-5">
-                <div class="mb-5">
-                    <h3>Öffnungszeiten</h3>
-                    <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
-                </div>
-
-            </div>
-            <div class="col-md-3 mb-5">
-                <h3>Kontaktdaten</h3>
-                <ul class="list-unstyled footer-link">
-                    <li class="d-block">
-                        <span class="d-block text-black">Adresse:</span>
-                        <span>Jägerstraße 62, 1200 Wien Österreich </span></li>
-                    <li class="d-block"><span class="d-block text-black">Telefon:</span><span>+1 242 4942 290</span></li>
-                    <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-
-            </div>
-        </div>
-
-    </div>
-</footer>
-<!-- END footer -->
-
-<!-- loader -->
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
 
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>

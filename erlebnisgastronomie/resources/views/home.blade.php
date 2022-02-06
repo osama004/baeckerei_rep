@@ -1,4 +1,4 @@
-
+@extends('layouts.index')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
-
+@section('content')
 <header role="banner">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
@@ -137,6 +137,8 @@
 
                         @endguest
 
+                        <div class="divider"></div>
+
                         <li class="nav-item" href="shoppingcart">
                             <a class="nav-link" href="shoppingcart">
                               <i class="fas fa-shopping-cart"></i>
@@ -204,36 +206,7 @@
             </div>
         </div>
     </div>
-
-<footer class="site-footer" role="contentinfo">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-md-4 mb-5">
-                <h3>Über uns</h3>
-                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
-
-
-            </div>
-            <div class="col-md-5 mb-5">
-                    <h3>Öffnungszeiten</h3>
-                    <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
-            </div>
-            <div class="col-md-3 mb-5">
-                <h3>Kontaktdaten</h3>
-                <ul class="list-unstyled footer-link">
-                    <li class="d-block">
-                        <span class="d-block text-black">Adresse:</span>
-                        <span>Jägerstraße 62, 1200 Wien Österreich </span></li>
-                    <li class="d-block"><span class="d-block text-black">Telefon:</span><span>+1 242 4942 290</span></li>
-                    <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</footer>
-
-<!-- loader -->
+@endsection
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg>
 </div>
 

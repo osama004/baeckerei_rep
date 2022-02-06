@@ -69,8 +69,6 @@
                                         <a class="dropdown-item" href="register">
                                             Registrieren
                                         </a>
-
-
                                     </div>
                                 </li>
                             @endif

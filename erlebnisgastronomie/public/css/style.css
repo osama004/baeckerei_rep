@@ -1888,3 +1888,7 @@ li.nav-item a {
 
 }
 
+.cart_quantity_button
+{
+    font-weight: bold;
+}
