@@ -4,7 +4,7 @@ namespace App;
 
 class Cart
 {
-    public $items; // array of products
+    public $items; // array of products ['product_id' => ['quantity' => , 'price', 'data' => [....]]
     public $totalQuantity ;
     public $totalPrice ;
 
@@ -35,5 +35,18 @@ class Cart
         $this->items[$product_id] = $productToAdd;
         $this->totalQuantity++;
         $this->totalPrice = $this->totalPrice + $price;
+    }
+
+    public function updatePriceAndQuantity()
+    {
+        $totalPriceLocal = 0;
+        $totalQuantityLocal = 0;
+
+        foreach ($this->items as $item) {
+            $totalQuantityLocal += $item['quantity']; // $totalQuantityLocal = $totalQuantityLocal + $item['quantity'];
+            $totalPriceLocal += $item['totalSinglePrice'];
+        }
+        $this -> totalPrice = $totalPriceLocal;
+        $this -> totalQuantity = $totalQuantityLocal;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -20,6 +21,22 @@ class CartController extends Controller
             //echo 'cart is empty';
             return  redirect()->route('shoppingcart');
         }
+    }
+
+    public function deleteItemFromCart(Request $request, $product_id) {
+        $cart = $request->session()->get('cart');
+        if (array_key_exists($product_id, $cart->items)) {
+            // delete Item from an array
+            unset($cart->items[$product_id]);
+        }
+
+        $previousCart = $request->session()->get('cart');
+        $updatedCart = new Cart($previousCart);
+        $updatedCart->updatePriceAndQuantity();
+
+        $request->session()->put('cart', $updatedCart);
+
+        return redirect()->route('shoppingcart');
     }
 
     /*

@@ -61,8 +61,10 @@ Route::get('/profile', function () {
 
 // show cart items
 //Route::get('/shoppingcart/items', [CartController::class, 'showCart']);
-Route::get('/shoppingcart', [CartController::class, 'showCart']);
+Route::get('/shoppingcart', [CartController::class, 'showCart']) ->name('shoppingcart');
 
+// delete item from cart
+Route::get('/kaffee&products/deleteItemFromCart/{product_id}', [CartController::class, 'deleteItemFromCart'])->name('DeleteItemFromCart');
 
 
 Route::get('/contactus',[ContactController::class,'contact']);

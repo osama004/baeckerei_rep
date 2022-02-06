@@ -185,6 +185,9 @@
                                    <td class="cart_total">
                                        <p class="cart_total_price">{{$item['totalSinglePrice']}}</p>
                                    </td>
+                                   <td class="cart_delete">
+                                       <a class="cart_quantity_delete" href="{{ route('DeleteItemFromCart',['product_id' => $item['data']['product_id']]) }}"><i class="fa fa-times"></i></a>
+                                   </td>
 
                                </tr>
                                <ul class="col-sm-6">
@@ -196,7 +199,7 @@
                                        </ul>
                                    </div>
 
-                               </div>
+                                </ul>
                            @endforeach
                        </div>
                                <button type="submit" class="btn btn-primary float-right" >Bestellen</button>
