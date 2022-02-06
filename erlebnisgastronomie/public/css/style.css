@@ -1853,12 +1853,28 @@ li.nav-item a {
 {
     background-color: #ffffff;
     border-width: 0;
+    transition: 0.2s;
 }
 .infobutton:hover,
 .infobutton:focus
 {
+    transition: 0.2s;
     cursor: pointer;
+    transform: scale(1.2);
+}
+.cartbutton
+{
+    transition: 0.2s;
 
+    background-color: #ffffff;
+    border-width: 0;
+    color: #A1E944;
+}
+.cartbutton:hover,
+.cartbutton:focus
+{
+    transform: scale(1.15);
+    cursor: pointer;
 }
 
 .product-category
