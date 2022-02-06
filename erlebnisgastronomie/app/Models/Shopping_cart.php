@@ -18,7 +18,5 @@ class shopping_cart extends Model
         'quantity'
     ];
 
-    public function index() {
-        //
-    }
+
 }

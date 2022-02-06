@@ -3,9 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
+    public function showCart() {
+        $cart = Session::get('cart');
+
+        // cart is not empty
+        if ($cart) {
+            return view('shoppingcart', ['cartItems' => $cart]);
+            //dump($cart);
+        }
+        // Cart is empty
+        else {
+            //echo 'cart is empty';
+            return  redirect()->route('shoppingcart');
+        }
+    }
+
+    /*
     public function cartList()
     {
         $cartItems = \Cart::getContent();
@@ -63,4 +80,5 @@ class CartController extends Controller
 
         return redirect()->route('cart.list');
     }
+    */
 }

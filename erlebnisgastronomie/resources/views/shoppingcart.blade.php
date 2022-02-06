@@ -162,10 +162,31 @@
                            Ihr Warenkorb:
                        </div>
                        <div class="card-body">
+                           @foreach($cartItems ->items as $item)
+                               <tr>
+                                   <td class="cart_product">
+                                       <a href=""><img src="images/{{$item['data']['image']}}"  width="100" height="100"alt=""></a>
+                                   </td>
+                                   <td class="cart_description">
+                                       <h4><a href="">{{$item['data']['title']}}</a></h4>
+                                       <p>{{$item['data']['description']}} </p>
+                                       <p> id: {{$item['data']['product_id']}}</p>
+                                   </td>
+                                   <td class="cart_price">
+                                       <p>{{$item['data']['price']}}</p>
+                                   </td>
+                                   <td class="cart_quantity">
+                                       <div class="cart_quantity_button">
+                                           <a class="cart_quantity_up" href=""> + </a>
+                                           <input class="cart_quantity_input" type="text" name="quantity" value="{{$item['quantity']}}" autocomplete="off" size="2">
+                                           <a class="cart_quantity_down" href=""> - </a>
+                                       </div>
+                                   </td>
 
-
-                               <button type="senden" class="btn btn-primary float-right">Bestellen</button>
+                               </tr>
+                           @endforeach
                        </div>
+                               <button type="submit" class="btn btn-primary float-right">Bestellen</button>
                    </div>
                </div>
            </div>

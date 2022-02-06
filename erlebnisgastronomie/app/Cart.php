@@ -10,7 +10,7 @@ class Cart
 
     public function __construct($previousCart)
     {
-        $previousCart == null ? $this->items = $previousCart->items : $this->items = [];
+        $previousCart != null ? $this->items = $previousCart->items : $this->items = [];
 
         $this->totalQuantity = $previousCart->totalQuantity ?? 0;
         $this->totalPrice = $previousCart->totalPrice ?? 0;

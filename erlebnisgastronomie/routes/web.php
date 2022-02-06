@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegionalProductsController;
@@ -56,9 +57,11 @@ Route::get('/profile', function () {
     return view('userprofile');
 });
 
-Route::get('/shoppingcart', function () {
-    return view('shoppingcart');
-});
+//Route::get('/shoppingcart', function () { return view('shoppingcart');}) ->name('shoppingcart');
+
+// show cart items
+//Route::get('/shoppingcart/items', [CartController::class, 'showCart']);
+Route::get('/shoppingcart', [CartController::class, 'showCart']);
 
 
 

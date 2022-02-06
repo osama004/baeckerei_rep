@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Cart;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -54,6 +54,8 @@ class ProductsController extends Controller
     }
 
     public function addProductToCart(Request $request,$product_id) {
+       // print_r($product_id);
+
         $previousCart = $request->session()->get('cart');
         $cart = new Cart($previousCart);
 
@@ -63,10 +65,9 @@ class ProductsController extends Controller
         $request->session()->put('cart', $cart);
 
         // it shows the cart object (for debugging)
-        //dump($cart);
+        // dump($cart);
 
-        return redirect()->route('kaffee&products');
-
+       return redirect()->route('kaffee&products');
 
     }
 }
