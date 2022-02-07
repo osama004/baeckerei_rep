@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
     <link rel="stylesheet"
-          href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u')}}"
+          href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh5u')}}"
           crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
@@ -179,19 +179,21 @@
 <h1 class="product-category"> Sandwiches</h1>
 <div class="container">
     <div class="row">
+        <ul class="item-list">
         @foreach($sandwiches as $sandwich)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="item-card">
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h4>{{$sandwich->title}}  </h4>
+                            <h5>{{$sandwich->title}}  </h5>
                             <p>{{$sandwich->description}}
                                 <button class="infobutton">
                                     <i class="fas fa-info-circle" data-toggle="modal"
                                        data-target="#myModal{{$sandwich->product_id}}"></i>
                                 </button>
                             </p >
-                            <p class="h4">
+                            <p class="h5">
                                 {{$sandwich->price}} €
                                     <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$sandwich->product_id])}}'" >
                                         <i  class="fas fa-cart-arrow-down"> </i>
@@ -208,13 +210,14 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
             <!-- modal popup-->
             <div class="modal fade" id="myModal{{$sandwich->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$sandwich->title}}</h4>
+                            <h5 class="modal-title" id="myModalLabel">{{$sandwich->title}}</h5>
                             <i style="margin-left:1em; margin-top:5px">€{{$sandwich->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
@@ -233,28 +236,29 @@
                     </div>
                 </div>
             </div>
-
-
         @endforeach
+        </ul>
     </div>
 </div>
 <h1 class="product-category"> Brote</h1>
 
 <div class="container">
     <div class="row">
+        <ul class="item-list">
         @foreach($breads as $bread)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="item-card">
                 <div class="row">
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h4> {{$bread->title}}</h4>
+                            <h5> {{$bread->title}}</h5>
                             <p>{{$bread->description}}
                                 <button class="infobutton">
                                     <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$bread->product_id}}"></i>
                                 </button>
                             </p>
-                            <p class="text-primary h4">
+                            <p class="text-primary h5">
                                 {{$bread->price}} €
                                 <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$bread->product_id])}}'" >
                                     <i  class="fas fa-cart-arrow-down"> </i>
@@ -272,13 +276,14 @@
                     </div>
                 </div>
             </div>
+            </div>
 
             <!-- modal popup-->
             <div class="modal fade" id="myModal{{$bread->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$bread->title}}</h4>
+                            <h5 class="modal-title" id="myModalLabel">{{$bread->title}}</h5>
                             <i style="margin-left:1em; margin-top:5px">€{{$bread->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
@@ -294,6 +299,7 @@
                 </div>
             </div>
         @endforeach
+        </ul>
     </div>
 </div>
 
@@ -301,20 +307,22 @@
 
 <div class="container">
     <div class="row">
+        <ul class="item-list">
         @foreach($sweets as $sweet)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="item-card">
                 <div class="row">
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h4> {{$sweet->title}}</h4>
+                            <h5> {{$sweet->title}}</h5>
                             <p>{{$sweet->description}}
                                 <button class="infobutton">
                                     <i class="fas fa-info-circle" data-toggle="modal"
                                        data-target="#myModal{{$sweet->product_id}}"></i>
                                 </button>
                             </p>
-                            <p class="text-primary h4">
+                            <p class="text-primary h5">
                                 {{$sweet->price}} €
                                 <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$sweet->product_id])}}'" >
                                     <i  class="fas fa-cart-arrow-down"> </i>
@@ -331,13 +339,14 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
             <!-- modal popup-->
             <div class="modal fade" id="myModal{{$sweet->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$sweet->title}}</h4>
+                            <h5 class="modal-title" id="myModalLabel">{{$sweet->title}}</h5>
                             <i style="margin-left:1em; margin-top:5px">€{{$sweet->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
@@ -353,6 +362,7 @@
                 </div>
             </div>
         @endforeach
+        </ul>
     </div>
 </div>
 
@@ -360,20 +370,22 @@
 
 <div class="container">
     <div class="row">
+        <ul class="item-list">
         @foreach($others as $other)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="item-card">
                 <div class="row">
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h4> {{$other->title}}</h4>
+                            <h5> {{$other->title}}</h5>
                             <p>{{$other->description}}
                                 <button class="infobutton">
                                     <i class="fas fa-info-circle" data-toggle="modal"
                                        data-target="#myModal{{$other->product_id}}"></i>
                                 </button>
                             </p>
-                            <p class="text-primary h4">
+                            <p class="text-primary h5">
                                 {{$other->price}} €
                                 <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$other->product_id])}}'" >
                                     <i  class="fas fa-cart-arrow-down"> </i>
@@ -390,6 +402,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- modal popup-->
@@ -397,7 +410,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">{{$other->title}}</h4>
+                            <h5 class="modal-title" id="myModalLabel">{{$other->title}}</h5>
                             <i style="margin-left:1em; margin-top:5px">€{{$other->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
@@ -413,6 +426,7 @@
                 </div>
             </div>
         @endforeach
+        </ul>
     </div>
 </div>
 @endsection
