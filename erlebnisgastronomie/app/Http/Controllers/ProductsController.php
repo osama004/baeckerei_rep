@@ -80,7 +80,7 @@ class ProductsController extends Controller
         $cart = new Cart($previousCart);
 
 
-        if ($cart -> items[$product_id] > 1) {
+        if ($cart -> items[$product_id]['quantity'] > 1) {
             $product = Product::query()->find($product_id);
             $cart->items[$product_id]['quantity']--;
             $cart->items[$product_id]['totalSinglePrice'] = $cart->items[$product_id]['quantity'] * $product['price'];
