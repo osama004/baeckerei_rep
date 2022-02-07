@@ -1916,9 +1916,16 @@ li.nav-item a {
     max-width: 600px;
     max-height: 337px;
 }
+.item-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-.dish-card {
-    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
+.item-card {
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
     border-radius: 4px;
+    height: 150px;
 
 }

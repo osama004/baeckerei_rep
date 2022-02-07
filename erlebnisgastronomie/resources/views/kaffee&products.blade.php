@@ -179,8 +179,10 @@
 <h1 class="product-category"> Sandwiches</h1>
 <div class="container">
     <div class="row">
+        <ul class="item-list">
         @foreach($sandwiches as $sandwich)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="item-card">
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
@@ -208,6 +210,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
             <!-- modal popup-->
             <div class="modal fade" id="myModal{{$sandwich->product_id}}" role="dialog" aria-labelledby="myModalLabel">
@@ -233,17 +236,18 @@
                     </div>
                 </div>
             </div>
-
-
         @endforeach
+        </ul>
     </div>
 </div>
 <h1 class="product-category"> Brote</h1>
 
 <div class="container">
     <div class="row">
+        <ul class="item-list">
         @foreach($breads as $bread)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="item-card">
                 <div class="row">
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
@@ -272,6 +276,7 @@
                     </div>
                 </div>
             </div>
+            </div>
 
             <!-- modal popup-->
             <div class="modal fade" id="myModal{{$bread->product_id}}" role="dialog" aria-labelledby="myModalLabel">
@@ -294,6 +299,7 @@
                 </div>
             </div>
         @endforeach
+        </ul>
     </div>
 </div>
 
@@ -301,8 +307,10 @@
 
 <div class="container">
     <div class="row">
+        <ul class="item-list">
         @foreach($sweets as $sweet)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="item-card">
                 <div class="row">
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
@@ -331,6 +339,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
             <!-- modal popup-->
             <div class="modal fade" id="myModal{{$sweet->product_id}}" role="dialog" aria-labelledby="myModalLabel">
@@ -353,6 +362,7 @@
                 </div>
             </div>
         @endforeach
+        </ul>
     </div>
 </div>
 
@@ -360,8 +370,10 @@
 
 <div class="container">
     <div class="row">
+        <ul class="item-list">
         @foreach($others as $other)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <div class="item-card">
                 <div class="row">
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
@@ -390,6 +402,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- modal popup-->
@@ -413,6 +426,7 @@
                 </div>
             </div>
         @endforeach
+        </ul>
     </div>
 </div>
 @endsection
