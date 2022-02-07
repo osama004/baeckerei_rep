@@ -156,7 +156,7 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
+    <div class="slider-item" style="background-image: url('images/new_filler_1.jpg');">
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
@@ -204,7 +204,7 @@
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
                                 src="images/{{$sandwich->image}}"
-                                alt="" style="">
+                                alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
                 </div>
@@ -267,7 +267,7 @@
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
                                 src="images/{{$bread->image}}"
-                                alt="" style="">
+                                alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
                 </div>
@@ -327,7 +327,7 @@
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
                                 src="images/{{$sweet->image}}"
-                                alt="" style="">
+                                alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
                 </div>
@@ -386,7 +386,7 @@
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img
                                 src="images/{{$other->image}}"
-                                alt="" style="">
+                                alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
                 </div>

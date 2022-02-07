@@ -45,10 +45,6 @@
                 <div class="collapse navbar-collapse" id="navbarsExample05">
                     <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 
-
-
-
-
                         <li class="nav-item">
                             <a class="nav-link active" href="/">Home</a>
                         </li>
@@ -78,10 +74,6 @@
                         </li>
 
                         <div class="divider"></div>
-
-
-
-
 
                         <li class="nav-item">
                             <a class="nav-link" href="kontakt">Kontakt</a>
@@ -133,8 +125,6 @@
                                     </form>
                                 </div>
                             </li>
-
-
                         @endguest
 
                         <div class="divider"></div>
@@ -159,12 +149,15 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
+    <div class="slider-item" style="background-image: url('images/new_filler_1.jpg');">
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
-                    <h1 data-aos="fade-up mb-5">HOME</h1>
+                    <h1 data-aos="fade-up mb-5" style="margin-bottom: -10em">Die Filiale</h1>
                 </div>
+                    <video class="homevideo" controls loop>
+                        <source src="{{asset('videos/homevideo.mp4')}}" type="video/mp4">
+                    </video>
             </div>
         </div>
     </div>
@@ -175,7 +168,7 @@
         <div class="row align-items-center">
 
             <div class="col-lg-6">
-                <img src="{{asset('images/hero_1.jpg')}}" alt="Image" class="img-fluid">
+                <img src="{{asset('images/new_filler_1.jpg')}}" alt="Image" class="img-fluid">
             </div>
             <div class="col-lg-5 ml-auto">
                 <div class="text-left heading-wrap">
@@ -197,7 +190,7 @@
         <div class="row">
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="blog d-block">
-                    <a class="bg-image d-block" href="single.html" style="background-image: url('images/dishes_1.jpg');"></a>
+                    <a class="bg-image d-block" href="single.html" style="background-image: url('images/ei_brot.jpg');"></a>
                     <div class="text">
                         <h3><a href="single.html">How To Bake A Good Taste Food</a></h3>
                         <p class="sched-time">

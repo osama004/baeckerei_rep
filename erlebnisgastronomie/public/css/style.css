@@ -1906,3 +1906,13 @@ li.nav-item a {
     top:-10px;
     opacity:0.9;
 }
+
+.homevideo
+{
+    margin-top: -3em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 800px;
+    max-height: 450px;
+}

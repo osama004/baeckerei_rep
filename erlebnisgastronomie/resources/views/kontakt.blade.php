@@ -163,7 +163,7 @@
 
 
 
-    <div class="slider-item" style="background-image: url('images/hero_1.jpg');">
+    <div class="slider-item" style="background-image: url('images/new_filler_1.jpg');">
        <div class="container">
            <div class ="row">
                <div class="col-md-6 offset-md-3">

@@ -12,7 +12,7 @@
             <div class="col-md-5 mb-5">
                 <div class="mb-5">
                     <h3>Öffnungszeiten</h3>
-                    <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
+                    <p><strong class="d-block font-weight-normal text-black">Montag-Freitag</strong>09:00 - 20:00</p>
                 </div>
 
             </div>
