@@ -100,9 +100,6 @@
                                         <a class="dropdown-item" href="register" >
                                             Registrieren
                                         </a>
-
-
-
                                     </div>
                                 </li>
                             @endif
@@ -189,7 +186,7 @@
                                    <div class="total_area">
                                        <ul>
                                            <li>Anzahl der Items: <span>{{$cartItems->totalQuantity}}</span></li>
-                                           <li>Gesamtpreis: <span>{{$cartItems->totalPrice}}€</span></li>
+                                           <li>Gesamtpreis: <span>{{number_format($cartItems->totalPrice,2, ',')}}€</span></li>
                                        </ul>
                                    </div>
 

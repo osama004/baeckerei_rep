@@ -202,7 +202,7 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img
+                            <img loading="lazy"
                                 src="images/{{$sandwich->image}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
@@ -265,7 +265,7 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img
+                            <img loading="lazy"
                                 src="images/{{$bread->image}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
@@ -325,7 +325,7 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img
+                            <img loading="lazy"
                                 src="images/{{$sweet->image}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
@@ -384,7 +384,7 @@
 
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img
+                            <img loading="lazy"
                                 src="images/{{$other->image}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
