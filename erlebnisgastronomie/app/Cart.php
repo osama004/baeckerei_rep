@@ -18,8 +18,7 @@ class Cart
 
     public function addItem($product_id, $product) {
 
-        // the price is string "30 €". it should be converted back to int
-        $price = (float) str_replace("€", '',$product->price);
+        $price = $product->price;
         // check if product exists in items (cart)
         if (array_key_exists($product_id, $this->items)) {
             $productToAdd = $this->items[$product_id];

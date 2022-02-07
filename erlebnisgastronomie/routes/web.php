@@ -66,6 +66,11 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
 // delete item from cart
     Route::get('/kaffee&products/deleteItemFromCart/{product_id}', [CartController::class, 'deleteItemFromCart'])->name('DeleteItemFromCart');
 
+    // increase single product in cart
+    Route::get('product/increaseSingleProduct/{product_id}' ,[ProductsController::class,'increaseSingleProduct']) ->name('IncreaseSingleProduct');
+
+    // decrease single product in cart
+    Route::get('product/decreaseSingleProduct/{product_id}' ,[ProductsController::class,'decreaseSingleProduct']) ->name('DecreaseSingleProduct');
 
     Route::get('/contactus',[ContactController::class,'contact']);
 

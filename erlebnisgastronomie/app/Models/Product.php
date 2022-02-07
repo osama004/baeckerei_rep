@@ -18,9 +18,7 @@ class Product extends Model
         "bezeichnung" , "price" , "description"
     ];
 
-    public function getPriceAttribute($price) {
-        return $price . " €";
-    }
+
 
     public function index()
     {

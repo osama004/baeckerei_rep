@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Models\Product;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -11,7 +12,7 @@ use Illuminate\View\View;
 class ProductsController extends Controller
 {
     /**
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
     public function index():View
     {
@@ -30,6 +31,7 @@ class ProductsController extends Controller
             ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
             ->get( ['ingredients.name', 'allergens.type', 'allergens.describe_type' , 'products_ingredients.product_id'])
             ->toArray();
+
 
 
         return view("kaffee&products", compact( "sandwiches", "breads", "sweets", "others", "allergens"));
@@ -57,4 +59,40 @@ class ProductsController extends Controller
        return redirect()->route('kaffee&products');
 
     }
+
+ public function increaseSingleProduct(Request $request,$product_id) {
+
+        $previousCart = $request->session()->get('cart');
+        $cart = new Cart($previousCart);
+
+        $product = Product::query()->find($product_id);
+        $cart->addItem($product_id, $product );
+        $request->session()->put('cart', $cart);
+
+     // dump($cart);
+       return redirect()->route('shoppingcart');
+
+    }
+
+    public function decreaseSingleProduct(Request $request,$product_id) {
+
+        $previousCart = $request->session()->get('cart');
+        $cart = new Cart($previousCart);
+
+
+        if ($cart -> items[$product_id] > 1) {
+            $product = Product::query()->find($product_id);
+            $cart->items[$product_id]['quantity']--;
+            $cart->items[$product_id]['totalSinglePrice'] = $cart->items[$product_id]['quantity'] * $product['price'];
+            $cart->updatePriceAndQuantity();
+            $request->session()->put('cart', $cart);
+        }
+        // dump($cart);
+        return redirect()->route('shoppingcart');
+
+    }
+
+
+
+
 }
