@@ -139,7 +139,13 @@
                     <div class="divider"></div>
                     <li class="nav-item" href="shoppingcart">
                         <a class="nav-link" href="shoppingcart">
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-shopping-cart">
+                                @if(Session::has('cart'))
+                                    <span class="cart-with-numbers">
+                                        {{ Session::get('cart')->totalQuantity }}
+                                   </span>
+                                @endif
+                            </i>
                         </a>
                     </li>
                 </ul>

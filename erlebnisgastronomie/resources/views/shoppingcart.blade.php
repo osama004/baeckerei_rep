@@ -134,7 +134,13 @@
 
                     <li class="nav-item" href="shoppingcart">
                         <a class="nav-link" href="shoppingcart">
-                            <i class="fas fa-shopping-cart" style =  "color: #A1E944"></i>
+                            <i class="fas fa-shopping-cart" style =  "color: #A1E944">
+                                @if(Session::has('cart'))
+                                    <span class="cart-with-numbers">
+                                        {{ Session::get('cart')->totalQuantity }}
+                                   </span>
+                                @endif
+                            </i>
                         </a>
 
                     </li>

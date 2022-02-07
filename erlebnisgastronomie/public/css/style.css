@@ -1890,5 +1890,19 @@ li.nav-item a {
 
 .cart_quantity_button
 {
-    font-weight: bold;
+    font-weight:bold;
+}
+
+.cart-with-numbers{
+    font-size: 15px;
+    font-weight:bold;
+    text-align:center;
+    color:white;
+    background: #A1E944;
+    border-radius:50%;
+    padding:4px;
+    position:relative;
+    left:-8px;
+    top:-10px;
+    opacity:0.9;
 }
