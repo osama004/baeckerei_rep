@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\addressController;
 use App\Http\Controllers\Controller;
-use App\Models\address;
+use App\Models\Address;
 use App\Providers\RouteServiceProvider;
 use App\Models\Customer;
 use Illuminate\Foundation\Auth\RegistersUsers;

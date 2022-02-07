@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\address;
+use App\Models\Address;
 use Illuminate\Http\Request;
 
 class addressController extends Controller
@@ -10,7 +10,7 @@ class addressController extends Controller
     //
     public function create(array $data)
     {
-        return address::create([
+        return Address::create([
             'street_haus_nr' => $data['street_haus_nr'],
             'stairway_nr' => $data['stairway_nr'],
             'apartment_nr' => $data ['apartment_nr'],

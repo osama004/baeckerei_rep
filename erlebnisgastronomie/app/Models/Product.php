@@ -26,4 +26,11 @@ class Product extends Model
     {
         //
     }
+    // categories 1..n products
+    // products  1..n shopping_carts
+    // products 1..n ingrdients
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

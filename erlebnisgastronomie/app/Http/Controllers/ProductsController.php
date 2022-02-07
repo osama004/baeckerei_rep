@@ -15,29 +15,13 @@ class ProductsController extends Controller
      */
     public function index():View
     {
-        $sandwiches = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.category_id')
-            ->where('products.category_id', '=', 1)
-            ->get()->toArray();
-           // -
 
 
+       $sandwiches = Product::with('Category')->where('products.category_id', '=', 1)->get();
+       $sweets = Product::with('Category')->where('products.category_id', '=', 2)->get();
+       $breads = Product::with('Category')->where('products.category_id', '=', 3)->get();
+       $others = Product::with('Category')->where('products.category_id', '=', 4)->get();
 
-        $sweets = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.category_id')
-            ->where('products.category_id', '=', 2)
-            ->get()->toArray();
-
-
-        $breads = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.category_id')
-            ->where('products.category_id', '=', 3)
-            ->get()->toArray();
-
-        $others = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.category_id')
-            ->where('products.category_id', '=', 4)
-            ->get()->toArray();
 
         $allergens = DB::table('allergens')
             ->join('ingredients_allergens', 'allergens.allergen_id', 'ingredients_allergens.allergen_id')
@@ -48,8 +32,6 @@ class ProductsController extends Controller
             ->toArray();
 
 
-
-       // $products = Product::all();
         return view("kaffee&products", compact( "sandwiches", "breads", "sweets", "others", "allergens"));
 
     }
