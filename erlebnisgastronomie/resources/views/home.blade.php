@@ -155,9 +155,7 @@
                 <div class="col-md-8 text-center col-sm-12 ">
                     <h1 data-aos="fade-up mb-5" style="margin-bottom: -10em">Die Filiale</h1>
                 </div>
-                    <video class="homevideo" controls loop>
-                        <source src="{{asset('videos/homevideo.mp4')}}" type="video/mp4">
-                    </video>
+
             </div>
         </div>
     </div>
@@ -168,7 +166,9 @@
         <div class="row align-items-center">
 
             <div class="col-lg-6">
-                <img src="{{asset('images/new_filler_1.jpg')}}" alt="Image" class="img-fluid">
+                <video class="homevideo" controls loop>
+                    <source src="{{asset('videos/homevideo.mp4')}}" type="video/mp4">
+                </video>
             </div>
             <div class="col-lg-5 ml-auto">
                 <div class="text-left heading-wrap">
@@ -183,28 +183,6 @@
         </div>
     </div>
 </section>
-
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="blog d-block">
-                    <a class="bg-image d-block" href="single.html" style="background-image: url('images/ei_brot.jpg');"></a>
-                    <div class="text">
-                        <h3><a href="single.html">How To Bake A Good Taste Food</a></h3>
-                        <p class="sched-time">
-                            <span> April 22, 2018</span> <br>
-                        </p>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                        <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg>
 </div>
