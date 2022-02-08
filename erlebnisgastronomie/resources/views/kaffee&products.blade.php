@@ -294,6 +294,10 @@
                         <div class="modal-body">
                             <p>{{$bread->description}}</p>
                             <h5>Allergene:<br></h5>
+                            @foreach($allergens as $allergen)
+                                @continue($allergen -> product_id != $bread->product_id)
+                                <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
+                            @endforeach
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -358,6 +362,10 @@
                         <div class="modal-body">
                             <p>{{$sweet->description}}</p>
                             <h5>Allergene:<br></h5>
+                            @foreach($allergens as $allergen)
+                                @continue($allergen -> product_id != $sweet->product_id)
+                                <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
+                            @endforeach
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -422,6 +430,10 @@
                             <div class="modal-body">
                                 <p>{{$other->description}}</p>
                                 <h5>Allergene:<br></h5>
+                                @foreach($allergens as $allergen)
+                                    @continue($allergen -> product_id != $other->product_id)
+                                    <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
+                                @endforeach
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
