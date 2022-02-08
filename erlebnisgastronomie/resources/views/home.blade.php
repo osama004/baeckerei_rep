@@ -166,11 +166,6 @@
         <div class="row align-items-center">
 
             <div class="col-lg-6">
-                <video class="homevideo" controls loop>
-                    <source src="{{asset('videos/homevideo.mp4')}}" type="video/mp4">
-                </video>
-            </div>
-            <div class="col-lg-5 ml-auto">
                 <div class="text-left heading-wrap">
                     <h2 data-aos="fade-up">The Restaurant</h2>
                 </div>
@@ -178,6 +173,10 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ut enim quam laboriosam illum amet.</p>
                 <p>Obcaecati nisi ipsum possimus necessitatibus tempore, illo id facere magni quisquam quam quaerat accusamus dolores?</p>
                 <p><img src="{{asset('images/signature.png')}}" alt="Image" class="img-fluid w-25"></p>
+
+                <video class="homevideo" controls>
+                    <source src="{{asset('videos/homevideo.mp4')}}" type="video/mp4">
+                </video>
             </div>
 
         </div>
