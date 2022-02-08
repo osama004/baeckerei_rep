@@ -141,7 +141,7 @@
                         <a class="nav-link" href="shoppingcart">
                             <i class="fas fa-shopping-cart">
                                 @if(Session::has('cart'))
-                                    <span class="cart-with-numbers">
+                                    <span id ="totalQuantity" class="cart-with-numbers">
                                         {{ Session::get('cart')->totalQuantity }}
                                    </span>
                                 @endif
@@ -445,9 +445,9 @@
                 url:url,
                 data:{_token: _token},
                 success:function(data,status,XHR){
-                    //alert(data.totalQuantity);
-                    var totalQuantity = data.totalQuantity;
-                    $('#totalQuantity').text(totalQuantity);
+                    //alert(data);
+                   // var totalQuantity = data[1];
+                    $('#totalQuantity').text(data[1]);
                 },
                 error:function(xhr,status,error){
                     alert(error);

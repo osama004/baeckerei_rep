@@ -52,7 +52,6 @@ class ProductsController extends Controller
         $cart->addItem($product_id, $product );
         // create the session ( it stores the new object of the cart in the session
         $request->session()->put('cart', $cart);
-
         // it shows the cart object (for debugging)
         // dump($cart);
 
