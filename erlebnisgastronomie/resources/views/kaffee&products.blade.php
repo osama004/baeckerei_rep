@@ -184,6 +184,7 @@
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
                 <div class="item-card">
                 <div class="row">
+                    {{ csrf_field() }}
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
                             <h5>{{$sandwich->title}}  </h5>
@@ -195,9 +196,10 @@
                             </p >
                             <p class="h5">
                                 {{$sandwich->price}} €
-                                    <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$sandwich->product_id])}}'" >
-                                        <i  class="fas fa-cart-arrow-down"> </i>
-                                    </button>
+                                <button class="cartbutton ajaxGET" >
+                                    <i  class="fas fa-cart-arrow-down"> </i>
+                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$sandwich->product_id])}}</i>
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -249,7 +251,7 @@
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
                 <div class="item-card">
                 <div class="row">
-
+                    {{ csrf_field() }}
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
                             <h5> {{$bread->title}}</h5>
@@ -260,8 +262,9 @@
                             </p>
                             <p class="text-primary h5">
                                 {{$bread->price}} €
-                                <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$bread->product_id])}}'" >
+                                <button class="cartbutton ajaxGET" >
                                     <i  class="fas fa-cart-arrow-down"> </i>
+                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$bread->product_id])}}</i>
                                 </button>
                             </p>
                         </div>
@@ -312,7 +315,7 @@
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
                 <div class="item-card">
                 <div class="row">
-
+                    {{ csrf_field() }}
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
                             <h5> {{$sweet->title}}</h5>
@@ -324,8 +327,9 @@
                             </p>
                             <p class="text-primary h5">
                                 {{$sweet->price}} €
-                                <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$sweet->product_id])}}'" >
+                                <button class="cartbutton ajaxGET" >
                                     <i  class="fas fa-cart-arrow-down"> </i>
+                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$sweet->product_id])}}</i>
                                 </button>
                             </p>
                         </div>
@@ -375,7 +379,7 @@
                 <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
                     <div class="item-card">
                         <div class="row">
-
+                            {{ csrf_field() }}
                             <div class="col-md-6 ml-auto mr-auto text-center">
                                 <div class="text order-1">
                                     <h5> {{$other->title}}</h5>
@@ -387,8 +391,9 @@
                                     </p>
                                     <p class="text-primary h5">
                                         {{$other->price}} €
-                                        <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$other->product_id])}}'" >
+                                        <button class="cartbutton ajaxGET" >
                                             <i  class="fas fa-cart-arrow-down"> </i>
+                                            <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$other->product_id])}}</i>
                                         </button>
                                     </p>
                                 </div>
@@ -428,6 +433,30 @@
         </ul>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.ajaxGET').click(function(e){
+            e.preventDefault();
+            var url = $(this).find('#url').text();
+            var _token = $("input[name='_token']").val();
+            $.ajax({
+                method:"GET",
+                url:url,
+                data:{_token: _token},
+                success:function(data,status,XHR){
+                    //alert(data.totalQuantity);
+                    var totalQuantity = data.totalQuantity;
+                    $('#totalQuantity').text(totalQuantity);
+                },
+                error:function(xhr,status,error){
+                    alert(error);
+                }
+            });
+        });
+    });
+</script>
+
 @endsection
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>

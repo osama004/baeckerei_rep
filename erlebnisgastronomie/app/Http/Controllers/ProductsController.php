@@ -56,7 +56,8 @@ class ProductsController extends Controller
         // it shows the cart object (for debugging)
         // dump($cart);
 
-       return redirect()->route('kaffee&products');
+       //return redirect()->route('kaffee&products');
+        return response()->json(['totalQuantity',$cart->totalQuantity]);
 
     }
 
