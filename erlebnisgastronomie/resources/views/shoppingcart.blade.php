@@ -167,7 +167,7 @@
                                        <p>{{$item['data']['description']}} </p>
                                    </td>
                                    <td class="cart_price">
-                                       <p>{{$item['data']['price']}}</p>
+                                       <p>{{$item['data']['price']}}€</p>
                                    </td>
                                    <td class="cart_quantity">
                                        <div class="cart_quantity_button">
@@ -182,6 +182,7 @@
                                </tr>
                                </div>
                            @endforeach
+                               <hr>
                                <ul class="col-sm-6">
                                    <div class="total_area">
                                        <ul>

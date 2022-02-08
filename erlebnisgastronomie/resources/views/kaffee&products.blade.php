@@ -224,10 +224,10 @@
                         </div>
                         <div class="modal-body">
                             <p>{{$sandwich->description}}</p>
-                            <p>Allergene:<br></p>
+                            <h5>Allergene:<br></h5>
                             @foreach($allergens as $allergen)
                                 @continue($allergen -> product_id != $sandwich->product_id)
-                                <p>{{$allergen -> name}}  {{$allergen -> type}}    {{$allergen ->describe_type}}</p>
+                                <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
                             @endforeach
                         </div>
                         <div class="modal-footer">
@@ -290,7 +290,7 @@
                         </div>
                         <div class="modal-body">
                             <p>{{$bread->description}}</p>
-                            <p>Allergene:</p>
+                            <h5>Allergene:<br></h5>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -353,7 +353,7 @@
                         </div>
                         <div class="modal-body">
                             <p>{{$sweet->description}}</p>
-                            <p>Allergene:</p>
+                            <h5>Allergene:<br></h5>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -371,61 +371,60 @@
 <div class="container">
     <div class="row">
         <ul class="item-list">
-        @foreach($others as $other)
-            <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
-                <div class="item-card">
-                <div class="row">
+            @foreach($others as $other)
+                <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                    <div class="item-card">
+                        <div class="row">
 
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="text order-1">
-                            <h5> {{$other->title}}</h5>
-                            <p>{{$other->description}}
-                                <button class="infobutton">
-                                    <i class="fas fa-info-circle" data-toggle="modal"
-                                       data-target="#myModal{{$other->product_id}}"></i>
-                                </button>
-                            </p>
-                            <p class="text-primary h5">
-                                {{$other->price}} €
-                                <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$other->product_id])}}'" >
-                                    <i  class="fas fa-cart-arrow-down"> </i>
-                                </button>
-                            </p>
-                        </div>
-                    </div>
+                            <div class="col-md-6 ml-auto mr-auto text-center">
+                                <div class="text order-1">
+                                    <h5> {{$other->title}}</h5>
+                                    <p>{{$other->description}}
+                                        <button class="infobutton">
+                                            <i class="fas fa-info-circle" data-toggle="modal"
+                                               data-target="#myModal{{$other->product_id}}"></i>
+                                        </button>
+                                    </p>
+                                    <p class="text-primary h5">
+                                        {{$other->price}} €
+                                        <button class="cartbutton" onclick="location.href='{{route('AddToCartProduct',['product_id'=>$other->product_id])}}'" >
+                                            <i  class="fas fa-cart-arrow-down"> </i>
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
 
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img loading="lazy"
-                                src="images/{{$other->image}}"
-                                alt="" style="max-width: 150px; max-height: 150px;">
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <!-- modal popup-->
-            <div class="modal fade" id="myModal{{$other->product_id}}" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="myModalLabel">{{$other->title}}</h5>
-                            <i style="margin-left:1em; margin-top:5px">€{{$other->price}}</i>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true">&times;</span></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>{{$other->description}}</p>
-                            <p>Allergene:</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            <div class="col-md-6 ml-auto mr-auto text-center" >
+                                <div class="bg-image order-2 speisekarte" data-aos="fade" >
+                                    <img loading="lazy"
+                                         src="images/{{$other->image}}"
+                                         alt="" style="max-width: 150px; max-height: 150px;">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+                <!-- modal popup-->
+                <div class="modal fade" id="myModal{{$other->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">{{$other->title}}</h5>
+                                <i style="margin-left:1em; margin-top:5px">€{{$other->price}}</i>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{$other->description}}</p>
+                                <h5>Allergene:<br></h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </ul>
     </div>
 </div>

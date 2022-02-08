@@ -172,7 +172,6 @@
                 <!-- <h3 class="mb-4">Welcome To Our Restaurant</h3> -->
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ut enim quam laboriosam illum amet.</p>
                 <p>Obcaecati nisi ipsum possimus necessitatibus tempore, illo id facere magni quisquam quam quaerat accusamus dolores?</p>
-                <p><img src="{{asset('images/signature.png')}}" alt="Image" class="img-fluid w-25"></p>
 
                 <video class="homevideo" controls>
                     <source src="{{asset('videos/homevideo.mp4')}}" type="video/mp4">
