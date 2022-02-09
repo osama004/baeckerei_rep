@@ -42,8 +42,8 @@ class ProductsController extends Controller
        // print_r($product_id);
 
         //$request->session()->forget('cart');
-        //$request->session()->flash('cart') ;
-        //
+       // $request->session()->flash('cart') ;
+
 
         $previousCart = $request->session()->get('cart');
         $cart = new Cart($previousCart);
@@ -78,20 +78,22 @@ class ProductsController extends Controller
 
         $previousCart = $request->session()->get('cart');
         $cart = new Cart($previousCart);
+        // becasue of the arrayKey undefined to catch
+        if (array_key_exists($product_id, $cart->items)) {
+            if ($cart->items[$product_id]['quantity'] > 1) {
+                $product = Product::query()->findOrFail($product_id);
+                $cart->items[$product_id]['quantity']--;
+                $cart->items[$product_id]['totalSinglePrice'] = $cart->items[$product_id]['quantity'] * $product['price'];
+                $cart->updatePriceAndQuantity();
+                $request->session()->put('cart', $cart);
+            } else if ($cart->items[$product_id]['quantity'] == 1) {
 
+                // delete Item from an array
+                unset($cart->items[$product_id]);
 
-        if ($cart -> items[$product_id]['quantity'] > 1) {
-            $product = Product::query()->findOrFail($product_id);
-            $cart->items[$product_id]['quantity']--;
-            $cart->items[$product_id]['totalSinglePrice'] = $cart->items[$product_id]['quantity'] * $product['price'];
-            $cart->updatePriceAndQuantity();
-            $request->session()->put('cart', $cart);
-        }
-        else if($cart -> items[$product_id]['quantity'] == 1)
-        {
-            unset($cart->items[$product_id]);
-            $cart->updatePriceAndQuantity();
-            $request->session()->put('cart', $cart);
+                $cart->updatePriceAndQuantity();
+                $request->session()->put('cart', $cart);
+            }
         }
         // dump($cart);
         return redirect()->route('shoppingcart');
