@@ -34,9 +34,9 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">Bäckquem</a>
-            <a href="https://www.twitter.com" class="p-2"><span class="fa fa-twitter"></span></a>
-            <a href="https://www.facebook.com" class="p-2"><span class="fa fa-facebook"></span></a>
-            <a href="https://www.instagram.com" class="p-2"><span class="fa fa-instagram"></span></a>
+            <a href="https://www.twitter.com" class="p-2" target="_blank" rel="noopener noreferrer"><span class="fa fa-twitter"></span></a>
+            <a href="https://www.facebook.com" class="p-2" target="_blank" rel="noopener noreferrer"><span class="fa fa-facebook"></span></a>
+            <a href="https://www.instagram.com" class="p-2" target="_blank" rel="noopener noreferrer"><span class="fa fa-instagram"></span></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
