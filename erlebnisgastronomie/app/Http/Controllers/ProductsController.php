@@ -87,6 +87,12 @@ class ProductsController extends Controller
             $cart->updatePriceAndQuantity();
             $request->session()->put('cart', $cart);
         }
+        else if($cart -> items[$product_id]['quantity'] == 1)
+        {
+            unset($cart->items[$product_id]);
+            $cart->updatePriceAndQuantity();
+            $request->session()->put('cart', $cart);
+        }
         // dump($cart);
         return redirect()->route('shoppingcart');
 
