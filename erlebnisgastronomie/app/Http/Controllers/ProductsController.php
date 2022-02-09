@@ -48,7 +48,7 @@ class ProductsController extends Controller
         $previousCart = $request->session()->get('cart');
         $cart = new Cart($previousCart);
 
-        $product = Product::query()->find($product_id);
+        $product = Product::query()->findOrFail($product_id);
         $cart->addItem($product_id, $product );
         // create the session ( it stores the new object of the cart in the session
         $request->session()->put('cart', $cart);
@@ -65,7 +65,7 @@ class ProductsController extends Controller
         $previousCart = $request->session()->get('cart');
         $cart = new Cart($previousCart);
 
-        $product = Product::query()->find($product_id);
+        $product = Product::query()->findOrFail($product_id);
         $cart->addItem($product_id, $product );
         $request->session()->put('cart', $cart);
 
@@ -81,7 +81,7 @@ class ProductsController extends Controller
 
 
         if ($cart -> items[$product_id]['quantity'] > 1) {
-            $product = Product::query()->find($product_id);
+            $product = Product::query()->findOrFail($product_id);
             $cart->items[$product_id]['quantity']--;
             $cart->items[$product_id]['totalSinglePrice'] = $cart->items[$product_id]['quantity'] * $product['price'];
             $cart->updatePriceAndQuantity();
