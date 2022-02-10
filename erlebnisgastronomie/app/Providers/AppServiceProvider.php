@@ -26,13 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*
         // share data with all views (alle webpages)
-        View::share('Name', 'Rick');
+        //View::share('Name', 'Rick');
         // another way (share user data among pages)
         View::composer('*', function($view) {
             $view->with('userdata',Auth::user()) ;
         }) ;
-        */
     }
 }
