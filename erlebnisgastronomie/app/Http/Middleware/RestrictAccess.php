@@ -20,7 +20,8 @@ class RestrictAccess
     public function handle(Request $request, Closure $next)
     {
         // check if user logged in and if the user an admin
-        if (Auth::check() && Auth::user()->isAdmin()) {
+
+        if (Auth::check() && Auth::user()->isAdmin()  ) {
             return $next($request);
         }
         return redirect("/login");

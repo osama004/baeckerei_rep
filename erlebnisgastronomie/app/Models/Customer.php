@@ -53,7 +53,12 @@ class Customer extends Authenticatable implements MustVerifyEmail
 
     public function isAdmin()
     {
-        return $this->admin;
+       if ($this->role_id == 2)
+            return true;
+        else
+            return false;
+
     }
+
 
 }
