@@ -10,7 +10,6 @@
             <th>Image</th>
             <th>Name</th>
             <th>Description</th>
-            <th>Type</th>
             <th>Price</th>
             <th>Edit Image</th>
             <th>Edit</th>
@@ -22,7 +21,9 @@
         @foreach($products as $product)
         <tr>
             <td>{{$product['product_id']}}</td>
-            <td><img src="{{asset ('storage')}}/product_images/{{$product['image']}}" loading="lazy" alt="{{asset ('storage')}}/product_images/{{$product['image']}}" width="100" height="100" style="max-height:220px" ></td>
+            <td><img loading="lazy"
+                     src="/images/{{$product->image}}"
+                     alt="" style="max-width: 75px; max-height: 75px;"></td>
 
             <td>{{$product['title']}}</td>
             <td>{{$product['description']}}</td>

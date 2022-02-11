@@ -18,7 +18,9 @@
 
 
     <h3>Current Image</h3>
-    <div><img src="{{asset ('storage')}}/product_images/{{$product['image']}}" width="100" height="100" style="max-height:220px"  alt=""></div>
+    <div><img loading="lazy"
+              src="/images/{{$product->image}}"
+              alt="" style="max-width: 300px; max-height: 300px;"></div>
 
     <form action="{{ route('adminUpdateProductImage',['product_id' => $product->product_id ])}}" method="post" enctype="multipart/form-data">
 
