@@ -24,7 +24,7 @@
             <label for="type">Preis(Bsp: "3.60" ohne Währungszeichen!)</label>
             <input type="text" class="form-control" name="price" id="price" placeholder="price" value="{{$product->price}}" required>
         </div>
-        <button type="submit" name="submit" class="btn btn-default">Speichern</button>
+        <button type="submit" name="submit" class="btn btn-primary">Speichern</button>
     </form>
 
 </div>
