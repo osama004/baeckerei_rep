@@ -33,7 +33,7 @@
             <input type="file" class=""  name="image" id="image" placeholder="Image" value="{{$product->image}}" required>
         </div>
 
-        <button type="submit" name="submit" class="btn btn-default">Submit</button>
+        <button type="submit" name="submit" class="btn btn-primary">Speichern</button>
     </form>
 
 </div>

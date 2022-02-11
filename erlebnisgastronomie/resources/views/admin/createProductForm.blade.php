@@ -16,23 +16,23 @@
     @endif
 
 
-    <h2>Create New Product</h2>
+    <h2>Neues Produkt hinzufügen</h2>
 
     <form action="{{ route('adminSendCreateProductForm')}}" method="post" enctype="multipart/form-data">
 
         {{csrf_field()}}
 
         <div class="form-group">
-            <label for="name">title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="Product Name" required>
+            <label for="name">Name(Max. 100 Zeichen!)</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Produktname" required>
         </div>
         <div class="form-group">
-            <label for="description">Description</label>
-            <input type="text" class="form-control" name="description" id="description" placeholder="description" required>
+            <label for="description">Beschreibung(Max. 200 Zeichen!)</label>
+            <input type="text" class="form-control" name="description" id="description" placeholder="Beschreibung" required>
         </div>
         <div class="form-group">
-            <label for="categorie">Categorie</label>
-            <input type="text" class="form-control" name="categorie" id="categorie" placeholder="categorie(Brot, Süß, etc..)" required>
+            <label for="categorie">Kategorie</label>
+            <input type="text" class="form-control" name="categorie" id="categorie" placeholder="Kategorie(Brot, Süß, etc..)" required>
         </div>
 
         <div class="form-group">
@@ -41,10 +41,10 @@
         </div>
 
         <div class="form-group">
-            <label for="type">Price</label>
-            <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
+            <label for="type">Preis</label>
+            <input type="text" class="form-control" name="price" id="price" placeholder="Preis(Bsp: '3.60' mit PUNKT und ohne Währungszeichen!)" required>
         </div>
-        <button type="submit" name="submit" class="btn btn-default">Submit</button>
+        <button type="submit" name="submit" class="btn btn-primary">Speichern</button>
     </form>
 
 </div>
