@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Models\Allergen;
 use App\Models\Product;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -31,6 +32,18 @@ class ProductsController extends Controller
             ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
             ->get( ['ingredients.name', 'allergens.type', 'allergens.describe_type' , 'products_ingredients.product_id'])
             ->toArray();
+
+        /*
+        $allergens = Allergen::with('Ingredients_allergens')->with('ingredients_allergens.Ingredients')
+                    ->with('Products_ingredients')//->dd()
+            ->get( )
+            ->toArray();
+    */
+        /*$allergens = Allergen::with('ingredients_allergens')->with('ingredients_allergens.ingredient')
+            ->with('products_ingredients.ingredient')//->dump()
+            ->select('*')->get()->toArray()
+            ;
+        */
 
 
 

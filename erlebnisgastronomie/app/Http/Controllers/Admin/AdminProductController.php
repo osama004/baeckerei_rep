@@ -32,6 +32,8 @@ class AdminProductController extends Controller
         $title =  $request->input('title');
         $description =  $request->input('description');
         $price = $request->input('price');
+        if (str_contains($price, ',')) // check if price has komma
+            $price = str_replace( ',', '.', $request->input('price'));
         $categorie_title =  $request->input('categorie');
         $categorie = DB::table('categories')->where(strtoupper('title'), '=', $categorie_title)
             ->get('category_id');
@@ -130,6 +132,7 @@ class AdminProductController extends Controller
         $exists =  Storage::disk("local")->exists("public/product_images/".$product->image);
 
         //if old image exists
+
         if($exists){
             //delete it
             Storage::delete('public/product_images/'.$product->image);
