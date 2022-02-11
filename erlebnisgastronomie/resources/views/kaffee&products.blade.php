@@ -207,7 +207,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img loading="lazy"
-                                src="images/{{$sandwich->image}}"
+                                src="{{Storage::disk('local')->url('images/'.$sandwich->image)}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
@@ -273,7 +273,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img loading="lazy"
-                                src="images/{{$bread->image}}"
+                                 src="{{Storage::disk('local')->url('images/'.$bread->image)}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
@@ -342,7 +342,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img loading="lazy"
-                                src="images/{{$sweet->image}}"
+                                 src="{{Storage::disk('local')->url('images/'.$sweet->image)}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
@@ -410,7 +410,7 @@
                             <div class="col-md-6 ml-auto mr-auto text-center" >
                                 <div class="bg-image order-2 speisekarte" data-aos="fade" >
                                     <img loading="lazy"
-                                         src="images/{{$other->image}}"
+                                         src="{{Storage::disk('local')->url('images/'.$other->image)}}"
                                          alt="" style="max-width: 150px; max-height: 150px;">
                                 </div>
                             </div>

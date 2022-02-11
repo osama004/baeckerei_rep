@@ -49,7 +49,7 @@ class AdminProductController extends Controller
 
         $imageName = $stringImageReFormat.".".$ext; //blackdress.jpg
         $imageEncoded = File::get($request->image);
-        Storage::disk('uploads')->put($imageName, $imageEncoded);
+        Storage::disk('local')->put($imageName, $imageEncoded);
 
         $newProductArray = array("title"=>$title, "description"=> $description,"image"=> $imageName,"price"=>$price,
             "category_id" => $category);
@@ -135,13 +135,13 @@ class AdminProductController extends Controller
 
         $product = Product::query()->find($product_id);
 
-        $exists =  Storage::disk("local")->exists("public/images/".$product->image);
+        $exists =  Storage::disk("local")->exists($product->image);
 
         //if old image exists
 
         if($exists){
             //delete it
-            Storage::delete('public/images/'.$product->image);
+            Storage::delete($product->image);
         }
 
         Product::destroy($product_id);

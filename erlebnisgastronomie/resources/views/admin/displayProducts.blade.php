@@ -22,7 +22,7 @@
         <tr>
             <td>{{$product['product_id']}}</td>
             <td><img loading="lazy"
-                     src="/images/{{$product->image}}"
+                     src="{{Storage::disk('local')->url('images/'.$product->image)}}"
                      alt="" style="max-width: 75px; max-height: 75px;"></td>
 
             <td>{{$product['title']}}</td>
