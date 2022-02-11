@@ -20,4 +20,10 @@ class Allergen extends Model
     public function index() {
         // return view('allergens');
     }
+
+    // Allergen 1..n ingredient_allergen
+    public function ingredients_allergens()
+    {
+       return $this->hasMany(Ingredients_allergen::class, 'allergen_id','allergen_id');
+    }
 }
