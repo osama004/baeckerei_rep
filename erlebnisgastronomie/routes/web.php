@@ -92,25 +92,28 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
     Route::get('/userprofile', [HomeController::class, 'indexLogin'])->name('/userprofile');
     Route::get('/registrieren', [HomeController::class, 'index'])->name('/register');
 
+    // Admin Access only
+    Route::group(['middleware' => 'restrictAccess'] , function() {
+        //Admin Panel
+        Route::get('admin/products',[AdminProductController::class, 'index'] )->name('adminDisplayProducts');
+        //->middleware('restrictToAdmin');
+        //display edit product image form
+        Route::get('admin/editProductImageForm/{product_id}',[AdminProductController::class, 'editProductImageForm'] ) ->name('adminEditProductImageForm');
+        //display edit product form
+        Route::get('admin/editProductForm/{product_id}', [AdminProductController::class, 'editProductForm'] ) ->name('adminEditProductForm');
+        //delete product
+        Route::get('admin/deleteProduct/{product_id}',[AdminProductController::class, 'deleteProduct'] ) ->name('adminDeleteProduct');
+        //display create product form
+        Route::get('admin/createProductForm',[AdminProductController::class ,'createProductForm'] ) ->name('adminCreateProductForm');
+        //orders control panel
+        Route::get('admin/ordersPanel/',[AdminProductController::class, 'ordersPanel'] ) ->name("ordersPanel");
+        //update product image
+        Route::post('admin/updateProductImage/{product_id}',[AdminProductController::class, 'updateProductImage']) ->name("adminUpdateProductImage");
+        //update product data
+        Route::post('admin/updateProduct/{product_id}',[AdminProductController::class, 'updateProduct'] )->name("adminUpdateProduct");
+        //send new product data to database
+        Route::post('admin/sendCreateProductForm/',[AdminProductController::class, 'sendCreateProductForm'] )->name("adminSendCreateProductForm");
 
-    //Admin Panel
-    Route::get('admin/products',[AdminProductController::class, 'index'] )->name('adminDisplayProducts');
-    //->middleware('restrictToAdmin');
-    //display edit product image form
-    Route::get('admin/editProductImageForm/{product_id}',[AdminProductController::class, 'editProductImageForm'] ) ->name('adminEditProductImageForm');
-    //display edit product form
-    Route::get('admin/editProductForm/{product_id}', [AdminProductController::class, 'editProductForm'] ) ->name('adminEditProductForm');
-    //delete product
-    Route::get('admin/deleteProduct/{product_id}',[AdminProductController::class, 'deleteProduct'] ) ->name('adminDeleteProduct');
-    //display create product form
-    Route::get('admin/createProductForm',[AdminProductController::class ,'createProductForm'] ) ->name('adminCreateProductForm');
-    //orders control panel
-    Route::get('admin/ordersPanel/',[AdminProductController::class, 'ordersPanel'] ) ->name("ordersPanel");
-    //update product image
-    Route::post('admin/updateProductImage/{product_id}',[AdminProductController::class, 'updateProductImage']) ->name("adminUpdateProductImage");
-    //update product data
-    Route::post('admin/updateProduct/{product_id}',[AdminProductController::class, 'updateProduct'] )->name("adminUpdateProduct");
-    //send new product data to database
-    Route::post('admin/sendCreateProductForm/',[AdminProductController::class, 'sendCreateProductForm'] )->name("adminSendCreateProductForm");
+    });
 
 });
