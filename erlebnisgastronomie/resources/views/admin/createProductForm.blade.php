@@ -23,21 +23,21 @@
         {{csrf_field()}}
 
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Product Name" required>
+            <label for="name">title</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Product Name" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
             <input type="text" class="form-control" name="description" id="description" placeholder="description" required>
         </div>
+        <div class="form-group">
+            <label for="categorie">Categorie</label>
+            <input type="text" class="form-control" name="categorie" id="categorie" placeholder="categorie(Brot, Süß, etc..)" required>
+        </div>
 
         <div class="form-group">
             <label for="image">Image</label>
             <input type="file" class=""  name="image" id="image" required>
-        </div>
-        <div class="form-group">
-            <label for="type">Type</label>
-            <input type="text" class="form-control" name="type" id="type" placeholder="type" required>
         </div>
 
         <div class="form-group">

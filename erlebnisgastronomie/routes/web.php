@@ -110,5 +110,7 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
     Route::post('admin/updateProductImage/{product_id}',[AdminProductController::class, 'updateProductImage']) ->name("adminUpdateProductImage");
     //update product data
     Route::post('admin/updateProduct/{product_id}',[AdminProductController::class, 'updateProduct'] )->name("adminUpdateProduct");
+    //send new product data to database
+    Route::post('admin/sendCreateProductForm/',[AdminProductController::class, 'sendCreateProductForm'] )->name("adminSendCreateProductForm");
 
 });

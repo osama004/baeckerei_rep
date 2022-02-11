@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -31,23 +32,30 @@ class AdminProductController extends Controller
         $title =  $request->input('title');
         $description =  $request->input('description');
         $price = $request->input('price');
+        $categorie_title =  $request->input('categorie');
+        $categorie = DB::table('categories')->where(strtoupper('title'), '=', $categorie_title)
+            ->get('category_id');
 
+        echo ($categorie->get('category_id'));
         Validator::make($request->all(),['image'=>"required|file|image|mimes:jpg,png,jpeg|max:5000"])->validate();
         $ext =  $request->file("image")->getClientOriginalExtension();
+        // remove spaces from the image name
         $stringImageReFormat = str_replace(" ","",$request->input('name'));
 
         $imageName = $stringImageReFormat.".".$ext; //blackdress.jpg
         $imageEncoded = File::get($request->image);
         Storage::disk('local')->put('public/product_images/'.$imageName, $imageEncoded);
 
-        $newProductArray = array("title"=>$title, "description"=> $description,"image"=> $imageName,"price"=>$price);
+        $newProductArray = array("title"=>$title, "description"=> $description,"image"=> $imageName,"price"=>$price,
+            "category_id" => 3);
+        //problem with category
 
         $created = DB::table("products")->insert($newProductArray);
-
 
         if($created){
             return redirect()->route("adminDisplayProducts");
         }else{
+            // return view ( error View)
             return "Product was not Created";
 
         }
