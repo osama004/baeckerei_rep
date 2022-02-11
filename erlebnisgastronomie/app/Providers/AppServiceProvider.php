@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
         // share data with all views (alle webpages)
         //View::share('Name', 'Rick');
         // another way (share user data among pages)
+        Paginator::useBootstrap();
         View::composer('*', function($view) {
             $view->with('userdata',Auth::user()) ;
         }) ;
