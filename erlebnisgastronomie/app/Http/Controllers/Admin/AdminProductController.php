@@ -32,6 +32,7 @@ class AdminProductController extends Controller
         $title =  $request->input('title');
         $description =  $request->input('description');
         $price = $request->input('price');
+        $category = $request->input('category_id');
         if (str_contains($price, ',')) // check if price has komma
             $price = str_replace( ',', '.', $request->input('price'));
         $categorie_title =  $request->input('categorie');
@@ -50,7 +51,7 @@ class AdminProductController extends Controller
         Storage::disk('uploads')->put($imageName, $imageEncoded);
 
         $newProductArray = array("title"=>$title, "description"=> $description,"image"=> $imageName,"price"=>$price,
-            "category_id" => 3);
+            "category_id" => $category);
         //problem with category
 
         $created = DB::table("products")->insert($newProductArray);
