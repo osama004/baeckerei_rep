@@ -50,10 +50,10 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul >
-               <li class="active"><a href="{{route('adminDisplayProducts')}}">Overview <span class="sr-only">(current)</span></a></li>
-                <li><a href="{{route('adminCreateProductForm')}}">Insert</a></li>
-                <li><a href="{{route('ordersPanel')}}">Orders</a></li>
-                 <li><a href="#">Edit</a></li>
+               <li class="active"><a href="{{route('adminDisplayProducts')}}">Übersicht <span class="sr-only">(current)</span></a></li>
+                <li><a href="{{route('adminCreateProductForm')}}">Produkt hinzufügen</a></li>
+                <li><a href="{{route('ordersPanel')}}">Bestellungen</a></li>
+                 <li><a href="#">Bearbeiten</a></li>
                 <li><a href="#">Users</a></li>
                 <li><a href="#">Analytics</a></li>
             </ul>
@@ -65,7 +65,7 @@
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Dashboard</h1>
+
 
 
             @yield('body')

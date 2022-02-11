@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('body')
-
+    <h1 class="page-header">Dashboard</h1>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
@@ -27,7 +27,7 @@
 
             <td>{{$product['title']}}</td>
             <td>{{$product['description']}}</td>
-            <td>${{$product['price']}}</td>
+            <td>€{{$product['price']}}</td>
 
             <td><a href="{{ route('adminEditProductImageForm',['product_id' => $product['product_id'] ])}}" class="btn btn-primary">Edit Image</a></td>
             <td><a href="{{ route('adminEditProductForm',['product_id' => $product['product_id'] ])}}" class="btn btn-primary">Edit</a></td>
