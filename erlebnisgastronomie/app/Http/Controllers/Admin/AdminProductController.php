@@ -45,7 +45,7 @@ class AdminProductController extends Controller
 
         $imageName = $stringImageReFormat.".".$ext; //blackdress.jpg
         $imageEncoded = File::get($request->image);
-        Storage::disk('local')->put('public/images/'.$imageName, $imageEncoded);
+        Storage::disk('uploads')->put($imageName, $imageEncoded);
 
         $newProductArray = array("title"=>$title, "description"=> $description,"image"=> $imageName,"price"=>$price,
             "category_id" => 3);
