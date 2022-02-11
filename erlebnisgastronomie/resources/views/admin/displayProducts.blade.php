@@ -27,7 +27,7 @@
 
             <td>{{$product['title']}}</td>
             <td>{{$product['description']}}</td>
-            <td>€{{$product['price']}}</td>
+            <td>€{{number_format($product['price'], 2, ',')}}</td>
 
             <td><a href="{{ route('adminEditProductImageForm',['product_id' => $product['product_id'] ])}}" class="btn btn-primary">Edit Image</a></td>
             <td><a href="{{ route('adminEditProductForm',['product_id' => $product['product_id'] ])}}" class="btn btn-primary">Edit</a></td>

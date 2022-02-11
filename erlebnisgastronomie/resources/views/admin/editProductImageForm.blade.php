@@ -27,7 +27,6 @@
         {{csrf_field()}}
 
 
-
         <div class="form-group">
             <label for="description">Update Image</label>
             <input type="file" class=""  name="image" id="image" placeholder="Image" value="{{$product->image}}" required>

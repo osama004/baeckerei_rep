@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
@@ -88,17 +89,21 @@ class AdminProductController extends Controller
         if($request->hasFile("image")){
 
             $product = Product::query()->find($product_id);
-            $exists = Storage::disk('local')->exists("public/product_images/".$product->image);
+            //$exists = Storage::exists("images/".$product->image);
+            $exists = Storage::disk('local')->exists("images/".$product->image);
+            //$exists = Storage::disk('local')->exists("images/".$product->image);
 
             //delete old image
             if($exists){
-                Storage::delete('public/product_images/'.$product->image);
-
+                Storage::disk('local')->delete("images/".$product->image);
+                //Storage::delete("images/".$product->image);
+                echo 'exists !!!';
             }
             //upload new image , <input name = 'image'> is the key
             $ext = $request->file('image')->getClientOriginalExtension(); //jpg
             // $product->image get the same name as the old picture
-            $request->image->storeAs("public/product_images/",$product->image);
+            //$request->image->storeAs("images/",$product->image);
+            $request->image->storeAs("images/",$product->image);
             $arrayToUpdate = array('image'=>$product->image);
             DB::table('products')->where('product_id',$product_id)->update($arrayToUpdate);
             return redirect()->route("adminDisplayProducts");
@@ -141,7 +146,8 @@ class AdminProductController extends Controller
 
         Product::destroy($product_id);
 
-        return redirect()->route("adminDisplayProducts");
+        //return redirect()->route("adminDisplayProducts");
+        return Redirect::back()->with('message', 'product Deleted');
     }
 
     //orders control panel (display all orders)
