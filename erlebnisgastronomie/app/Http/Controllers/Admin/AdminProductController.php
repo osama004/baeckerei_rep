@@ -90,12 +90,12 @@ class AdminProductController extends Controller
 
             $product = Product::query()->find($product_id);
             //$exists = Storage::exists("images/".$product->image);
-            $exists = Storage::disk('local')->exists("images/".$product->image);
+            $exists = Storage::disk('local')->exists($product->image);
             //$exists = Storage::disk('local')->exists("images/".$product->image);
 
             //delete old image
             if($exists){
-                Storage::disk('local')->delete("images/".$product->image);
+                Storage::disk('local')->delete($product->image);
                 //Storage::delete("images/".$product->image);
                 echo 'exists !!!';
             }
@@ -103,7 +103,7 @@ class AdminProductController extends Controller
             $ext = $request->file('image')->getClientOriginalExtension(); //jpg
             // $product->image get the same name as the old picture
             //$request->image->storeAs("images/",$product->image);
-            $request->image->storeAs("images/",$product->image);
+            $request->image->storeAs("",$product->image);
             $arrayToUpdate = array('image'=>$product->image);
             DB::table('products')->where('product_id',$product_id)->update($arrayToUpdate);
             return redirect()->route("adminDisplayProducts");
