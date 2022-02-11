@@ -42,7 +42,7 @@
 
         <div class="form-group">
             <label for="type">Preis</label>
-            <input type="text" class="form-control" name="price" id="price" placeholder="Preis(Bsp: '3.60' mit PUNKT und ohne Währungszeichen!)" required>
+            <input type="text" class="form-control" name="price" id="price" placeholder="Preis(Bsp: '3.60' ohne Währungszeichen!)" required>
         </div>
         <button type="submit" name="submit" class="btn btn-primary">Speichern</button>
     </form>
