@@ -40,11 +40,12 @@ class AdminProductController extends Controller
         Validator::make($request->all(),['image'=>"required|file|image|mimes:jpg,png,jpeg|max:5000"])->validate();
         $ext =  $request->file("image")->getClientOriginalExtension();
         // remove spaces from the image name
-        $stringImageReFormat = str_replace(" ","",$request->input('name'));
+        $stringImageReFormat = str_replace(" ","",$request->input('title'));
+
 
         $imageName = $stringImageReFormat.".".$ext; //blackdress.jpg
         $imageEncoded = File::get($request->image);
-        Storage::disk('local')->put('public/product_images/'.$imageName, $imageEncoded);
+        Storage::disk('local')->put('public/images/'.$imageName, $imageEncoded);
 
         $newProductArray = array("title"=>$title, "description"=> $description,"image"=> $imageName,"price"=>$price,
             "category_id" => 3);
