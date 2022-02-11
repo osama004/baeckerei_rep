@@ -46,6 +46,8 @@ class AdminProductController extends Controller
         // remove spaces from the image name
         $stringImageReFormat = str_replace(" ","",$request->input('title'));
 
+        $ingredients = $request->input('ingredients_id');
+        $ingredientsarray = $request->all('ingredients_id');
 
         $imageName = $stringImageReFormat.".".$ext; //blackdress.jpg
         $imageEncoded = File::get($request->image);
@@ -53,10 +55,15 @@ class AdminProductController extends Controller
 
         $newProductArray = array("title"=>$title, "description"=> $description,"image"=> $imageName,"price"=>$price,
             "category_id" => $category);
-        //problem with category
 
         $created = DB::table("products")->insert($newProductArray);
 
+        foreach($request->all('ingredients_id') as $ingredient){
+            $newProductId = Product::max('product_id');
+
+        $newIngredientArray = array('ingredient_id'=>$ingredient, 'product_id'=>$newProductId, 'quantity'=> 220.00 , 'unit_of_measure' =>"gramm");
+        DB::table("products_ingredients")->insert($newIngredientArray);
+        }
         if($created){
             return redirect()->route("adminDisplayProducts");
         }else{
