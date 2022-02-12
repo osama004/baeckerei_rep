@@ -66,30 +66,7 @@
 
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#checkBtn').click(function() {
-            checked = $("input[type=checkbox]:checked").length;
+<script src="{{asset('js/adminpanel.js')}}"></script>
 
-            if(!checked) {
-                alert("You must check at least one checkbox.");
-                return false;
-            }
 
-        });
-    });
-</script>
-
-<script type="text/javascript">
-  function lettersOnly(input) {
-      var regex = /[^a-z-áàéèóòúù,.äüöß# 0-9]/gi;
-      input.value = input.value.replace(regex, "");
-  }
-</script>
-    <script type="text/javascript">
-        function numbersOnly(input) {
-            var regex = /[^0-9,.]/gi;
-            input.value = input.value.replace(regex,"");
-        }
-    </script>
 @endsection

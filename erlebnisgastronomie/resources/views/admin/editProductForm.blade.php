@@ -32,7 +32,7 @@
         <div class="form-group checkboxes">
             <ul class ="formingredients">
                 @foreach($ingredients as $ingredient)
-                    <input type="checkbox" name="ingredients_id[]" value="{{$ingredient->ingredient_id}}" > {{$ingredient->name}}<br>
+                    <input id ="checkbox{{$ingredient->ingredient_id}}" type="checkbox" name="ingredients_id[]" value="{{$ingredient->ingredient_id}}"> {{$ingredient->name}}<br>
                 @endforeach
             </ul>
         </div>
@@ -47,31 +47,8 @@
 
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#checkBtn').click(function() {
-            checked = $("input[type=checkbox]:checked").length;
 
-            if(!checked) {
-                alert("You must check at least one checkbox.");
-                return false;
-            }
+<script src="{{asset('js/adminpanel.js')}}"></script>
 
-        });
-    });
-</script>
-
-<script type="text/javascript">
-    function lettersOnly(input) {
-        var regex = /[^a-z-áàéèóòúù,.äüöß# 0-9]/gi;
-        input.value = input.value.replace(regex, "");
-    }
-</script>
-<script type="text/javascript">
-    function numbersOnly(input) {
-        var regex = /[^0-9,.]/gi;
-        input.value = input.value.replace(regex,"");
-    }
-</script>
 
 @endsection
