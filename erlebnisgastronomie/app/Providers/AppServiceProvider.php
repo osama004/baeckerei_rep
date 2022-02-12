@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         // another way (share user data among pages)
         Paginator::useBootstrap();
         View::composer('*', function($view) {
-            $view->with('userdata',Auth::user()) ;
+            $view->with('userData',Auth::user()) ;
         }) ;
         Paginator::useBootstrap();
     }

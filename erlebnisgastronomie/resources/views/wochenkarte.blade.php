@@ -127,7 +127,11 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Ausloggen') }}
                                 </a>
-
+                                @if($userData -> isAdmin())
+                                    <a class="dropdown-item" href="{{route('adminDisplayProducts')}}">
+                                        Admin Dashboard
+                                    </a>
+                                @endif
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>

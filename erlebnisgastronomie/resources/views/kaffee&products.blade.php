@@ -106,7 +106,6 @@
                                             Registrieren
                                         </a>
 
-
                                     </div>
                                 </li>
                             @endif
@@ -121,7 +120,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile">
+                                <a class="dropdown-item" href="{{route('/userprofile')}}">
                                     Mein Profil
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -129,7 +128,11 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Ausloggen') }}
                                 </a>
-
+                                @if($userData -> isAdmin())
+                                <a class="dropdown-item" href="{{route('adminDisplayProducts')}}">
+                                    Admin Dashboard
+                                </a>
+                                @endif
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
