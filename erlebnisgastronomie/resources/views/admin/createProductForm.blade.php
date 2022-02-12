@@ -35,13 +35,11 @@
             <label for="categorie">Kategorie</label>
             <label for="category_id">Kategorie wählen:</label>
             <select id="category_id" name="category_id">
-                <option value="1">Sandwich</option>
-                <option value="2">Süßspeise</option>
-                <option value="3">Brot</option>
-                <option value="4">Sonstige</option>
-                <option value="5">Getränk</option>
-                <option value="6">Käse</option>
+                @foreach($categories as $category)
+                <option value="{{$category->category_id}}">{{$category->title}}</option>
+                    @endforeach
             </select>
+
 
         </div>
 
