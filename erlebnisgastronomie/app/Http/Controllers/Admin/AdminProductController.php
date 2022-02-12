@@ -53,9 +53,21 @@ class AdminProductController extends Controller
 
         $newProductArray = array("title"=>$title, "description"=> $description,"image"=> $imageName,"price"=>$price,
             "category_id" => $category);
-        //problem with category
 
         $created = DB::table("products")->insert($newProductArray);
+
+        function store(Request $request)
+        {
+            $values = $request->input('ingredients_id');
+
+            return $values;
+        }
+        $newProductId = Product::max('product_id');
+
+        foreach(store($request) as $ingredient){
+        $newIngredientArray = array('ingredient_id'=>$ingredient, 'product_id'=>$newProductId, 'quantity'=> 220.00 , 'unit_of_measure' =>"gramm");
+        DB::table("products_ingredients")->insert($newIngredientArray);
+        }
 
         if($created){
             return redirect()->route("adminDisplayProducts");
