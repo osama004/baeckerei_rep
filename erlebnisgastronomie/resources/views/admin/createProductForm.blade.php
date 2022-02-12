@@ -24,11 +24,11 @@
 
         <div class="form-group">
             <label for="name">Name(Max. 100 Zeichen!)</label>
-            <input onkeyup="lettersOnly(this)" id="input" type="text" class="form-control" name="title" id="title" placeholder="Produktname" required>
+            <input maxlength="100" onkeyup="lettersOnly(this)" id="input" type="text" class="form-control" name="title" id="title" placeholder="Produktname" required>
         </div>
         <div class="form-group">
             <label for="description">Beschreibung(Max. 200 Zeichen!)</label>
-            <input onkeyup="lettersOnly(this)" id="input" type="text" class="form-control" name="description" id="description" placeholder="Beschreibung" required>
+            <input maxlength="200" onkeyup="lettersOnly(this)" id="input" type="text" class="form-control" name="description" id="description" placeholder="Beschreibung" required>
         </div>
 
         <div class="form-group">
@@ -61,7 +61,7 @@
 
         <div class="form-group">
             <label for="type">Preis</label>
-            <input onkeyup="numbersOnly(this)" type="text" class="form-control" name="price" id="price" placeholder="Preis(Bsp: '3,60' mit KOMMA und ohne Währungszeichen!)" required>
+            <input maxlength="4" onkeyup="numbersOnly(this)" type="text" class="form-control" name="price" id="price" placeholder="Preis(Bsp: '3,60' mit KOMMA und ohne Währungszeichen!)" required>
         </div>
 
         <button type="submit" name="submit" class="btn btn-primary">Speichern</button>
