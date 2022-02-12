@@ -41,7 +41,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/admin/products">Admin Panel</a>
+            <a class="navbar-brand adminsidepanel" href="/admin/products">Admin Panel</a>
         </div>
     </div>
 </nav>
@@ -50,12 +50,12 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul >
-               <li class="active"><a href="{{route('adminDisplayProducts')}}">Übersicht <span class="sr-only">(current)</span></a></li>
-                <li><a href="{{route('adminCreateProductForm')}}">Produkt hinzufügen</a></li>
-                <li><a href="{{route('ordersPanel')}}">Bestellungen</a></li>
-                 <li><a href="#">Bearbeiten</a></li>
-                <li><a href="#">Users</a></li>
-                <li><a href="#">Analytics</a></li>
+               <li class="active "><a class="adminsidepanel" href="{{route('adminDisplayProducts')}}">Übersicht <span class="sr-only">(current)</span></a></li>
+                <li class="active "><a class="adminsidepanel" href="{{route('adminCreateProductForm')}}">Produkt hinzufügen</a></li>
+                <li class="active "><a class="adminsidepanel" href="{{route('ordersPanel')}}">Bestellungen</a></li>
+                <li class="active "><a class="adminsidepanel" href="#">Bearbeiten</a></li>
+                <li class="active "><a class="adminsidepanel" href="#">Users</a></li>
+                <li class="active "><a class="adminsidepanel" href="#">Analytics</a></li>
             </ul>
             <ul class="nav nav-sidebar">
 

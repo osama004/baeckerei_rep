@@ -1933,3 +1933,14 @@ li.nav-item a {
     display: inline-block;
     column-count:4;
 }
+
+.adminsidepanel{
+    color: #0b0b0b;
+    font-weight: 600;
+    transition: 200ms ease-in-out;
+
+}
+.adminsidepanel:hover{
+    color: #A1E944;
+    transition: 200ms ease-in-out;
+}
