@@ -157,6 +157,9 @@
            <div class ="row">
                <div class="col-md-6 offset-md-3">
                    <div class="card">
+                       <div >
+                           @include('alerts.emptyCart')
+                       </div>
                        <div class = "card-header">
                            Ihr Warenkorb:
                        </div>
@@ -198,12 +201,7 @@
                                </ul>
                        </div>
                        @if (Route::has('login'))
-                           @if(session('cart') ->totalQuantity == 0)
-                               <button type="submit" class="btn btn-primary float-right" onclick="" >Bestellen</button>
-                           @else
                                <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'" >Bestellen</button>
-                           @endif
-
                        @else
                            <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('/login')}}'">Bestellen</button>
                        @endif

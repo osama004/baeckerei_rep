@@ -123,6 +123,11 @@ class ProductsController extends Controller
         $cart = Session::get('cart');
         //cart is not empty
         if($cart) {
+            if ($cart -> totalQuantity == 0) {
+                return redirect()->route("shoppingcart")->with('emptyCart' , 'Ihr Warenkorb ist leer!!');
+            }
+                else {
+
             // dump($cart);
             $dateget = date('Y-m-d H:i:s');
             $delivery_date = date('Y-m-d'); // hardcoded
@@ -145,6 +150,7 @@ class ProductsController extends Controller
 
             return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
 
+                }
         }else{
 
             return redirect()->route("/login")->with('loginOrRegister' , 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
