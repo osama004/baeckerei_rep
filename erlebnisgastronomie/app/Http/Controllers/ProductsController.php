@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Models\Allergen;
 use App\Models\Product;
+use DateTime;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
+
 
 class ProductsController extends Controller
 {
@@ -114,7 +117,39 @@ class ProductsController extends Controller
         }
         // dump($cart);
         return redirect()->route('shoppingcart');
+    }
 
+   public function createOrder(){
+        $cart = Session::get('cart');
+        //cart is not empty
+        if($cart) {
+            // dump($cart);
+            $dateget = date('Y-m-d H:i:s');
+            $delivery_date = date('Y-m-d'); // hardcoded
+            $newOrderArray = array("status"=>"on_hold", 'date_get' => $dateget ,
+                'delivery_date' => $delivery_date,"price"=>$cart->totalPrice);
+            // insert order into Order table
+            $created_order = DB::table("orders")->insert($newOrderArray);
+            // get the last inserted Id in Database
+            $order_id = DB::getPdo()->lastInsertId();;
+            //dd($cart);
+            //dd($cart->items);
+            foreach ($cart->items as $cart_item){
+                $product_id = $cart_item['data']['product_id'];
+                $newItemsInCurrentOrder = array("order_id"=>$order_id, "product_id" => $product_id);
+                $created_order_products = DB::table("orders_products")->insert($newItemsInCurrentOrder);
+            }
+            //delete cart
+            Session::forget("cart");
+            Session::flush();
+
+            return redirect()->route("kaffee&products")->withsuccess("Thanks For Choosing Us");
+
+        }else{
+
+            return redirect()->route("/login")->with('loginOrRegister' , 'bitte einloggin sich ein oder registieren');
+
+        }
     }
 
 

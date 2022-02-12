@@ -197,7 +197,11 @@
 
                                </ul>
                        </div>
-                               <button type="submit" class="btn btn-primary float-right" >Bestellen</button>
+                       @if (Route::has('login'))
+                               <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'"  >Bestellen</button>
+                       @else
+                           <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('/login')}}'"  >Bestellen</button>
+                       @endif
                    </div>
                </div>
            </div>

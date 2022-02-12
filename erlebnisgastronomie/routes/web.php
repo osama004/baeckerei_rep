@@ -84,6 +84,7 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
 //Route::get('/kaffee&products', [AllergenController::class, 'index']) ->name('productsAllergen');
     Route::get('/kaffee&products/addToCart/{product_id}', [ProductsController::class, 'addProductToCart'])->name('AddToCartProduct');
 
+    Route::get('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
 
 
     Auth::routes(['verify' => true]);

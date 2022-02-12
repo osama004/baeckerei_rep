@@ -29,13 +29,9 @@ class Cart
         {
             $productToAdd = ['quantity' => 1, 'totalSinglePrice'=> $price , 'data' =>$product];
         }
-
         $this->items[$product_id] = $productToAdd;
         $this->totalQuantity++;
         $this->totalPrice = $this->totalPrice + $price;
-
-
-
     }
 
     public function updatePriceAndQuantity()
