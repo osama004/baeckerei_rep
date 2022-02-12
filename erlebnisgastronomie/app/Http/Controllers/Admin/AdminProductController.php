@@ -83,7 +83,10 @@ class AdminProductController extends Controller
     //display edit product form
     public function editProductForm($product_id){
         $product = Product::query()->find($product_id);
-        return view('admin.editProductForm',['product'=>$product]);
+        $ingredients = DB::table('ingredients')->orderBy('name') ->get(['ingredient_id', 'name'])->toArray();
+        $categories = DB::table('categories')->orderBy('title') ->get(['category_id', 'title'])->toArray();
+
+        return view('admin.editProductForm',['product'=>$product, 'ingredients' =>$ingredients, 'categories' =>$categories]);
 
     }
 
