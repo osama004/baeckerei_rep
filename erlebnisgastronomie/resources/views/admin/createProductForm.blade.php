@@ -47,33 +47,11 @@
 
         <label for="ingredients_id[]">Zutaten wählen:</label>
         <div class="form-group checkboxes">
-            <ul style="display: inline-block">
-                <br>
-                <input type="checkbox" name="ingredients_id[]" value="1" > Frischkäse<br>
-                <input type="checkbox" name="ingredients_id[]" value="2" > Chiliflocken<br>
-                <input type="checkbox" name="ingredients_id[]" value="3" > Limetten<br>
-                <input type="checkbox" name="ingredients_id[]" value="4" > Rucola<br>
-                <input type="checkbox" name="ingredients_id[]" value="5" > Tomaten<br>
-                <input type="checkbox" name="ingredients_id[]" value="6" > Bio-Spiegelei<br>
-                <input type="checkbox" name="ingredients_id[]" value="7" > Schaffrischkäse<br>
-                <input type="checkbox" name="ingredients_id[]" value="8" > Zucchini<br>
-                <input type="checkbox" name="ingredients_id[]" value="9" > Melanzani<br>
-                <input type="checkbox" name="ingredients_id[]" value="10" > Paprika<br>
+            <ul class ="formingredients">
+                @foreach($ingredients as $ingredient)
+               <input type="checkbox" name="ingredients_id[]" value="{{$ingredient->ingredient_id}}" > {{$ingredient->name}}<br>
+                    @endforeach
             </ul>
-            <ul style="display: inline-block">
-                <input type="checkbox" name="ingredients_id[]" value="11" > Hummus<br>
-                <input type="checkbox" name="ingredients_id[]" value="12" > Räucherlachs<br>
-                <input type="checkbox" name="ingredients_id[]" value="13" > Kren<br>
-                <input type="checkbox" name="ingredients_id[]" value="14" > Crème Fraiche<br>
-                <input type="checkbox" name="ingredients_id[]" value="15" > Salz<br>
-                <input type="checkbox" name="ingredients_id[]" value="16" > Milch<br>
-                <input type="checkbox" name="ingredients_id[]" value="17" > Weizenmehl<br>
-                <input type="checkbox" name="ingredients_id[]" value="18" > Zucker<br>
-                <input type="checkbox" name="ingredients_id[]" value="19" > Walnuss<br>
-                <input type="checkbox" name="ingredients_id[]" value="20" > Oliven<br>
-            </ul>
-
-
         </div>
 
         <div class="form-group">

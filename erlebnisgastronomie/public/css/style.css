@@ -1929,4 +1929,7 @@ li.nav-item a {
     height: 135px;
 }
 
-
+.formingredients{
+    display: inline-block;
+    column-count: 2;
+}

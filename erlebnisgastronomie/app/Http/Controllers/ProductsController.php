@@ -33,6 +33,8 @@ class ProductsController extends Controller
             ->get( ['ingredients.name', 'allergens.type', 'allergens.describe_type' , 'products_ingredients.product_id'])
             ->toArray();
 
+
+
         /*
         $allergens = Allergen::with('Ingredients_allergens')->with('ingredients_allergens.Ingredients')
                     ->with('Products_ingredients')//->dd()

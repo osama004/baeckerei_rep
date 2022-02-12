@@ -23,10 +23,9 @@ class AdminProductController extends Controller
 
     //display create product form
     public function createProductForm(){
-        return view("admin.createProductForm");
+        $ingredients = DB::table('ingredients') ->get(['ingredient_id', 'name'])->toArray();
+        return view("admin.createProductForm", ['ingredients' =>$ingredients]);
     }
-
-
     //store new product to database
     public function sendCreateProductForm(Request $request){
 
