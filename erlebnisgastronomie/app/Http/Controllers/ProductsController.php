@@ -35,7 +35,6 @@ class ProductsController extends Controller
             ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
             ->orderBy('ingredients.name')
             ->get( ['ingredients.name', 'allergens.type', 'allergens.describe_type' , 'products_ingredients.product_id'])
-
             ->toArray();
 
 
@@ -126,8 +125,7 @@ class ProductsController extends Controller
             if ($cart -> totalQuantity == 0) {
                 return redirect()->route("shoppingcart")->with('emptyCart' , 'Ihr Warenkorb ist leer!!');
             }
-                else {
-
+            else {
             // dump($cart);
             $dateget = date('Y-m-d H:i:s');
             $delivery_date = date('Y-m-d'); // hardcoded
@@ -146,7 +144,8 @@ class ProductsController extends Controller
             }
             //delete cart
             Session::forget("cart");
-            Session::flush();
+
+            //Session::flush(); // it removes every thing from the session and the user will be logged out
 
             return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
 
