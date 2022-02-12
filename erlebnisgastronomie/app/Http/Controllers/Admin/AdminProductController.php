@@ -37,11 +37,6 @@ class AdminProductController extends Controller
         $category = $request->input('category_id');
         if (str_contains($price, ',')) // check if price has komma
             $price = str_replace( ',', '.', $request->input('price'));
-        $categorie_title =  $request->input('categorie');
-        $categorie = DB::table('categories')->where(strtoupper('title'), '=', $categorie_title)
-            ->get('category_id');
-
-        echo ($categorie->get('category_id'));
         Validator::make($request->all(),['image'=>"required|file|image|mimes:jpg,png,jpeg|max:5000"])->validate();
         $ext =  $request->file("image")->getClientOriginalExtension();
         // remove spaces from the image name

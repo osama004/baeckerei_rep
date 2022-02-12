@@ -16,12 +16,11 @@ class CartController extends Controller
             return view('shoppingcart', ['cartItems' => $cart]);
             //dump($cart);
         }
-        // Cart is empty
-        else {
             //echo 'cart is empty';
             return  redirect()->route('kaffee&products');
         }
-    }
+
+
 
     public function deleteItemFromCart(Request $request, $product_id) {
         $cart = $request->session()->get('cart');

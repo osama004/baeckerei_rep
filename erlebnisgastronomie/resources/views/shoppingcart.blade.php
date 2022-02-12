@@ -198,7 +198,12 @@
                                </ul>
                        </div>
                        @if (Route::has('login'))
-                               <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'"  >Bestellen</button>
+                           @if(session('cart') ->totalQuantity == 0)
+                               <button type="submit" class="btn btn-primary float-right" onclick="" >Bestellen</button>
+                           @else
+                               <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'" >Bestellen</button>
+                           @endif
+
                        @else
                            <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('/login')}}'">Bestellen</button>
                        @endif
