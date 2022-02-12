@@ -24,7 +24,7 @@
 
         <div class="form-group">
             <label for="name">Name(Max. 100 Zeichen!)</label>
-            <input maxlength="100" onkeyup="lettersOnly(this)" id="input" type="text" class="form-control" name="title" id="title" placeholder="Produktname" required>
+            <input maxlength="100" onkeyup="lettersOnly(this)" id="input" type="text" class="form-control" name="title"  placeholder="Produktname" required>
         </div>
         <div class="form-group">
             <label for="description">Beschreibung(Max. 200 Zeichen!)</label>
@@ -39,8 +39,6 @@
                 <option value="{{$category->category_id}}">{{$category->title}}</option>
                     @endforeach
             </select>
-
-
         </div>
 
         <label for="ingredients_id[]">Zutaten wählen:</label>

@@ -11,11 +11,21 @@
 
         <div class="form-group">
             <label for="name">Name(Max. 100 Zeichen)</label>
-            <input maxlength="100" onkeyup="lettersOnly(this)" type="text" class="form-control" name="title" id="title" placeholder="Product Name" value="{{$product->title}}" required>
+            <input maxlength="100" onkeyup="lettersOnly(this)" type="text" class="form-control" name="title" placeholder="Product Name" value="{{$product->title}}" required>
         </div>
         <div class="form-group">
             <label for="description">Beschreibung(Max. 200 Zeichen)</label>
             <input maxlength="200" onkeyup="lettersOnly(this)" type="text" class="form-control" name="description" id="description" placeholder="description" value="{{$product->description}}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categorie">Kategorie</label>
+            <label for="category_id">Kategorie wählen:</label>
+            <select id="category_id" name="category_id">
+            @foreach($categories as $category)
+                    <option value="{{$category->category_id}}">{{$category->title}}</option>
+                @endforeach
+            </select>
         </div>
 
         <label for="ingredients_id[]">Zutaten wählen:</label>
