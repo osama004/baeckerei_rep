@@ -47,7 +47,7 @@ class AdminProductController extends Controller
         $stringImageReFormat = str_replace(" ","",$request->input('title'));
 
 
-        $imageName = $stringImageReFormat.".".$ext; //blackdress.jpg
+        $imageName = $stringImageReFormat.'_'.date('d-m-Y H.i.s ').".".$ext; //blackdress_12-02-2022 11.24.05.jpg
         $imageEncoded = File::get($request->image);
         Storage::disk('local')->put($imageName, $imageEncoded);
 
