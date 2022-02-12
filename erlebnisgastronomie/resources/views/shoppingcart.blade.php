@@ -200,7 +200,7 @@
                        @if (Route::has('login'))
                                <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'"  >Bestellen</button>
                        @else
-                           <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('/login')}}'"  >Bestellen</button>
+                           <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('/login')}}'">Bestellen</button>
                        @endif
                    </div>
                </div>

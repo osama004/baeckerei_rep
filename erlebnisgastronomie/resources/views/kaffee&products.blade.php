@@ -156,7 +156,11 @@
         </div>
     </nav>
 </header>
+
 <!-- END header -->
+<div >
+    @include('alerts.success')
+</div>
 
 <div class="slider-wrap">
     <div class="slider-item" style="background-image: url('images/new_filler_1.jpg');">
@@ -169,6 +173,9 @@
         </div>
     </div>
 </div>
+
+<div
+
 
 <div class="clearfix mb-5 pb-5">
     <div class="container-fluid">

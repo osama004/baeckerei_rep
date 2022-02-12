@@ -143,11 +143,11 @@ class ProductsController extends Controller
             Session::forget("cart");
             Session::flush();
 
-            return redirect()->route("kaffee&products")->withsuccess("Thanks For Choosing Us");
+            return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
 
         }else{
 
-            return redirect()->route("/login")->with('loginOrRegister' , 'bitte einloggin sich ein oder registieren');
+            return redirect()->route("/login")->with('loginOrRegister' , 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
 
         }
     }
