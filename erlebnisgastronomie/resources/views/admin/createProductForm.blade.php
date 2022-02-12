@@ -108,7 +108,7 @@
 
 <script type="text/javascript">
   function lettersOnly(input) {
-      var regex = /[?:*"]/gi;
+      var regex = /[^a-z-,äüöß# 0-9]/gi;
       input.value = input.value.replace(regex, "");
   }
 </script>
