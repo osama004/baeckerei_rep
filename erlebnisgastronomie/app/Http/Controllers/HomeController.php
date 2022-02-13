@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\ItemNotFoundException;
+use Throwable;
 
 class HomeController extends Controller
 {
@@ -23,11 +25,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        try {
+            return view('home');
+        }catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
+        }
     }
 
     public function indexLogin()
     {
-        return view('userprofile');
+        try {
+            return view('userprofile');
+        } catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
+        }
     }
 }

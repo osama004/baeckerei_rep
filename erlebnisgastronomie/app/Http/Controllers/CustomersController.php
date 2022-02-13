@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\ItemNotFoundException;
+use Throwable;
+
 class CustomersController extends Controller
 {
     //
@@ -18,7 +21,13 @@ class CustomersController extends Controller
 
       hardcode statt dynamisch, irrelevant
         */
-        $customers= DB::table('customers')->get();
-        return view("customers", compact ("customers"));
+        try {
+            $customers = DB::table('customers')->get();
+            return view("customers", compact("customers"));
+        } catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
+        }
     }
 }

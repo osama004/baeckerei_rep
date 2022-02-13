@@ -10,7 +10,9 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\ItemNotFoundException;
 use Illuminate\View\View;
+use Throwable;
 
 
 class ProductsController extends Controller
@@ -22,40 +24,37 @@ class ProductsController extends Controller
     {
 
 
-       $sandwiches = Product::with('Category')->where('products.category_id', '=', 1)->get();
-       $sweets = Product::with('Category')->where('products.category_id', '=', 2)->get();
-       $breads = Product::with('Category')->where('products.category_id', '=', 3)->get();
-       $others = Product::with('Category')->where('products.category_id', '=', 4)->get();
-
-
-        $allergens = DB::table('allergens')
-            ->join('ingredients_allergens', 'allergens.allergen_id', 'ingredients_allergens.allergen_id')
-            ->join('ingredients', 'ingredients_allergens.ingredient_id', 'ingredients.ingredient_id')
-            ->join('products_ingredients', 'ingredients.ingredient_id', 'products_ingredients.ingredient_id')
-            ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
-            ->orderBy('ingredients.name')
-            ->get( ['ingredients.name', 'allergens.type', 'allergens.describe_type' , 'products_ingredients.product_id'])
-            ->toArray();
-
-
-
-        /*
-        $allergens = Allergen::with('Ingredients_allergens')->with('ingredients_allergens.Ingredients')
-                    ->with('Products_ingredients')//->dd()
-            ->get( )
-            ->toArray();
-    */
-        /*$allergens = Allergen::with('ingredients_allergens')->with('ingredients_allergens.ingredient')
-            ->with('products_ingredients.ingredient')//->dump()
-            ->select('*')->get()->toArray()
-            ;
-        */
-
-
-
-        return view("kaffee&products", compact( "sandwiches", "breads", "sweets", "others", "allergens"));
+        try {
+            $sandwiches = Product::with('Category')->where('products.category_id', '=', 1)->get();
+            $sweets = Product::with('Category')->where('products.category_id', '=', 2)->get();
+            $breads = Product::with('Category')->where('products.category_id', '=', 3)->get();
+            $others = Product::with('Category')->where('products.category_id', '=', 4)->get();
+            $allergens = DB::table('allergens')
+                ->join('ingredients_allergens', 'allergens.allergen_id', 'ingredients_allergens.allergen_id')
+                ->join('ingredients', 'ingredients_allergens.ingredient_id', 'ingredients.ingredient_id')
+                ->join('products_ingredients', 'ingredients.ingredient_id', 'products_ingredients.ingredient_id')
+                ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
+                ->orderBy('ingredients.name')
+                ->get(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
+                ->toArray();/*
+                 $allergens = Allergen::with('Ingredients_allergens')->with('ingredients_allergens.Ingredients')
+                             ->with('Products_ingredients')//->dd()
+                     ->get( )
+                     ->toArray();
+             *//*$allergens = Allergen::with('ingredients_allergens')->with('ingredients_allergens.ingredient')
+                 ->with('products_ingredients.ingredient')//->dump()
+                 ->select('*')->get()->toArray()
+                 ;
+             */
+            return view("kaffee&products", compact("sandwiches", "breads", "sweets", "others", "allergens"));
+        } catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
+        }
 
     }
+
 
     public function addProductToCart(Request $request,$product_id) {
        // print_r($product_id);
@@ -63,99 +62,115 @@ class ProductsController extends Controller
         //$request->session()->forget('cart');
        // $request->session()->flash('cart') ;
 
-
-        $previousCart = $request->session()->get('cart');
-        $cart = new Cart($previousCart);
-
-        $product = Product::query()->findOrFail($product_id);
-        $cart->addItem($product_id, $product );
-        // create the session ( it stores the new object of the cart in the session
-        $request->session()->put('cart', $cart);
-        // it shows the cart object (for debugging)
-        // dump($cart);
-
-       //return redirect()->route('kaffee&products');
-        return response()->json(['totalQuantity',$cart->totalQuantity]);
+        try {
+            $previousCart = $request->session()->get('cart');
+            $cart = new Cart($previousCart);
+            $product = Product::query()->findOrFail($product_id);
+            $cart->addItem($product_id, $product);// create the session ( it stores the new object of the cart in the session
+            $request->session()->put('cart', $cart);// it shows the cart object (for debugging)
+            // dump($cart);
+            //return redirect()->route('kaffee&products');
+            return response()->json(['totalQuantity', $cart->totalQuantity]);
+        } catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
+        }
 
     }
 
  public function increaseSingleProduct(Request $request,$product_id) {
 
-        $previousCart = $request->session()->get('cart');
-        $cart = new Cart($previousCart);
+     try {
+         $previousCart = $request->session()->get('cart');
+         $cart = new Cart($previousCart);
+         $product = Product::query()->findOrFail($product_id);
+         $cart->addItem($product_id, $product);
+         $request->session()->put('cart', $cart);// dump($cart);
+         return redirect()->route('shoppingcart');
+     }catch (ItemNotFoundException $e) {
+         abort(404);
+     } catch (Throwable $e) {
+         abort(500);
+     }
 
-        $product = Product::query()->findOrFail($product_id);
-        $cart->addItem($product_id, $product );
-        $request->session()->put('cart', $cart);
-
-     // dump($cart);
-       return redirect()->route('shoppingcart');
-
-    }
+ }
 
     public function decreaseSingleProduct(Request $request,$product_id) {
 
-        $previousCart = $request->session()->get('cart');
-        $cart = new Cart($previousCart);
-        // becasue of the arrayKey undefined to catch
-        if (array_key_exists($product_id, $cart->items)) {
-            if ($cart->items[$product_id]['quantity'] > 1) {
-                $product = Product::query()->findOrFail($product_id);
-                $cart->items[$product_id]['quantity']--;
-                $cart->items[$product_id]['totalSinglePrice'] = $cart->items[$product_id]['quantity'] * $product['price'];
-                $cart->updatePriceAndQuantity();
-                $request->session()->put('cart', $cart);
-            } else if ($cart->items[$product_id]['quantity'] == 1) {
+        try {
+            $previousCart = $request->session()->get('cart');
+            $cart = new Cart($previousCart);// becasue of the arrayKey undefined to catch
+            if (array_key_exists($product_id, $cart->items)) {
+                if ($cart->items[$product_id]['quantity'] > 1) {
+                    $product = Product::query()->findOrFail($product_id);
+                    $cart->items[$product_id]['quantity']--;
+                    $cart->items[$product_id]['totalSinglePrice'] = $cart->items[$product_id]['quantity'] * $product['price'];
+                    $cart->updatePriceAndQuantity();
+                    $request->session()->put('cart', $cart);
+                } else if ($cart->items[$product_id]['quantity'] == 1) {
 
-                // delete Item from an array
-                unset($cart->items[$product_id]);
+                    // delete Item from an array
+                    unset($cart->items[$product_id]);
 
-                $cart->updatePriceAndQuantity();
-                $request->session()->put('cart', $cart);
-            }
+                    $cart->updatePriceAndQuantity();
+                    $request->session()->put('cart', $cart);
+                }
+            }// dump($cart);
+            return redirect()->route('shoppingcart');
+        } catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
         }
-        // dump($cart);
-        return redirect()->route('shoppingcart');
     }
 
    public function createOrder(){
-        $cart = Session::get('cart');
-        //cart is not empty
-        if($cart) {
-            if ($cart -> totalQuantity == 0) {
-                return redirect()->route("shoppingcart")->with('emptyCart' , 'Ihr Warenkorb ist leer!!');
-            }
-            else {
-            // dump($cart);
-            $dateget = date('Y-m-d H:i:s');
-            $delivery_date = date('Y-m-d'); // hardcoded
-            $newOrderArray = array("status"=>"on_hold", 'date_get' => $dateget ,
-                'delivery_date' => $delivery_date,"price"=>$cart->totalPrice);
-            // insert order into Order table
-            $created_order = DB::table("orders")->insert($newOrderArray);
-            // get the last inserted Id in Database
-            $order_id = DB::getPdo()->lastInsertId();;
-            //dd($cart);
-            //dd($cart->items);
-            foreach ($cart->items as $cart_item){
-                $product_id = $cart_item['data']['product_id'];
-                $newItemsInCurrentOrder = array("order_id"=>$order_id, "product_id" => $product_id);
-                $created_order_products = DB::table("orders_products")->insert($newItemsInCurrentOrder);
-            }
-            //delete cart
-            Session::forget("cart");
+       try {
+           $cart = Session::get('cart');//cart is not empty
+       } catch (\Exception $e) {
+           abort(500);
+       }
+       try {
+           if ($cart) {
+               if ($cart->totalQuantity == 0) {
+                   return redirect()->route("shoppingcart")->with('emptyCart', 'Ihr Warenkorb ist leer!!');
+               } else {
+                   // dump($cart);
+                   $dateget = date('Y-m-d H:i:s');
+                   $delivery_date = date('Y-m-d'); // hardcoded
+                   $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
+                       'delivery_date' => $delivery_date, "price" => $cart->totalPrice);
+                   // insert order into Order table
+                   $created_order = DB::table("orders")->insert($newOrderArray);
+                   // get the last inserted Id in Database
+                   $order_id = DB::getPdo()->lastInsertId();;
+                   //dd($cart);
+                   //dd($cart->items);
+                   foreach ($cart->items as $cart_item) {
+                       $product_id = $cart_item['data']['product_id'];
+                       $newItemsInCurrentOrder = array("order_id" => $order_id, "product_id" => $product_id);
+                       $created_order_products = DB::table("orders_products")->insert($newItemsInCurrentOrder);
+                   }
+                   //delete cart
+                   Session::forget("cart");
 
-            //Session::flush(); // it removes every thing from the session and the user will be logged out
+                   //Session::flush(); // it removes every thing from the session and the user will be logged out
 
-            return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
+                   return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
 
-                }
-        }else{
+               }
+           } else {
 
-            return redirect()->route("/login")->with('loginOrRegister' , 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
+               return redirect()->route("/login")->with('loginOrRegister', 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
 
-        }
-    }
+           }
+       } catch (ItemNotFoundException $e) {
+           abort(404);
+       } catch (Throwable $e) {
+           abort(500);
+       }
+   }
 
 
 

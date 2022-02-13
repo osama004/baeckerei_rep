@@ -56,19 +56,19 @@
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="kaffee&products">Kaffee & Produkte</a>
+                        <a class="nav-link" href="{{route('kaffee&products')}}">Kaffee & Produkte</a>
                     </li>
 
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
+                        <a class="nav-link" href="{{route('weeklyCart')}}">Wochenkarte</a>
                     </li>
 
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="regionales">Regionale Produkte</a>
+                        <a class="nav-link" href="{{route('regionalProducts')}}">Regionale Produkte</a>
                     </li>
 
                     <div class="divider"></div>
@@ -84,7 +84,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="kontakt">Kontakt</a>
+                        <a class="nav-link active" href="{{route('contact')}}">Kontakt</a>
                     </li>
 
                     <div class="divider"></div>
@@ -98,11 +98,11 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="login" >
+                                        <a class="dropdown-item" href="{{route('/login')}}" >
                                             Login
                                         </a>
 
-                                        <a class="dropdown-item" href="register" >
+                                        <a class="dropdown-item" href="{{route('/register')}}" >
                                             Registrieren
                                         </a>
 
@@ -120,7 +120,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile" >
+                                <a class="dropdown-item" href="{{route('/userprofile')}}" >
                                     Mein Profil
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -141,8 +141,8 @@
                     @endguest
                     <div class="divider"></div>
 
-                    <li class="nav-item" href="shoppingcart">
-                        <a class="nav-link" href="shoppingcart">
+                    <li class="nav-item" href="{{route('shoppingcart')}}">
+                        <a class="nav-link" href="{{route('shoppingcart')}}">
                             <i class="fas fa-shopping-cart">
                                 @if(Session::has('cart'))
                                     <span class="cart-with-numbers">
@@ -186,22 +186,23 @@
                                @csrf
                                <div class="form-group">
                                    <label for="name">Name</label>
-                                   <input type="text"name="name"class="form-control" required/>
+                                   <input type="text" name="name" class="form-control" required/>
                                </div>
                                <div class="form-group">
                                    <label for="email">E-Mail-Addresse</label>
                                    <!--<input type="text"name="email"class="form-control"/>-->
-                                   <input type="text"name="email"class="form-control" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b"/>
+                                   <input type="text" name="email" class="form-control" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b"/>
                                </div>
                                <div class="form-group">
                                    <label for="phone">Telefonnummer</label>
-                                   <input type="text"name="phone"class="form-control" required/>
+                                   <input type="text" name="phone" class="form-control" required/>
                                </div>
                                <div class="form-group">
                                    <label for="msg">Message</label>
                                    <textarea name="msg" class="form-control" required></textarea>
                                </div>
                                <button type="senden" class="btn btn-primary float-right">Senden</button>
+                           </form>
                        </div>
                    </div>
                </div>

@@ -55,19 +55,19 @@
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="kaffee&products">Kaffee & Produkte</a>
+                        <a class="nav-link" href="{{route('kaffee&products')}}">Kaffee & Produkte</a>
                     </li>
 
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="wochenkarte">Wochenkarte</a>
+                        <a class="nav-link" href="{{route('weeklyCart')}}">Wochenkarte</a>
                     </li>
 
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="regionales">Regionale Produkte</a>
+                        <a class="nav-link" href="{{route('regionalProducts')}}">Regionale Produkte</a>
                     </li>
 
                     <div class="divider"></div>
@@ -83,7 +83,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="kontakt">Kontakt</a>
+                        <a class="nav-link" href="{{route('contact')}}">Kontakt</a>
                     </li>
 
                     <div class="divider"></div>
@@ -97,11 +97,11 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="login" >
+                                        <a class="dropdown-item" href="{{route('/login')}}" >
                                             Login
                                         </a>
 
-                                        <a class="dropdown-item" href="register" >
+                                        <a class="dropdown-item" href="{{route('/register')}}" >
                                             Registrieren
                                         </a>
 
@@ -119,7 +119,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile" >
+                                <a class="dropdown-item" href="{{route('/userprofile')}}" >
                                     Mein Profil
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -140,8 +140,8 @@
                     @endguest
                     <div class="divider"></div>
 
-                    <li class="nav-item" href="shoppingcart">
-                        <a class="nav-link" href="shoppingcart">
+                    <li class="nav-item" href="{{route('shoppingcart')}}">
+                        <a class="nav-link" href="{{route('shoppingcart')}}">
                             <i class="fas fa-shopping-cart">
                                 @if(Session::has('cart'))
                                     <span class="cart-with-numbers">

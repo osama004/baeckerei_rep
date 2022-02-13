@@ -22,33 +22,17 @@ use App\Http\Controllers\AllergenController;
 */
 Route::group(['middleware'=>'HtmlMinifier'], function(){
     Route::get('/', function () {
-        // if user NOT!!! logged in
-        /*
-        if (!Auth::check()){
-            return redirect('/login');
-        }
-        */
         return view('home');
-    });
-
-    Route::get('/home', function () {
-        return view('home');
-    });
+    }) ->name('home');
 
     Route::get('/wochenkarte', function () {
         return view('wochenkarte');
-    });
+    }) ->name('weeklyCart');
 
     Route::get('/app', function () {
         return view('app');
     });
-    /*
-    Route::get('/regionales', function () {
-        return view('regionaleprodukte');
-    });
-    */
-
-    Route::get('/regionales', [RegionalProductsController::class , 'index']);
+    Route::get('/regionales', [RegionalProductsController::class , 'index']) ->name('regionalProducts');
 
     Route::get('/kontakt', function () {
         return view('kontakt');
@@ -57,8 +41,6 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
     Route::get('/profile', function () {
         return view('userprofile');
     });
-
-//Route::get('/shoppingcart', function () { return view('shoppingcart');}) ->name('shoppingcart');
 
 // show cart items
 //Route::get('/shoppingcart/items', [CartController::class, 'showCart']);
@@ -77,22 +59,18 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
 
     Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
 
-
-//Route::get('/products',[ProductsController::class, 'index']);
-//Route::get('/products',[ProductsController::class,'index'])->name('productsGet');
     Route::get('/kaffee&products', [ProductsController::class, 'index']) ->name('kaffee&products');
-//Route::get('/kaffee&products', [AllergenController::class, 'index']) ->name('productsAllergen');
+
     Route::get('/kaffee&products/addToCart/{product_id}', [ProductsController::class, 'addProductToCart'])->name('AddToCartProduct');
 
     Route::get('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
-
 
     Auth::routes(['verify' => true]);
 
     Route::get('/anmelden', [HomeController::class, 'index'])->name('/login');
     Route::get('/userprofile', [HomeController::class, 'indexLogin'])->name('/userprofile');
     Route::get('/registrieren', [HomeController::class, 'index'])->name('/register');
-
+    Route::get('/kontakt', [ContactController::class, 'contact'])->name('contact');
     // Admin Access only
     Route::group(['middleware' => 'restrictAccess'] , function() {
         //Admin Panel

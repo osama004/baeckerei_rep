@@ -5,37 +5,46 @@ namespace App\Http\Controllers;
 use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\ItemNotFoundException;
+use Throwable;
 
 class CartController extends Controller
 {
     public function showCart() {
-        $cart = Session::get('cart');
-
-        // cart is not empty
-        if ($cart) {
-            return view('shoppingcart', ['cartItems' => $cart]);
-            //dump($cart);
+        try {
+            $cart = Session::get('cart');// cart is not empty
+            if ($cart) {
+                return view('shoppingcart', ['cartItems' => $cart]);
+                //dump($cart);
+            }//echo 'cart is empty';
+            return redirect()->route('kaffee&products');
+        } catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
         }
-            //echo 'cart is empty';
-            return  redirect()->route('kaffee&products');
-        }
+    }
 
 
 
     public function deleteItemFromCart(Request $request, $product_id) {
-        $cart = $request->session()->get('cart');
-        if (array_key_exists($product_id, $cart->items)) {
-            // delete Item from an array
-            unset($cart->items[$product_id]);
+
+        try {
+            $cart = $request->session()->get('cart');
+            if (array_key_exists($product_id, $cart->items)) {
+                // delete Item from an array
+                unset($cart->items[$product_id]);
+            }
+            $previousCart = $request->session()->get('cart');
+            $updatedCart = new Cart($previousCart);
+            $updatedCart->updatePriceAndQuantity();
+            $request->session()->put('cart', $updatedCart);
+            return redirect()->route('shoppingcart');
+        }  catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
         }
-
-        $previousCart = $request->session()->get('cart');
-        $updatedCart = new Cart($previousCart);
-        $updatedCart->updatePriceAndQuantity();
-
-        $request->session()->put('cart', $updatedCart);
-
-        return redirect()->route('shoppingcart');
     }
 
 }
