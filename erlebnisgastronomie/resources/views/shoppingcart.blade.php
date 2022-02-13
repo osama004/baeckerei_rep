@@ -93,7 +93,7 @@
                                             Login
                                         </a>
 
-                                        <a class="dropdown-item" href="{{route('/register)}}" >
+                                        <a class="dropdown-item" href="{{route('/register')}}" >
                                             Registrieren
                                         </a>
                                     </div>
@@ -111,7 +111,7 @@
                                 <a class="dropdown-item" href="{{route('/userprofile')}}" >
                                     Mein Profil
                                 </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="dropdown-item" href="{{ route('logout')}}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Ausloggen') }}

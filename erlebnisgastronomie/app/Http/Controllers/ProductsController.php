@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Mail\OrderCreatedEmail;
 use App\Models\Allergen;
 use App\Models\Product;
 use DateTime;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ItemNotFoundException;
 use Illuminate\View\View;
@@ -152,6 +155,8 @@ class ProductsController extends Controller
                        $newItemsInCurrentOrder = array("order_id" => $order_id, "product_id" => $product_id);
                        $created_order_products = DB::table("orders_products")->insert($newItemsInCurrentOrder);
                    }
+                   // send the email with orders information
+
                    //delete cart
                    Session::forget("cart");
 
@@ -172,7 +177,14 @@ class ProductsController extends Controller
        }
    }
 
-
+   private function sendMail()
+   {
+       $user = Auth::user(); // get user
+       $cart = Session::get('cart');
+       if ($cart != null && $user != null) {
+           Mail::to($user)->send(new OrderCreatedEmail($cart));
+       }
+   }
 
 
 }
