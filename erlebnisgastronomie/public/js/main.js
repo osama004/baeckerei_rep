@@ -230,35 +230,39 @@
 	contentWayPoint();
 // CHECK AT LEAST ONE BOX ON CREATE PRODUCT
     (function() {
-        const form = document.querySelector('#sectionForm');
-        const checkboxes = form.querySelectorAll('input[type=checkbox]');
-        const checkboxLength = checkboxes.length;
-        const firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
+        const form = document.querySelector('#sectionForm'); // is null !!
+        if (form != null) {
+            const checkboxes = form.querySelectorAll("input[type='checkbox']");
+            //const checkboxes = form.querySelectorAll("input:checked");
+            const checkboxLength = checkboxes.length;
+            const firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
 
-        function init() {
-            if (firstCheckbox) {
+            function init() {
+                if (firstCheckbox) {
+                    for (let i = 0; i < checkboxLength; i++) {
+                        checkboxes[i].addEventListener('change', checkValidity);
+                    }
+
+                    checkValidity();
+                }
+            }
+
+            function isChecked() {
                 for (let i = 0; i < checkboxLength; i++) {
-                    checkboxes[i].addEventListener('change', checkValidity);
+                    if (checkboxes[i].checked) return true;
                 }
 
-                checkValidity();
-            }
-        }
-
-        function isChecked() {
-            for (let i = 0; i < checkboxLength; i++) {
-                if (checkboxes[i].checked) return true;
+                return false;
             }
 
-            return false;
+            function checkValidity() {
+                const errorMessage = !isChecked() ? 'At least one checkbox must be selected.' : '';
+                firstCheckbox.setCustomValidity(errorMessage);
+            }
+
+            init();
         }
 
-        function checkValidity() {
-            const errorMessage = !isChecked() ? 'At least one checkbox must be selected.' : '';
-            firstCheckbox.setCustomValidity(errorMessage);
-        }
-
-        init();
     })();
 
 })(jQuery);
