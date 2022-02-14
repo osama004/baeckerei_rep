@@ -12,6 +12,8 @@ class Allergen extends Model
     protected $table = 'allergens';
     protected $primaryKey = 'allergen_id';
     public $timestamps = false; // so, we don't need created_at and updated_at columns
+    // load relationship dynamically when you create the model !! (Eager Loading By Default)
+    protected $with = ['ingredients_allergens'];
 
     protected $fillable = [
         'type', 'describe_type'
@@ -26,4 +28,5 @@ class Allergen extends Model
     {
        return $this->hasMany(Ingredients_allergen::class, 'allergen_id','allergen_id');
     }
+
 }

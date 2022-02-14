@@ -14,6 +14,7 @@ class Product extends Model
     protected $table ='products'; // The table associated with the model.
     protected $primaryKey = 'product_id';
     public $timestamps = false; // so, we don't need created_at and updated_at columns
+    protected $with = ['category', 'products_ingredients'];
 
     protected $fillable = [
         "bezeichnung" , "price" , "description"
@@ -32,12 +33,8 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
-    public function shopping_carts()
-    {
-        return $this->hasMany(Shopping_cart::class , 'product_id', 'product_id');
-    }
 
-    public function products_ingrdients()
+    public function products_ingredients()
     {
         return $this->hasMany(Product_ingredient::class, 'product_id', 'product_id');
     }

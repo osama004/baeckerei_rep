@@ -12,7 +12,7 @@ class Ingredient extends Model
     protected $table = 'ingredients';
     protected $primaryKey = 'ingredient_id';
     public $timestamps = false; // so, we don't need created_at and updated_at columns
-
+    protected $with = ['ingredients_allergens'];
     protected $fillable = [
         'name'
     ];
@@ -26,4 +26,5 @@ class Ingredient extends Model
     {
         return $this->hasMany(Ingredients_allergen::class,'ingredient_id', 'ingredient_id');
     }
+
 }

@@ -12,6 +12,7 @@ class Order extends Model
     protected $table = 'orders';
     protected $primaryKey = 'order_id';
     public $timestamps = false; // so, we don't need created_at and updated_at columns
+    protected $with = ['orders_products'];
 
     protected $fillable = [
 
@@ -19,5 +20,10 @@ class Order extends Model
 
     public function index() {
         // return view('allergens');
+    }
+
+    public function orders_products()
+    {
+        return $this->hasMany(Orders_products::class);
     }
 }

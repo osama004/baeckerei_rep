@@ -13,7 +13,7 @@ class Ingredients_allergen extends Model
     protected $primaryKey = ['ingredient_id', 'allergen_id'];
     public $incrementing = false;
     public $timestamps = false; // so, we don't need created_at and updated_at columns
-
+    protected $with = ['allergen', 'ingredient'];
     protected $fillable = [
 
     ];
