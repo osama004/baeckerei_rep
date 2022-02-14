@@ -7,6 +7,7 @@ use App\Mail\OrderCreatedEmail;
 use App\Models\Allergen;
 use App\Models\Product;
 use DateTime;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -128,63 +129,102 @@ class ProductsController extends Controller
         }
     }
 
-   public function createOrder(){
-       try {
-           $cart = Session::get('cart');//cart is not empty
-       } catch (\Exception $e) {
-           abort(500);
-       }
-       try {
-           if ($cart) {
-               if ($cart->totalQuantity == 0) {
-                   return redirect()->route("shoppingcart")->with('emptyCart', 'Ihr Warenkorb ist leer!!');
-               } else {
-                   // dump($cart);
-                   $dateget = date('Y-m-d H:i:s');
-                   $delivery_date = date('Y-m-d'); // hardcoded
-                   $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
-                       'delivery_date' => $delivery_date, "price" => $cart->totalPrice);
-                   // insert order into Order table
-                   $created_order = DB::table("orders")->insert($newOrderArray);
-                   // get the last inserted Id in Database
-                   $order_id = DB::getPdo()->lastInsertId();;
-                   //dd($cart);
-                   //dd($cart->items);
-                   foreach ($cart->items as $cart_item) {
-                       $product_id = $cart_item['data']['product_id'];
-                       $newItemsInCurrentOrder = array("order_id" => $order_id, "product_id" => $product_id);
-                       $created_order_products = DB::table("orders_products")->insert($newItemsInCurrentOrder);
-                   }
-                   // send the email with orders information
-
-                   //delete cart
-                   Session::forget("cart");
-
-                   //Session::flush(); // it removes every thing from the session and the user will be logged out
-
-                   return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
-
-               }
+/*   public function createOrder(){
+       $cart = Session::get('cart');//cart is not empty
+       if ($cart) {
+           if ($cart->totalQuantity == 0) {
+               return redirect()->route("shoppingcart")->with('emptyCart', 'Ihr Warenkorb ist leer!!');
            } else {
+               // dump($cart);
+               $dateget = date('Y-m-d H:i:s');
+               $delivery_date = date('Y-m-d'); // hardcoded
+               $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
+                   'delivery_date' => $delivery_date, "price" => $cart->totalPrice);
+               // insert order into Order table
+               $created_order = DB::table("orders")->insert($newOrderArray);
+               // get the last inserted Id in Database
+               $order_id = DB::getPdo()->lastInsertId();;
+               //dd($cart);
+               //dd($cart->items);
+               foreach ($cart->items as $cart_item) {
+                   $product_id = $cart_item['data']['product_id'];
+                   $newItemsInCurrentOrder = array("order_id" => $order_id, "product_id" => $product_id);
+                   $created_order_products = DB::table("orders_products")->insert($newItemsInCurrentOrder);
+               }
+               // send the email with orders information
+               $user = Auth::user(); // get user
+               //dd($user);
+               if ($user != null) {
+                   Mail::to($user)->send(new OrderCreatedEmail($cart));
+               }
+               //delete cart
+               Session::forget("cart");
 
-               return redirect()->route("/login")->with('loginOrRegister', 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
+               //Session::flush(); // it removes every thing from the session and the user will be logged out
+
+               return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
 
            }
-       } catch (ItemNotFoundException $e) {
-           abort(404);
-       } catch (Throwable $e) {
-           abort(500);
-       }
-   }
+       } else {
 
-   private function sendMail()
-   {
-       $user = Auth::user(); // get user
-       $cart = Session::get('cart');
-       if ($cart != null && $user != null) {
-           Mail::to($user)->send(new OrderCreatedEmail($cart));
+           return redirect()->route("/login")->with('loginOrRegister', 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
+
        }
-   }
+
+   }*/
+
+    public function createOrder(){
+        try {
+            $cart = Session::get('cart');//cart is not empty
+        } catch (Exception $e) {
+            abort(500);
+        }
+        try {
+            if ($cart) {
+                if ($cart->totalQuantity == 0) {
+                    return redirect()->route("shoppingcart")->with('emptyCart', 'Ihr Warenkorb ist leer!!');
+                } else {
+                    // dump($cart);
+                    $dateget = date('Y-m-d H:i:s');
+                    $delivery_date = date('Y-m-d'); // hardcoded
+                    $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
+                        'delivery_date' => $delivery_date, "price" => $cart->totalPrice);
+                    // insert order into Order table
+                    $created_order = DB::table("orders")->insert($newOrderArray);
+                    // get the last inserted Id in Database
+                    $order_id = DB::getPdo()->lastInsertId();;
+                    //dd($cart);
+                    //dd($cart->items);
+                    foreach ($cart->items as $cart_item) {
+                        $product_id = $cart_item['data']['product_id'];
+                        $newItemsInCurrentOrder = array("order_id" => $order_id, "product_id" => $product_id);
+                        $created_order_products = DB::table("orders_products")->insert($newItemsInCurrentOrder);
+                    }
+                     // send the email with orders information
+                   $user = Auth::user(); // get user
+                   //dd($user);
+                   if ($user != null) {
+                       Mail::to($user)->send(new OrderCreatedEmail($cart));
+                   }
+                    //delete cart
+                    Session::forget("cart");
+
+                    //Session::flush(); // it removes every thing from the session and the user will be logged out
+
+                    return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
+
+                }
+            } else {
+
+                return redirect()->route("/login")->with('loginOrRegister', 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
+
+            }
+        } catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
+        }
+    }
 
 
 }
