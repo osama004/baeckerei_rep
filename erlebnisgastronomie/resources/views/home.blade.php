@@ -133,8 +133,8 @@
 
                         <div class="divider"></div>
 
-                        <li class="nav-item" href="{{route('/userprofile')}}">
-                            <a class="nav-link" href="{{route('/userprofile')}}">
+                        <li class="nav-item" href="{{route('shoppingcart')}}">
+                            <a class="nav-link" href="{{route('shoppingcart')}}">
                               <i class="fas fa-shopping-cart">
                                   @if(Session::has('cart'))
                                       <span class="cart-with-numbers">
