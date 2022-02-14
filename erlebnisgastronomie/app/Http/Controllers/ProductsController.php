@@ -74,7 +74,7 @@ class ProductsController extends Controller
             $request->session()->put('cart', $cart);// it shows the cart object (for debugging)
             // dump($cart);
             //return redirect()->route('kaffee&products');
-            return response()->json(['totalQuantity', $cart->totalQuantity]);
+            return response()->json(['cartAjax', $cart]);
         } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {

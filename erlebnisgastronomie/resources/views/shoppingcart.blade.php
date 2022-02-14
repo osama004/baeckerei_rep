@@ -133,7 +133,7 @@
                         <a class="nav-link" href="{{route('shoppingcart')}}">
                             <i class="fas fa-shopping-cart" style =  "color: #A1E944">
                                 @if(Session::has('cart'))
-                                    <span class="cart-with-numbers">
+                                    <span id ="cartAjax" class="cart-with-numbers">
                                         {{ Session::get('cart')->totalQuantity }}
                                    </span>
                                 @endif
@@ -209,6 +209,29 @@
 
 </div>
 @endsection
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.ajaxGET').click(function(e){
+            e.preventDefault();
+            var url = $(this).find('#url').text();
+            var _token = $("input[name='_token']").val();
+            $.ajax({
+                method:"GET",
+                url:url,
+                data:{_token: _token},
+                success:function(data,status,XHR){
+                    //alert(data[1]['totalQuantity']);
+                    // var totalQuantity = data[1];
+                    $('#cartAjax').text(data[1]['totalQuantity']);
+                },
+                error:function(xhr,status,error){
+                    alert(error);
+                }
+            });
+        });
+    });
+</script>
 
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
 
