@@ -190,7 +190,7 @@ class AdminProductController extends Controller
 //delete product
     public function deleteProduct($product_id)
     {
-        try {
+
             $product = Product::query()->find($product_id);
             $exists = Storage::disk("local")->exists($product->image);//if old image exists
             if ($exists) {
@@ -199,11 +199,7 @@ class AdminProductController extends Controller
             }
             Product::destroy($product_id);//return redirect()->route("adminDisplayProducts");
             return Redirect::back()->with('message', 'product Deleted');
-        } catch (ItemNotFoundException $e) {
-            abort(404);
-        } catch (Throwable $e) {
-            abort(500);
-        }
+
     }
 
     //orders control panel (display all orders)

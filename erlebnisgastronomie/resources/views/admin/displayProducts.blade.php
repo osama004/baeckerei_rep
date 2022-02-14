@@ -31,7 +31,9 @@
 
             <td><a href="{{ route('adminEditProductImageForm',['product_id' => $product['product_id'] ])}}" class="btn btn-primary">Edit Image</a></td>
             <td><a href="{{ route('adminEditProductForm',['product_id' => $product['product_id'] ])}}" class="btn btn-primary">Edit</a></td>
-            <td><a href="{{ route('adminDeleteProduct',['product_id' => $product['product_id']])}}"  class="btn btn-warning">Remove</a></td>
+            <td><a href="{{ route('adminDeleteProduct',['product_id' => $product['product_id']])}}"
+                   onclick="return confirm('Sind Sie sicher, dass Sie das Produkt löschen wollen?')"
+                   class="btn btn-warning">Remove</a></td>
 
         </tr>
 
