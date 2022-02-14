@@ -101,7 +101,7 @@
                                             Login
                                         </a>
 
-                                        <a class="dropdown-item" href="{{route('/register')}}" >
+                                        <a class="dropdown-item" href="/register" >
                                             Registrieren
                                         </a>
 

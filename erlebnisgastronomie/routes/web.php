@@ -69,7 +69,7 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
 
     Route::get('/anmelden', [HomeController::class, 'index'])->name('/login');
     Route::get('/userprofile', [HomeController::class, 'indexLogin'])->name('/userprofile');
-    Route::get('/registrieren', [HomeController::class, 'index'])->name('/register');
+    Route::get('/registrieren', [HomeController::class, 'indexRegister'])->name('/register');
     Route::get('/kontakt', [ContactController::class, 'contact'])->name('contact');
     // Admin Access only
     Route::group(['middleware' => 'restrictAccess'] , function() {

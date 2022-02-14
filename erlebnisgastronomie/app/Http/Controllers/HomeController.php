@@ -44,4 +44,17 @@ class HomeController extends Controller
             abort(500);
         }
     }
+
+    public function indexRegister()
+    {
+        try {
+            return view('auth.register');
+        }catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
+        }
+    }
+
+
 }
