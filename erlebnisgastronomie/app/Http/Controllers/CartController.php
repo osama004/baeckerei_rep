@@ -10,14 +10,16 @@ use Throwable;
 
 class CartController extends Controller
 {
-    public function showCart() {
+    public function showCart()
+    {
         try {
             $cart = Session::get('cart');// cart is not empty
             if ($cart) {
                 return view('shoppingcart', ['cartItems' => $cart]);
                 //dump($cart);
-            }//echo 'cart is empty';
-            return redirect()->route('kaffee&products');
+            } else { //echo 'cart is empty';
+                return view('shoppingcart', ['cartItems' => new Cart($cart)]);
+            }
         } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
@@ -26,8 +28,8 @@ class CartController extends Controller
     }
 
 
-
-    public function deleteItemFromCart(Request $request, $product_id) {
+    public function deleteItemFromCart(Request $request, $product_id)
+    {
 
         try {
             $cart = $request->session()->get('cart');
@@ -40,7 +42,7 @@ class CartController extends Controller
             $updatedCart->updatePriceAndQuantity();
             $request->session()->put('cart', $updatedCart);
             return redirect()->route('shoppingcart');
-        }  catch (ItemNotFoundException $e) {
+        } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
             abort(500);
