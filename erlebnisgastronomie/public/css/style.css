@@ -1926,7 +1926,11 @@ li.nav-item a {
 .item-card {
     box-shadow: 0 3px 10px 0 rgb(0 0 0 / 30%);
     border-radius: 4px;
-    height: 135px;
+    min-height: 135px;
+    height: auto;
+}
+.item-card .textbox{
+    margin-top: 5px;
 }
 
 .formingredients{
@@ -1944,3 +1948,5 @@ li.nav-item a {
     color: #A1E944;
     transition: 200ms ease-in-out;
 }
+
+

@@ -196,7 +196,7 @@
                 <div class="row">
                     {{ csrf_field() }}
                     <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="text order-1">
+                        <div class="text order-1 textbox">
                             <h5>{{$sandwich->title}}  </h5>
                             <p>{{$sandwich->description}}
                                 <button class="infobutton">
@@ -204,7 +204,7 @@
                                        data-target="#myModal{{$sandwich->product_id}}"></i>
                                 </button>
                             </p >
-                            <p class="h5">
+                            <p class="h5" style="margin-top: -12px">
                                 {{$sandwich->price}} €
                                 <button class="cartbutton ajaxGET" >
                                     <i  class="fas fa-cart-arrow-down"> </i>
@@ -214,13 +214,6 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img loading="lazy"
-                                src="{{Storage::disk('local')->url('images/'.$sandwich->image)}}"
-                                alt="" style="max-width: 150px; max-height: 150px;">
-                        </div>
-                    </div>
                 </div>
                 </div>
             </div>
@@ -277,14 +270,6 @@
                                     <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$bread->product_id])}}</i>
                                 </button>
                             </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img loading="lazy"
-                                 src="{{Storage::disk('local')->url('images/'.$bread->image)}}"
-                                alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
                 </div>
@@ -348,14 +333,6 @@
                             </p>
                         </div>
                     </div>
-
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img loading="lazy"
-                                 src="{{Storage::disk('local')->url('images/'.$sweet->image)}}"
-                                alt="" style="max-width: 150px; max-height: 150px;">
-                        </div>
-                    </div>
                 </div>
                 </div>
             </div>
@@ -414,14 +391,6 @@
                                             <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$other->product_id])}}</i>
                                         </button>
                                     </p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 ml-auto mr-auto text-center" >
-                                <div class="bg-image order-2 speisekarte" data-aos="fade" >
-                                    <img loading="lazy"
-                                         src="{{Storage::disk('local')->url('images/'.$other->image)}}"
-                                         alt="" style="max-width: 150px; max-height: 150px;">
                                 </div>
                             </div>
                         </div>
