@@ -174,7 +174,6 @@
     </div>
 </div>
 
-<div
 
 
 <div class="clearfix mb-5 pb-5">
@@ -186,29 +185,29 @@
         </div>
     </div>
 </div>
-<h1 class="product-category"> Sandwiches</h1>
+<h1 class="product-category"> Brotwaren</h1>
 <div class="container">
     <div class="row">
         <ul class="item-list">
-        @foreach($sandwiches as $sandwich)
+        @foreach($breadProducts as $breadProduct)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
                 <div class="item-card">
                 <div class="row">
                     {{ csrf_field() }}
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h5>{{$sandwich->title}}  </h5>
-                            <p>{{$sandwich->description}}
+                            <h5>{{$breadProduct->title}}  </h5>
+                            <p>{{$breadProduct->description}}
                                 <button class="infobutton">
                                     <i class="fas fa-info-circle" data-toggle="modal"
-                                       data-target="#myModal{{$sandwich->product_id}}"></i>
+                                       data-target="#myModal{{$breadProduct->product_id}}"></i>
                                 </button>
                             </p >
                             <p class="h5">
-                                {{$sandwich->price}} €
+                                {{$breadProduct->price}} €
                                 <button class="cartbutton ajaxGET" >
                                     <i  class="fas fa-cart-arrow-down"> </i>
-                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$sandwich->product_id])}}</i>
+                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$breadProduct->product_id])}}</i>
                                 </button>
                             </p>
                         </div>
@@ -217,7 +216,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img loading="lazy"
-                                src="{{Storage::disk('local')->url('images/'.$sandwich->image)}}"
+                                src="{{Storage::disk('local')->url('images/'.$breadProduct->image)}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
@@ -225,20 +224,20 @@
                 </div>
             </div>
             <!-- modal popup-->
-            <div class="modal fade" id="myModal{{$sandwich->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal fade" id="myModal{{$breadProduct->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="myModalLabel">{{$sandwich->title}}</h5>
-                            <i style="margin-left:1em; margin-top:5px">€{{$sandwich->price}}</i>
+                            <h5 class="modal-title" id="myModalLabel">{{$breadProduct->title}}</h5>
+                            <i style="margin-left:1em; margin-top:5px">€{{$breadProduct->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                            <p>{{$sandwich->description}}</p>
+                            <p>{{$breadProduct->description}}</p>
                             <h5>Allergene:<br></h5>
                             @foreach($allergens as $allergen)
-                                @continue($allergen -> product_id != $sandwich->product_id)
+                                @continue($allergen -> product_id != $breadProduct->product_id)
                                 <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
                             @endforeach
                         </div>
@@ -252,29 +251,29 @@
         </ul>
     </div>
 </div>
-<h1 class="product-category"> Brote</h1>
+<h1 class="product-category"> Gebäck</h1>
 
 <div class="container">
     <div class="row">
         <ul class="item-list">
-        @foreach($breads as $bread)
+        @foreach($pastries as $pastry)
             <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
                 <div class="item-card">
                 <div class="row">
                     {{ csrf_field() }}
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="text order-1">
-                            <h5> {{$bread->title}}</h5>
-                            <p>{{$bread->description}}
+                            <h5> {{$pastry->title}}</h5>
+                            <p>{{$pastry->description}}
                                 <button class="infobutton">
-                                    <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$bread->product_id}}"></i>
+                                    <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$pastry->product_id}}"></i>
                                 </button>
                             </p>
                             <p class="text-primary h5">
-                                {{$bread->price}} €
+                                {{$breadProduct->price}} €
                                 <button class="cartbutton ajaxGET" >
                                     <i  class="fas fa-cart-arrow-down"> </i>
-                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$bread->product_id])}}</i>
+                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$pastry->product_id])}}</i>
                                 </button>
                             </p>
                         </div>
@@ -283,7 +282,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <div class="bg-image order-2 speisekarte" data-aos="fade">
                             <img loading="lazy"
-                                 src="{{Storage::disk('local')->url('images/'.$bread->image)}}"
+                                 src="{{Storage::disk('local')->url('images/'.$pastry->image)}}"
                                 alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
@@ -292,20 +291,20 @@
             </div>
 
             <!-- modal popup-->
-            <div class="modal fade" id="myModal{{$bread->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal fade" id="myModal{{$pastry->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="myModalLabel">{{$bread->title}}</h5>
-                            <i style="margin-left:1em; margin-top:5px">€{{$bread->price}}</i>
+                            <h5 class="modal-title" id="myModalLabel">{{$pastry->title}}</h5>
+                            <i style="margin-left:1em; margin-top:5px">€{{$pastry->price}}</i>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                            <p>{{$bread->description}}</p>
+                            <p>{{$pastry->description}}</p>
                             <h5>Allergene:<br></h5>
                             @foreach($allergens as $allergen)
-                                @continue($allergen -> product_id != $bread->product_id)
+                                @continue($allergen -> product_id != $pastry->product_id)
                                 <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
                             @endforeach
                         </div>
@@ -384,6 +383,74 @@
                 </div>
             </div>
         @endforeach
+        </ul>
+    </div>
+</div>
+
+<h1 class="product-category"> Getränke</h1>
+
+<div class="container">
+    <div class="row">
+        <ul class="item-list">
+            @foreach($drinks as $drink)
+                <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                    <div class="item-card">
+                        <div class="row">
+                            {{ csrf_field() }}
+                            <div class="col-md-6 ml-auto mr-auto text-center">
+                                <div class="text order-1">
+                                    <h5> {{$drink->title}}</h5>
+                                    <p>{{$drink->description}}
+                                        <button class="infobutton">
+                                            <i class="fas fa-info-circle" data-toggle="modal"
+                                               data-target="#myModal{{$drink->product_id}}"></i>
+                                        </button>
+                                    </p>
+                                    <p class="text-primary h5">
+                                        {{$drink->price}} €
+                                        <button class="cartbutton ajaxGET" >
+                                            <i  class="fas fa-cart-arrow-down"> </i>
+                                            <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$drink->product_id])}}</i>
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 ml-auto mr-auto text-center">
+                                <div class="bg-image order-2 speisekarte" data-aos="fade">
+                                    <img loading="lazy"
+                                         src="{{Storage::disk('local')->url('images/'.$drink->image)}}"
+                                         alt="" style="max-width: 150px; max-height: 150px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal popup-->
+                <div class="modal fade" id="myModal{{$drink->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">{{$drink->title}}</h5>
+                                <i style="margin-left:1em; margin-top:5px">€{{$drink->price}}</i>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{$drink->description}}</p>
+                                <h5>Allergene:<br></h5>
+                                @foreach($allergens as $allergen)
+                                    @continue($allergen -> product_id != $drink->product_id)
+                                    <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
+                                @endforeach
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </ul>
     </div>
 </div>

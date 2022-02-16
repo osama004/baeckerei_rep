@@ -27,10 +27,11 @@ class ProductsController extends Controller
     public function index():View
     {
         try {
-            $sandwiches = Product::with('Category')->where('products.sub_category_id', '=', 1)->get();
-            $sweets = Product::with('Category')->where('products.sub_category_id', '=', 2)->get();
-            $breads = Product::with('Category')->where('products.sub_category_id', '=', 3)->get();
-            $others = Product::with('Category')->where('products.sub_category_id', '=', 4)->get();
+            $breadProducts = Product::with('Category')->where('products.category_id', '=', 1)->get();
+            $pastries = Product::with('Category')->where('products.category_id', '=', 2)->get();
+            $sweets = Product::with('Category')->where('products.category_id', '=', 3)->get();
+            $drinks = Product::with('Category')->where('products.category_id', '=', 4)->get();
+            $others = Product::with('Category')->where('products.category_id', '=', 5)->get();
             $allergens = DB::table('allergens')
                 ->join('ingredients_allergens', 'allergens.allergen_id', 'ingredients_allergens.allergen_id')
                 ->join('ingredients', 'ingredients_allergens.ingredient_id', 'ingredients.ingredient_id')
@@ -48,7 +49,8 @@ class ProductsController extends Controller
                       ->select('*')->get()->toArray()
                       ;
                   */
-            return view("kaffee&products", compact("sandwiches", "breads", "sweets", "others", "allergens"));
+            return view("kaffee&products",
+                compact("breadProducts", "sweets", "pastries", "drinks", "others","allergens"));
         } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
