@@ -42,6 +42,14 @@
             <label for="type">Preis</label>
             <input maxlength="4" onkeyup="numbersOnly(this)" type="text" class="form-control" name="price" id="price" placeholder="{{$product->price}}" required>
         </div>
+
+        <div class="form-group checkboxes">
+            <ul class ="formingredients">
+                <label for="is_weekly_menu">Teil der Wochenkarte ? </label>
+                <input id = "weekly_menu" type="checkbox" name="is_weekly_menu" value="{{$product->is_weekly_menu == true ? 1 : 0}}">
+            </ul>
+        </div>
+
         <button type="submit" name="submit" class="btn btn-primary">Speichern</button>
     </form>
 
@@ -49,6 +57,14 @@
 
 
 <script src="{{asset('js/adminpanel.js')}}"></script>
-
+<script src="{{asset('js/adminpanel.js')}}"></script>
+<script>
+    $(document).ready(function () {
+        $('#weekly_menu').on('change', function () {
+            this.value = this.checked ? 1 : 0;
+            alert(this.value);
+        }).change();
+    });
+</script>
 
 @endsection
