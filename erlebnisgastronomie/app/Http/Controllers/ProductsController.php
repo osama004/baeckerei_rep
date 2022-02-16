@@ -26,13 +26,11 @@ class ProductsController extends Controller
      */
     public function index():View
     {
-
-
         try {
-            $sandwiches = Product::with('Category')->where('products.category_id', '=', 1)->get();
-            $sweets = Product::with('Category')->where('products.category_id', '=', 2)->get();
-            $breads = Product::with('Category')->where('products.category_id', '=', 3)->get();
-            $others = Product::with('Category')->where('products.category_id', '=', 4)->get();
+            $sandwiches = Product::with('Category')->where('products.sub_category_id', '=', 1)->get();
+            $sweets = Product::with('Category')->where('products.sub_category_id', '=', 2)->get();
+            $breads = Product::with('Category')->where('products.sub_category_id', '=', 3)->get();
+            $others = Product::with('Category')->where('products.sub_category_id', '=', 4)->get();
             $allergens = DB::table('allergens')
                 ->join('ingredients_allergens', 'allergens.allergen_id', 'ingredients_allergens.allergen_id')
                 ->join('ingredients', 'ingredients_allergens.ingredient_id', 'ingredients.ingredient_id')
@@ -41,22 +39,21 @@ class ProductsController extends Controller
                 ->orderBy('ingredients.name')
                 ->get(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
                 ->toArray();/*
-                 $allergens = Allergen::with('Ingredients_allergens')->with('ingredients_allergens.Ingredients')
-                             ->with('Products_ingredients')//->dd()
-                     ->get( )
-                     ->toArray();
-             *//*$allergens = Allergen::with('ingredients_allergens')->with('ingredients_allergens.ingredient')
-                 ->with('products_ingredients.ingredient')//->dump()
-                 ->select('*')->get()->toArray()
-                 ;
-             */
+                     $allergens = Allergen::with('Ingredients_allergens')->with('ingredients_allergens.Ingredients')
+                                 ->with('Products_ingredients')//->dd()
+                         ->get( )
+                         ->toArray();
+                 *//*$allergens = Allergen::with('ingredients_allergens')->with('ingredients_allergens.ingredient')
+                      ->with('products_ingredients.ingredient')//->dump()
+                      ->select('*')->get()->toArray()
+                      ;
+                  */
             return view("kaffee&products", compact("sandwiches", "breads", "sweets", "others", "allergens"));
         } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
             abort(500);
         }
-
     }
 
 
