@@ -52,12 +52,19 @@
 
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" class=""  name="image" id="image" required>
+            <input type="file" class=""  name="image" id="image" required >
         </div>
 
         <div class="form-group">
             <label for="type">Preis</label>
             <input maxlength="4" onkeyup="numbersOnly(this)" type="text" class="form-control" name="price" id="price" placeholder="Preis(Bsp: '3,60' mit KOMMA und ohne Währungszeichen!)" required>
+        </div>
+
+        <div class="form-group checkboxes">
+            <ul class ="formingredients">
+                <label for="is_weekly_menu">Teil der Wochenkarte ? </label>
+                <input id = "weekly_menu" type="checkbox" name="is_weekly_menu" value="0" >
+            </ul>
         </div>
 
         <button type="submit" name="submit" class="btn btn-primary">Speichern</button>
@@ -67,6 +74,11 @@
 </div>
 
 <script src="{{asset('js/adminpanel.js')}}"></script>
-
+<script>
+    $('#weekly_menu').on('change', function(){
+        this.value = this.checked ? 1 : 0;
+         alert(this.value);
+    }).change();
+</script>
 
 @endsection

@@ -51,11 +51,13 @@ class AdminProductController extends Controller
     public function sendCreateProductForm(Request $request)
     {
 
-        try {
+   //     try {
             $title = $request->input('title');
             $description = $request->input('description');
             $price = $request->input('price');
             $category = $request->input('category_id');
+            $is_weekly_menu = $request->input('is_weekly_menu');
+            //echo ($is_weekly_menu);
             if (str_contains($price, ',')) // check if price has komma
                 $price = str_replace(',', '.', $request->input('price'));
             Validator::make($request->all(), ['image' => "required|file|image|mimes:jpg,png,jpeg|max:5000"])->validate();
@@ -65,7 +67,7 @@ class AdminProductController extends Controller
             $imageEncoded = File::get($request->image);
             Storage::disk('local')->put($imageName, $imageEncoded);
             $newProductArray = array("title" => $title, "description" => $description, "image" => $imageName, "price" => $price,
-                "category_id" => $category);
+                "category_id" => $category , 'is_weekly_menu' => $is_weekly_menu == true ? 1 : 0) ;
             $created = DB::table("products")->insert($newProductArray);
 
             function store(Request $request)
@@ -88,11 +90,12 @@ class AdminProductController extends Controller
                 // return view ( error View)
                 return "Product was not Created";
             }
-        } catch (ItemNotFoundException $e) {
+   //     }
+        /*catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
             abort(500);
-        }
+        }*/
 
     }
 

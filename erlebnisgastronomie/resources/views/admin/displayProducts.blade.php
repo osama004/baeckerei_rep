@@ -10,6 +10,7 @@
             <th>Image</th>
             <th>Name</th>
             <th>Description</th>
+            <th>is weekly_menu</th>
             <th>Price</th>
             <th>Edit Image</th>
             <th>Edit</th>
@@ -27,8 +28,12 @@
 
             <td>{{$product['title']}}</td>
             <td>{{$product['description']}}</td>
+            @if ($product -> is_weekly_menu == true)
+                <td> <span style="font-size: 150%;">&#10004;</span> </td>
+            @else
+                <td> <span style="font-size: 150%">X</span></td>
+            @endif
             <td>€{{number_format($product['price'], 2, ',')}}</td>
-
             <td><a href="{{ route('adminEditProductImageForm',['product_id' => $product['product_id'] ])}}" class="btn btn-primary">Edit Image</a></td>
             <td><a href="{{ route('adminEditProductForm',['product_id' => $product['product_id'] ])}}" class="btn btn-primary">Edit</a></td>
             <td><a href="{{ route('adminDeleteProduct',['product_id' => $product['product_id']])}}"

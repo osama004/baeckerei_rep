@@ -17,7 +17,7 @@ class Product extends Model
     protected $with = ['category', 'products_ingredients'];
 
     protected $fillable = [
-        "bezeichnung" , "price" , "description"
+        "bezeichnung" , "price" , "description" , "is_weekly_menu"
     ];
 
 
