@@ -43,6 +43,10 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
         return view('userprofile');
     });
 
+    /*Route::get('home', function () {
+        return view('userprofile');
+    });*/
+
 // show cart items
 //Route::get('/shoppingcart/items', [CartController::class, 'showCart']);
     Route::get('/shoppingcart', [CartController::class, 'showCart']) ->name('shoppingcart');
