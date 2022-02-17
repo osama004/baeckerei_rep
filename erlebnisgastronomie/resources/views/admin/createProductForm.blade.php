@@ -52,7 +52,7 @@
 
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" class=""  name="image" id="image" required >
+            <input type="file" class=""  name="image" id="image" >
         </div>
 
         <div class="form-group">
@@ -74,11 +74,14 @@
 </div>
 
 <script src="{{asset('js/adminpanel.js')}}"></script>
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script>
-    $('#weekly_menu').on('change', function(){
-        this.value = this.checked ? 1 : 0;
-         alert(this.value);
-    }).change();
+    $(document).ready(function() {
+        $('#weekly_menu').on('change', function () {
+            this.value = this.checked ? 1 : 0;
+           // alert(this.value);
+        }).change();
+    });
 </script>
 
 @endsection

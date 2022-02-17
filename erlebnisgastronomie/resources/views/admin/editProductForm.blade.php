@@ -61,12 +61,12 @@
 
 
 <script src="{{asset('js/adminpanel.js')}}"></script>
-<script src="{{asset('js/adminpanel.js')}}"></script>
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script>
     $(document).ready(function () {
         $('#weekly_menu').on('change', function () {
             this.value = this.checked ? 1 : 0;
-            alert(this.value);
+           // alert(this.value);
         }).change();
     });
 </script>

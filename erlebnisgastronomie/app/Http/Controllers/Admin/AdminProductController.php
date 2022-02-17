@@ -56,18 +56,25 @@ class AdminProductController extends Controller
             $description = $request->input('description');
             $price = $request->input('price');
             $category = $request->input('category_id');
+            $image = $request->file('image');
             $is_weekly_menu = $request->input('is_weekly_menu');
-            //echo ($is_weekly_menu);
+            echo ($is_weekly_menu);
             if (str_contains($price, ',')) // check if price has komma
                 $price = str_replace(',', '.', $request->input('price'));
-            Validator::make($request->all(), ['image' => "required|file|image|mimes:jpg,png,jpeg|max:5000"])->validate();
-            $ext = $request->file("image")->getClientOriginalExtension();// remove spaces from the image name
-            $stringImageReFormat = str_replace(" ", "", $request->input('title'));
-            $imageName = $stringImageReFormat . '_' . date('d-m-Y H.i.s ') . "." . $ext;//blackdress_12-02-2022 11.24.05.jpg
-            $imageEncoded = File::get($request->image);
-            Storage::disk('local')->put($imageName, $imageEncoded);
-            $newProductArray = array("title" => $title, "description" => $description, "image" => $imageName, "price" => $price,
-                "category_id" => $category , 'is_weekly_menu' => $is_weekly_menu == true ? 1 : 0) ;
+            Validator::make($request->all(), ['image' => "file|image|mimes:jpg,png,jpeg|max:5000"])->validate();
+            if ($image) { // image ist hinzugefügt
+                $ext = $request->file("image")->getClientOriginalExtension();// remove spaces from the image name
+                $stringImageReFormat = str_replace(" ", "", $request->input('title'));
+                $imageName = $stringImageReFormat . '_' . date('d-m-Y H.i.s ') . "." . $ext;//blackdress_12-02-2022 11.24.05.jpg
+                $imageEncoded = File::get($request->image);
+                Storage::disk('local')->put($imageName, $imageEncoded);
+                $newProductArray = array("title" => $title, "description" => $description, "image" => $imageName, "price" => $price,
+                    "category_id" => $category , 'is_weekly_menu' => $is_weekly_menu ) ;
+            }
+            else {
+                $newProductArray = array("title" => $title, "description" => $description, "price" => $price,
+                    "category_id" => $category , 'is_weekly_menu' => $is_weekly_menu ) ;
+            }
             $created = DB::table("products")->insert($newProductArray);
 
             function store(Request $request)
