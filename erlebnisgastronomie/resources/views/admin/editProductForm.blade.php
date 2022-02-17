@@ -19,7 +19,6 @@
         </div>
 
         <div class="form-group">
-            <label for="categorie">Kategorie</label>
             <label for="category_id">Kategorie wählen:</label>
             <select id="category_id" name="category_id">
             @foreach($categories as $category)

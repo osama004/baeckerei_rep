@@ -191,7 +191,7 @@
     <div class="row">
         <ul class="item-list">
         @foreach($breadProducts as $breadProduct)
-            <li>
+                <li class="menulistitem">
             <div style="margin-top: 1em">
                 <div class="item-card">
                     <div class="row">
