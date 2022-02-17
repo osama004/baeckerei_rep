@@ -42,7 +42,7 @@
         </div>
 
         <label for="ingredients_id[]">Zutaten wählen:</label>
-        <div class="form-group checkboxes">
+        <div class="form-group checkboxes"required>
             <ul class ="formingredients">
                 @foreach($ingredients as $ingredient)
                <input type="checkbox" name="ingredients_id[]" value="{{$ingredient->ingredient_id}}" > {{$ingredient->name}}<br>
