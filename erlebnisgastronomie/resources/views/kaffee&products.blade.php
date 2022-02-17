@@ -185,44 +185,40 @@
         </div>
     </div>
 </div>
-<h1 class="product-category"> Brotwaren</h1>
-<div class="container">
+
+<div class="container ">
+    <h1>Brotwaren</h1>
     <div class="row">
         <ul class="item-list">
         @foreach($breadProducts as $breadProduct)
-            <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+            <li>
+            <div style="margin-top: 1em">
                 <div class="item-card">
-                <div class="row">
-                    {{ csrf_field() }}
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="text order-1">
-                            <h5>{{$breadProduct->title}}  </h5>
-                            <p>{{$breadProduct->description}}
-                                <button class="infobutton">
-                                    <i class="fas fa-info-circle" data-toggle="modal"
-                                       data-target="#myModal{{$breadProduct->product_id}}"></i>
-                                </button>
-                            </p >
-                            <p class="h5">
-                                {{$breadProduct->price}} €
-                                <button class="cartbutton ajaxGET" >
-                                    <i  class="fas fa-cart-arrow-down"> </i>
-                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$breadProduct->product_id])}}</i>
-                                </button>
-                            </p>
+                    <div class="row">
+                        {{ csrf_field() }}
+                        <div class="col-md-6 ml-auto mr-auto text-center">
+                            <div class="text order-1 textbox">
+                                <h5 class="itemtitle">{{$breadProduct->title}}  </h5>
+                                <p>{{$breadProduct->description}}
+                                    <button class="infobutton">
+                                        <i class="fas fa-info-circle" data-toggle="modal"
+                                           data-target="#myModal{{$breadProduct->product_id}}"></i>
+                                    </button>
+                                </p >
+                                <p class="h5" style="margin-top: -12px">
+                                    {{$breadProduct->price}} €
+                                    <button class="cartbutton ajaxGET" >
+                                        <i  class="fas fa-cart-arrow-down"> </i>
+                                        <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$breadProduct->product_id])}}</i>
+                                    </button>
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img loading="lazy"
-                                src="{{Storage::disk('local')->url('images/'.$breadProduct->image)}}"
-                                alt="" style="max-width: 150px; max-height: 150px;">
-                        </div>
                     </div>
-                </div>
                 </div>
             </div>
+            </li>
             <!-- modal popup-->
             <div class="modal fade" id="myModal{{$breadProduct->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
@@ -251,113 +247,103 @@
         </ul>
     </div>
 </div>
-<h1 class="product-category"> Gebäck</h1>
 
 <div class="container">
+    <h1> Gebäck</h1>
     <div class="row">
         <ul class="item-list">
-        @foreach($pastries as $pastry)
-            <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
-                <div class="item-card">
-                <div class="row">
-                    {{ csrf_field() }}
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="text order-1">
-                            <h5> {{$pastry->title}}</h5>
-                            <p>{{$pastry->description}}
-                                <button class="infobutton">
-                                    <i class="fas fa-info-circle" data-toggle="modal" data-target="#myModal{{$pastry->product_id}}"></i>
-                                </button>
-                            </p>
-                            <p class="text-primary h5">
-                                {{$breadProduct->price}} €
-                                <button class="cartbutton ajaxGET" >
-                                    <i  class="fas fa-cart-arrow-down"> </i>
-                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$pastry->product_id])}}</i>
-                                </button>
-                            </p>
-                        </div>
-                    </div>
+            @foreach($pastries as $pastry)
+                <li>
+                <div style="margin-top: 1em">
+                    <div class="item-card" style="margin-right: auto; margin-left: 0">
+                        <div class="row">
+                            {{ csrf_field() }}
+                            <div class="col-md-6 ml-auto mr-auto text-center">
+                                <div class="text order-1 textbox">
+                                    <h5 class="itemtitle">{{$pastry->title}}  </h5>
+                                    <p>{{$pastry->description}}
+                                        <button class="infobutton">
+                                            <i class="fas fa-info-circle" data-toggle="modal"
+                                               data-target="#myModal{{$pastry->product_id}}"></i>
+                                        </button>
+                                    </p >
+                                    <p class="h5" style="margin-top: -12px">
+                                        {{$pastry->price}} €
+                                        <button class="cartbutton ajaxGET" >
+                                            <i  class="fas fa-cart-arrow-down"> </i>
+                                            <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$pastry->product_id])}}</i>
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
 
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img loading="lazy"
-                                 src="{{Storage::disk('local')->url('images/'.$pastry->image)}}"
-                                alt="" style="max-width: 150px; max-height: 150px;">
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
-
-            <!-- modal popup-->
-            <div class="modal fade" id="myModal{{$pastry->product_id}}" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="myModalLabel">{{$pastry->title}}</h5>
-                            <i style="margin-left:1em; margin-top:5px">€{{$pastry->price}}</i>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true">&times;</span></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>{{$pastry->description}}</p>
-                            <h5>Allergene:<br></h5>
-                            @foreach($allergens as $allergen)
-                                @continue($allergen -> product_id != $pastry->product_id)
-                                <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
-                            @endforeach
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </li>
+                <!-- modal popup-->
+                <div class="modal fade" id="myModal{{$pastry->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">{{$pastry->title}}</h5>
+                                <i style="margin-left:1em; margin-top:5px">€{{$pastry->price}}</i>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{$pastry->description}}</p>
+                                <h5>Allergene:<br></h5>
+                                @foreach($allergens as $allergen)
+                                    @continue($allergen -> product_id != $pastry->product_id)
+                                    <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
+                                @endforeach
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
         </ul>
     </div>
 </div>
 
-<h1 class="product-category"> Süßspeisen</h1>
 
 <div class="container">
+    <h1> Süßspeisen</h1>
     <div class="row">
         <ul class="item-list">
         @foreach($sweets as $sweet)
-            <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+            <li>
+            <div style="margin-top: 1em">
                 <div class="item-card">
-                <div class="row">
-                    {{ csrf_field() }}
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="text order-1">
-                            <h5> {{$sweet->title}}</h5>
-                            <p>{{$sweet->description}}
-                                <button class="infobutton">
-                                    <i class="fas fa-info-circle" data-toggle="modal"
-                                       data-target="#myModal{{$sweet->product_id}}"></i>
-                                </button>
-                            </p>
-                            <p class="text-primary h5">
-                                {{$sweet->price}} €
-                                <button class="cartbutton ajaxGET" >
-                                    <i  class="fas fa-cart-arrow-down"> </i>
-                                    <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$sweet->product_id])}}</i>
-                                </button>
-                            </p>
+                    <div class="row">
+                        {{ csrf_field() }}
+                        <div class="col-md-6 ml-auto mr-auto text-center">
+                            <div class="text order-1 textbox">
+                                <h5 class="itemtitle">{{$sweet->title}}  </h5>
+                                <p>{{$sweet->description}}
+                                    <button class="infobutton">
+                                        <i class="fas fa-info-circle" data-toggle="modal"
+                                           data-target="#myModal{{$sweet->product_id}}"></i>
+                                    </button>
+                                </p >
+                                <p class="h5" style="margin-top: -12px">
+                                    {{$sweet->price}} €
+                                    <button class="cartbutton ajaxGET" >
+                                        <i  class="fas fa-cart-arrow-down"> </i>
+                                        <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$sweet->product_id])}}</i>
+                                    </button>
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <div class="bg-image order-2 speisekarte" data-aos="fade">
-                            <img loading="lazy"
-                                 src="{{Storage::disk('local')->url('images/'.$sweet->image)}}"
-                                alt="" style="max-width: 150px; max-height: 150px;">
-                        </div>
                     </div>
-                </div>
                 </div>
             </div>
+            </li>
             <!-- modal popup-->
             <div class="modal fade" id="myModal{{$sweet->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
@@ -387,26 +373,27 @@
     </div>
 </div>
 
-<h1 class="product-category"> Getränke</h1>
 
 <div class="container">
+    <h1> Getränke</h1>
     <div class="row">
         <ul class="item-list">
             @foreach($drinks as $drink)
-                <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <li>
+                <div style="margin-top: 1em">
                     <div class="item-card">
                         <div class="row">
                             {{ csrf_field() }}
                             <div class="col-md-6 ml-auto mr-auto text-center">
-                                <div class="text order-1">
-                                    <h5> {{$drink->title}}</h5>
+                                <div class="text order-1 textbox">
+                                    <h5 class="itemtitle">{{$drink->title}}  </h5>
                                     <p>{{$drink->description}}
                                         <button class="infobutton">
                                             <i class="fas fa-info-circle" data-toggle="modal"
                                                data-target="#myModal{{$drink->product_id}}"></i>
                                         </button>
-                                    </p>
-                                    <p class="text-primary h5">
+                                    </p >
+                                    <p class="h5" style="margin-top: -12px">
                                         {{$drink->price}} €
                                         <button class="cartbutton ajaxGET" >
                                             <i  class="fas fa-cart-arrow-down"> </i>
@@ -416,16 +403,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 ml-auto mr-auto text-center">
-                                <div class="bg-image order-2 speisekarte" data-aos="fade">
-                                    <img loading="lazy"
-                                         src="{{Storage::disk('local')->url('images/'.$drink->image)}}"
-                                         alt="" style="max-width: 150px; max-height: 150px;">
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+                </li>
                 <!-- modal popup-->
                 <div class="modal fade" id="myModal{{$drink->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
@@ -455,26 +436,27 @@
     </div>
 </div>
 
-<h1 class="product-category"> Sonstiges</h1>
 
 <div class="container">
+    <h1> Sonstiges</h1>
     <div class="row">
         <ul class="item-list">
             @foreach($others as $other)
-                <div class="col-md-6 ml-auto mr-auto text-center" style="margin-top: 1em">
+                <li>
+                <div style="margin-top: 1em">
                     <div class="item-card">
                         <div class="row">
                             {{ csrf_field() }}
                             <div class="col-md-6 ml-auto mr-auto text-center">
-                                <div class="text order-1">
-                                    <h5> {{$other->title}}</h5>
+                                <div class="text order-1 textbox">
+                                    <h5 class="itemtitle">{{$other->title}}  </h5>
                                     <p>{{$other->description}}
                                         <button class="infobutton">
                                             <i class="fas fa-info-circle" data-toggle="modal"
                                                data-target="#myModal{{$other->product_id}}"></i>
                                         </button>
-                                    </p>
-                                    <p class="text-primary h5">
+                                    </p >
+                                    <p class="h5" style="margin-top: -12px">
                                         {{$other->price}} €
                                         <button class="cartbutton ajaxGET" >
                                             <i  class="fas fa-cart-arrow-down"> </i>
@@ -484,16 +466,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 ml-auto mr-auto text-center" >
-                                <div class="bg-image order-2 speisekarte" data-aos="fade" >
-                                    <img loading="lazy"
-                                         src="{{Storage::disk('local')->url('images/'.$other->image)}}"
-                                         alt="" style="max-width: 150px; max-height: 150px;">
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+                </li>
                 <!-- modal popup-->
                 <div class="modal fade" id="myModal{{$other->product_id}}" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
