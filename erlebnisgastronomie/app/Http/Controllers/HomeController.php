@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         try {
-            return view('home');
+            return view('userprofile');
         }catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
