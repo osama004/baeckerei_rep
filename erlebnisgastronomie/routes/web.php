@@ -42,6 +42,9 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
     Route::get('/profile', function () {
         return view('userprofile');
     });
+    Route::get('/checkouttest', function () {
+        return view('checkout');
+    });
 
     /*Route::get('home', function () {
         return view('userprofile');
