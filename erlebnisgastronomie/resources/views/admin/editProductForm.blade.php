@@ -40,13 +40,17 @@
 
         <div class="form-group">
             <label for="type">Preis</label>
-            <input maxlength="4" onkeyup="numbersOnly(this)" type="text" class="form-control" name="price" id="price" placeholder="{{$product->price}}" required>
+            <input maxlength="4" onkeyup="numbersOnly(this)" type="text" class="form-control" name="price" id="price" value="{{$product->price}}" placeholder="{{$product->price}}" required>
         </div>
 
         <div class="form-group checkboxes">
             <ul class ="formingredients">
                 <label for="is_weekly_menu">Teil der Wochenkarte ? </label>
-                <input id = "weekly_menu" type="checkbox" name="is_weekly_menu" value="{{$product->is_weekly_menu == true ? 1 : 0}}">
+                @if($product->is_weekly_menu == true)
+                    <input id = "weekly_menu"  type="checkbox" name="is_weekly_menu" value="1" checked = "checked">
+                @else
+                    <input id = "weekly_menu" type="checkbox" name="is_weekly_menu" value="0">
+                @endif
             </ul>
         </div>
 

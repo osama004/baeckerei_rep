@@ -175,21 +175,23 @@ class AdminProductController extends Controller
     public function updateProduct(Request $request, $product_id)
     {
 
-        try {
+      //  try {
             $title = $request->input('title');
             $description = $request->input('description');
             $price = $request->input('price');
+            if (str_contains($price, ',')) // check if price has komma
+                $price = str_replace(',', '.', $request->input('price'));
             $is_weekly_menu = $request->input('is_weekly_menu');
             $updateArray = array("title" => $title, "description" => $description, "price" => $price ,
                 "is_weekly_menu" => $is_weekly_menu == true ? 1 : 0);
-            dd($updateArray);
+           // dd($updateArray);
             DB::table('products')->where('product_id', $product_id)->update($updateArray);
             return redirect()->route("adminDisplayProducts");
-        } catch (ItemNotFoundException $e) {
+       /* } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
             abort(500);
-        }
+        }*/
 
     }
 
