@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegionalProductsController;
+use Fruitcake\Cors\HandleCors;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -59,7 +60,8 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
 
     Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
 
-    Route::get('/kaffee&products', [ProductsController::class, 'index']) ->name('kaffee&products');
+    Route::get('/kaffee&products', [ProductsController::class, 'index']) ->name('kaffee&products')
+        ->middleware(HandleCors::class);
 
     Route::get('/kaffee&products/addToCart/{product_id}', [ProductsController::class, 'addProductToCart'])->name('AddToCartProduct');
 
