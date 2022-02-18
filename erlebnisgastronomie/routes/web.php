@@ -70,7 +70,9 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
 
     Route::get('/kaffee&products/addToCart/{product_id}', [ProductsController::class, 'addProductToCart'])->name('AddToCartProduct');
 
-    Route::get('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
+    //Route::get('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
+   // Route::get('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
+    Route::post('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
 
     Auth::routes(['verify' => true]);
 

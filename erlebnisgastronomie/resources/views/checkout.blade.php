@@ -159,12 +159,64 @@
                         <div class = "card-header">
                             Ihr Warenkorb:
                         </div>
+                        @if($userData) <!-- if user ist logged in we have his infos -->
+                            <div class="card-body">
+                                <form method="POST" action="{{route('CreateOrder')}}" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input onkeyup="lettersOnly(this)" type="text" name="fullName" class="form-control"
+                                               value="{{ $userData->firstname.' '.$userData->lastname  }}" required/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">E-Mail-Addresse</label>
+                                        <!--<input type="text"name="email"class="form-control"/>-->
+                                        <input type="text" name="email" class="form-control" required
+                                               pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" value="{{ $userData->email }}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Telefonnummer</label>
+                                        <input type="text" name="phone" class="form-control"
+                                               value="{{$userData -> phone }}" required/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="msg">Notiz ans Restaurant</label>
+                                        <textarea name="msg" class="form-control" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" id="pickup" value="pickup" checked="checked" name="orderoption" onclick="hideAddress();">
+                                        <label for="pickup"> Selbstabholung</label>
+                                            <input type="radio" id="delivery" value="delivery" name="orderoption" onclick="showAddress();">
+                                            <label for="delivery"> Lieferung</label>
+                                    </div>
+
+                                    <div id="addDiv" class="form-group addDiv hiddenform" >
+                                        <h5>Adresse:</h5><br>
+
+                                        <div class="addressform">
+                                            <label for="hausnr">PLZ</label>
+                                            <input type="text" id="zip" name="zip"  class="form-control" />
+                                            <label for="street">Straße</label>
+                                            <input type="text" id="street" name="street"  class="form-control"/>
+                                        </div>
+
+                                        <div class="addressform">
+                                            <label for="hausnr">Ort</label>
+                                            <input type="text" id="city" name="city"  class="form-control"/>
+                                            <label for="hausnr">Stiege/Hausnummer</label>
+                                            <input type="text" id="hausnr" name="stairs_houseNr"  class="form-control hausnr"/>
+                                        </div>
+                                    </div>
+                                    <button type="submit" name="submit" class="btn btn-primary float-right" >Zahlungspflichtig Bestellen</button>
+                                </form>
+                            </div>
+                        @else
                         <div class="card-body">
-                            <form method="POST" action="{{route('contact.send')}}" enctype="multipart/form-data">
+                            <form method="POST" action="{{route('CreateOrder')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input onkeyup="lettersOnly(this)" type="text" name="name" class="form-control" required/>
+                                    <input onkeyup="lettersOnly(this)" type="text" name="fullName" class="form-control" required/>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">E-Mail-Addresse</label>
@@ -182,8 +234,8 @@
                                 <div class="form-group">
                                     <input type="radio" id="pickup" value="pickup" checked="checked" name="orderoption" onclick="hideAddress();">
                                     <label for="pickup"> Selbstabholung</label>
-                                        <input type="radio" id="delivery" value="delivery" name="orderoption" onclick="showAddress();">
-                                        <label for="delivery"> Lieferung</label>
+                                    <input type="radio" id="delivery" value="delivery" name="orderoption" onclick="showAddress();">
+                                    <label for="delivery"> Lieferung</label>
                                 </div>
 
                                 <div id="addDiv" class="form-group addDiv hiddenform" >
@@ -191,7 +243,7 @@
 
                                     <div class="addressform">
                                         <label for="hausnr">PLZ</label>
-                                        <input type="text" id="zip"  class="form-control" required/>
+                                        <input type="text" id="zip"  class="form-control"/>
                                         <label for="street">Straße</label>
                                         <input type="text" id="street"  class="form-control"/>
                                     </div>
@@ -203,9 +255,10 @@
                                         <input type="text" id="hausnr"  class="form-control hausnr"/>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'" >Zahlungspflichtig Bestellen</button>
+                                <button type="submit" name="submit" class="btn btn-primary float-right" >Zahlungspflichtig Bestellen</button>
                             </form>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -233,6 +286,7 @@
 </script>
 
 <script type="text/javascript">
+    /*
     $(document).ready(function() {
         $('.ajaxGET').click(function(e){
             e.preventDefault();
@@ -253,6 +307,7 @@
             });
         });
     });
+     */
 </script>
 
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
