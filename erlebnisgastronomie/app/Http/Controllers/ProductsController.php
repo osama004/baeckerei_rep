@@ -128,9 +128,11 @@ class ProductsController extends Controller
         }
     }
 
-/*   public function createOrder(){
+   public function createOrder(){
        $cart = Session::get('cart');//cart is not empty
-       if ($cart) {
+       if (!$cart) {
+           $cart = new Cart($cart);
+       }
            if ($cart->totalQuantity == 0) {
                return redirect()->route("shoppingcart")->with('emptyCart', 'Ihr Warenkorb ist leer!!');
            } else {
@@ -162,17 +164,10 @@ class ProductsController extends Controller
                //Session::flush(); // it removes every thing from the session and the user will be logged out
 
                return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
-
            }
-       } else {
+   }
 
-           return redirect()->route("/login")->with('loginOrRegister', 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
-
-       }
-
-   }*/
-
-    public function createOrder(){
+  /*  public function createOrder(){
         try {
             $cart = Session::get('cart');//cart is not empty
         } catch (Exception $e) {
@@ -213,7 +208,8 @@ class ProductsController extends Controller
                     return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
 
                 }
-            } else {
+            }
+            else {
 
                 return redirect()->route("/login")->with('loginOrRegister', 'bitte sich Dinloggin sich ein oder registieren wenn sie eine neue Beutzer sind');
 
@@ -223,7 +219,7 @@ class ProductsController extends Controller
         } catch (Throwable $e) {
             abort(500);
         }
-    }
+    }*/
 
     public function checkoutProducts(){
 
