@@ -160,6 +160,7 @@
 <!-- END header -->
 <div >
     @include('alerts.success')
+    @include('alerts.alreadyPayed')
 </div>
 
 <div class="slider-wrap">

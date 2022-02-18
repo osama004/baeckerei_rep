@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use \App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\AllergenController;
+use \App\Http\Controllers\Payment\PaymentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +74,10 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
     //Route::get('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
    // Route::get('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
     Route::post('product/createOrder/', [ProductsController::class, 'createOrder']) -> name('CreateOrder');
+
+    // payment page
+    Route::get('payment/paymentpage' , [PaymentsController::class, 'showPaymentPage']) -> name('ShowPaymentPage');
+
 
     Auth::routes(['verify' => true]);
 

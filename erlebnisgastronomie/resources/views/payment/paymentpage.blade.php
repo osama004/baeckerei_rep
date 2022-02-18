@@ -1,8 +1,10 @@
+
 @extends('layouts.index')
+
     <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Warenkorb</title>
+    <title>Payment Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -113,7 +115,7 @@
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout')}}"
                                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Ausloggen') }}
                                 </a>
                                 @if($userData -> isAdmin())
@@ -134,8 +136,8 @@
                             <i class="fas fa-shopping-cart" style =  "color: #A1E944">
                                 @if(Session::has('cart'))
                                     <span id ="cartAjax" class="cart-with-numbers">
-                                        {{ Session::get('cart')->totalQuantity }}
-                                   </span>
+                                    {{ Session::get('cart')->totalQuantity }}
+                               </span>
                                 @endif
                             </i>
                         </a>
@@ -146,88 +148,101 @@
         </div>
     </nav>
 </header>
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Shopping Cart</li>
+            </ol>
+        </div>
 
-<div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('images/new_filler_1.jpg');">
-       <div class="container">
-           <div class ="row">
-               <div class="col-md-6 offset-md-3">
-                   <div class="card">
-                       <div >
-                           @include('alerts.emptyCart')
-                           @include('alerts.checkCart')
-                       </div>
-                       <div class = "card-header">
-                           Ihr Warenkorb:
-                       </div>
-                       <div class="card-body">
-                           @foreach($cartItems ->items as $item)
-                               <div style="margin-top: 15px">
-                               <tr>
-                                   <td class="cart_description">
-                                       <h4><a href="">{{$item['data']['title']}}</a>
-                                           <a class="cart_quantity_delete" href="{{ route('DeleteItemFromCart',['product_id' => $item['data']['product_id']]) }}"><i class="fa fa-times"></i></a>
-                                       </h4>
-                                       <p>{{$item['data']['description']}} </p>
-                                   </td>
-                                   <td class="cart_price">
-                                       <p>{{$item['data']['price']}}€</p>
-                                   </td>
-                                   <td class="cart_quantity">
-                                       <div class="cart_quantity_button">
-                                           <a class="cart_quantity_down" href="{{route('DecreaseSingleProduct', ['product_id' => $item['data']['product_id']])}}"> - </a>
-                                           <input class="cart_quantity_input" type="text" name="quantity" value="{{$item['quantity']}}" autocomplete="off" size="2">
-                                           <a class="cart_quantity_up" href="{{route('IncreaseSingleProduct', ['product_id' => $item['data']['product_id']])}}"> + </a>
-                                       </div>
-                                   </td>
-                                   <td class="cart_delete">
-                                   </td>
 
-                               </tr>
-                               </div>
-                           @endforeach
-                               <hr>
-                               <ul class="col-sm-6">
-                                   <div class="total_area">
-                                       <ul>
-                                           <li>Anzahl der Produkte: <span>{{$cartItems->totalQuantity}}</span></li>
-                                           <li>Gesamtpreis: <span>{{number_format($cartItems->totalPrice,2, ',')}}€</span></li>
-                                       </ul>
-                                   </div>
+            <div class="shopper-informations">
+                <div class="row">
 
-                               </ul>
-                       </div>
-                           <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CheckoutProducts')}}'">Zur Kasse</button>
-                   </div>
-               </div>
-           </div>
-       </div>
+                    <div class="col-sm-12 clearfix">
+                        <div class="bill-to">
+                            <p> Shipping/Bill To</p>
+                            <div class="form-one">
+                                           <div class="total_area">
+                                                    <ul>
+
+                                                        <li>Payment Status
+                                                        @if($payment_info['status'] == 'on_hold')
+
+                                                         <span>noch nicht bezahlt</span>
+
+                                                        @endif
+
+                                                        </li>
+                                                        <li>Shipping Cost <span>Free</span></li>
+                                                        <li>Total <span>{{$payment_info['price']}}</span></li>
+                                                    </ul>
+                                                    <a class="btn btn-default update" href="">Update</a>
+                                                    <a class="btn btn-default check_out" id="paypal-button" ></a>
+                                                </div>
+
+                            </div>
+                            <div class="form-two">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
     </div>
+</section> <!--/#payment-->
 
-</div>
+
+
 @endsection
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.ajaxGET').click(function(e){
-            e.preventDefault();
-            var url = $(this).find('#url').text();
-            var _token = $("input[name='_token']").val();
-            $.ajax({
-                method:"GET",
-                url:url,
-                data:{_token: _token},
-                success:function(data,status,XHR){
-                    //alert(data[1]['totalQuantity']);
-                    // var totalQuantity = data[1];
-                    $('#cartAjax').text(data[1]['totalQuantity']);
-                },
-                error:function(xhr,status,error){
-                    alert(error);
-                }
-            });
-        });
-    });
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+  paypal.Button.render({
+    // Configure environment
+    env: 'sandbox',
+    client: {
+      sandbox: 'YOUR_SANDBOX_CLIENT_ID',
+      production: 'YOUR_PRODUCTION_CLIENT_ID'
+    },
+    // Customize button (optional)
+    locale: 'de_AT',
+    style: {
+      size: 'small',
+      color: 'gold',
+      shape: 'pill',
+    },
+
+    // Enable Pay Now checkout flow (optional)
+    commit: true,
+
+    // Set up a payment
+    payment: function(data, actions) {
+      return actions.payment.create({
+        transactions: [{
+          amount: {
+            total: "{{$payment_info['price']}}",
+            currency: 'EUR'
+          }
+        }]
+      });
+    },
+    // Execute the payment
+    onAuthorize: function(data, actions) {
+      return actions.payment.execute().then(function() {
+        // Show a confirmation message to the buyer
+        window.alert('Thank you for your purchase!');
+
+        window.location = './paymentreceipt/'+data.paymentID+'/'+data.payerID;
+
+      });
+    }
+  }, '#paypal-button');
+
 </script>
 
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
@@ -242,8 +257,11 @@
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('js/magnific-popup-options.js')}}"></script>
 
+<script src="{{asset('js/adminpanel.js')}}"></script>
 
 <script src="{{asset('js/main.js')}}"></script>
 
+
 </body>
 </html>
+

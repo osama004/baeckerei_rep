@@ -131,7 +131,7 @@ class ProductsController extends Controller
    public function createOrder(Request $request){
        $cart = Session::get('cart');//cart is not empty
       // dd($request);
-       // dump($cart);
+       // dump($cart)
        $dateget = date('Y-m-d H:i:s');
        $delivery_date = date('Y-m-d'); // hardcoded
        $fullName = $request->input('fullName');
@@ -172,7 +172,17 @@ class ProductsController extends Controller
        //delete cart
        Session::forget("cart");
        //Session::flush(); // it removes every thing from the session and the user will be logged out
-       return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
+       //return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
+
+       if ( $pickupOrDelivery === 'pickup') {
+           return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen!!
+            Wir willkommen Sie herzlich bei unserer Filiale");
+       }
+       else { // it is a deliver ,so there is a payment in advance
+           $request->session()->put('payment_info' , $newOrderArray);
+           return redirect()->route("ShowPaymentPage");
+       }
+
 
    }
 
