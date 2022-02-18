@@ -1982,8 +1982,7 @@ width: 100px;
 #searchbar{
     margin-left: 23%;
     padding:10px;
-    border-radius: 10px;
-    border-color: #3e7308;
+    margin-bottom: 1em;
 }
 
 #list{
