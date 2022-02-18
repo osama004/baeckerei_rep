@@ -1963,6 +1963,7 @@ li.nav-item a {
     float: right;
 }
 .menulistitem{
+    list-style-type: none;
     margin-left: 15px;
     display: list-item;
 }

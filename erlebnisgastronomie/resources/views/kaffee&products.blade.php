@@ -191,7 +191,7 @@
 </div>
 
 <div class="container ">
-    <h1>Brotwaren</h1>
+    <h1 class="menulistitem">Brotwaren</h1>
     <div class="row">
         <ul class="item-list">
         @foreach($breadProducts as $breadProduct)
@@ -253,7 +253,7 @@
 </div>
 
 <div class="container">
-    <h1> Gebäck</h1>
+    <h1 class="menulistitem"> Gebäck</h1>
     <div class="row">
         <ul class="item-list">
             @foreach($pastries as $pastry)
@@ -316,7 +316,7 @@
 
 
 <div class="container">
-    <h1> Süßspeisen</h1>
+    <h1 class="menulistitem"> Süßspeisen</h1>
     <div class="row">
         <ul class="item-list">
         @foreach($sweets as $sweet)
@@ -379,7 +379,7 @@
 
 
 <div class="container">
-    <h1> Getränke</h1>
+    <h1 class="menulistitem"> Getränke</h1>
     <div class="row">
         <ul class="item-list">
             @foreach($drinks as $drink)
@@ -442,7 +442,7 @@
 
 
 <div class="container">
-    <h1> Sonstiges</h1>
+    <h1 class="menulistitem"> Sonstiges</h1>
     <div class="row">
         <ul class="item-list">
             @foreach($others as $other)
