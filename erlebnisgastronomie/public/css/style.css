@@ -1738,19 +1738,16 @@ li.nav-item a {
     opacity: 0.8;
     height: 20px;
     margin-top: 2.3rem;
-    text-align: center;
 }
 
 .logincheckbox
 {
-
     display: block;
     position: relative;
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 15px;
-
 }
 
 /* Hide the browser's default checkbox */
