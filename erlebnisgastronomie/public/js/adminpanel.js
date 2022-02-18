@@ -16,8 +16,8 @@
 }
 
     function numbersOnly(input) {
-    var regex = /[^0-9,.]/gi;
-    input.value = input.value.replace(regex,"");
-}
+        var regex = /[^0-9,.]/gi;
+        input.value = input.value.replace(regex, "");
+    }
 
 

@@ -1971,3 +1971,14 @@ li.nav-item a {
 .hiddenform{
     display: none;
 }
+
+.addressform{
+display: inline-block;
+    padding: 5px;
+}
+.hausnr{
+width: 100px;
+}
+
+
+

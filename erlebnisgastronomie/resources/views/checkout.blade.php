@@ -163,11 +163,23 @@
                             <form method="POST" action="{{route('contact.send')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input onkeyup="lettersOnly(this)" type="text" name="name" class="form-control" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-Mail-Addresse</label>
+                                    <!--<input type="text"name="email"class="form-control"/>-->
+                                    <input type="text" name="email" class="form-control" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefonnummer</label>
+                                    <input type="text" name="phone" class="form-control" required/>
+                                </div>
+                                <div class="form-group">
                                     <label for="msg">Notiz ans Restaurant</label>
                                     <textarea name="msg" class="form-control" required></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Bestellmethode:</label>
                                     <input type="radio" id="pickup" value="pickup" checked="checked" name="orderoption" onclick="hideAddress();">
                                     <label for="pickup"> Selbstabholung</label>
                                         <input type="radio" id="delivery" value="delivery" name="orderoption" onclick="showAddress();">
@@ -175,8 +187,21 @@
                                 </div>
 
                                 <div id="addDiv" class="form-group addDiv hiddenform" >
-                                    <label>Adresse</label>
-                                    <input type="text" name="phone" class="form-control" required/>
+                                    <h5>Adresse:</h5><br>
+
+                                    <div class="addressform">
+                                        <label for="hausnr">PLZ</label>
+                                        <input type="text" id="zip"  class="form-control" required/>
+                                        <label for="street">Straße</label>
+                                        <input type="text" id="street"  class="form-control"/>
+                                    </div>
+
+                                    <div class="addressform">
+                                        <label for="hausnr">Ort</label>
+                                        <input type="text" id="city"  class="form-control"/>
+                                        <label for="hausnr">Stiege/Hausnummer</label>
+                                        <input type="text" id="hausnr"  class="form-control hausnr"/>
+                                    </div>
                                 </div>
 
 
@@ -198,14 +223,18 @@
 <script>
 
     function showAddress(){
-        var addDiv = document.getElementById('addDiv');
-        addDiv.style.display ='block';
-        addDiv.setAttribute('required', 'required');
+        document.getElementById('addDiv').style.display='block';
+        document.getElementById('zip').setAttribute('required', 'required');
+        document.getElementById('street').setAttribute('required', 'required');
+        document.getElementById('hausnr').setAttribute('required', 'required');
+        document.getElementById('city').setAttribute('required', 'required');
     }
     function hideAddress(){
-        var addDiv = document.getElementById('addDiv');
-        addDiv.style.display ='none';
-        addDiv.removeAttribute('required');
+        document.getElementById('addDiv').style.display='none';
+        document.getElementById('zip').removeAttribute('required');
+        document.getElementById('street').removeAttribute('required');
+        document.getElementById('hausnr').removeAttribute('required');
+        document.getElementById('city').removeAttribute('required');
     }
 </script>
 
@@ -244,6 +273,7 @@
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('js/magnific-popup-options.js')}}"></script>
 
+<script src="{{asset('js/adminpanel.js')}}"></script>
 
 <script src="{{asset('js/main.js')}}"></script>
 
