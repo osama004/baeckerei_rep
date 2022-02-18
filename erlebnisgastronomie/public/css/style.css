@@ -1964,6 +1964,7 @@ li.nav-item a {
 }
 .menulistitem{
     margin-left: 15px;
+    display: list-item;
 }
 .hiddenform{
     display: none;
@@ -1976,6 +1977,19 @@ display: inline-block;
 .hausnr{
 width: 100px;
 }
+
+#searchbar{
+    margin-left: 23%;
+    padding:10px;
+    border-radius: 10px;
+    border-color: #3e7308;
+}
+
+#list{
+    font-size:  1.5em;
+    margin-left: 90px;
+}
+
 
 
 

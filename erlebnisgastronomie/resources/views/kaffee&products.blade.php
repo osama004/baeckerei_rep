@@ -186,6 +186,10 @@
     </div>
 </div>
 
+<div><input id="searchbar" onkeyup="findProduct()" type="text"
+            name="search" placeholder="Produkt finden...">
+</div>
+
 <div class="container ">
     <h1>Brotwaren</h1>
     <div class="row">
@@ -253,7 +257,7 @@
     <div class="row">
         <ul class="item-list">
             @foreach($pastries as $pastry)
-                <li>
+                <li class="menulistitem">
                 <div style="margin-top: 1em">
                     <div class="item-card" style="margin-right: auto; margin-left: 0">
                         <div class="row">
@@ -316,7 +320,7 @@
     <div class="row">
         <ul class="item-list">
         @foreach($sweets as $sweet)
-            <li>
+                <li class="menulistitem">
             <div style="margin-top: 1em">
                 <div class="item-card">
                     <div class="row">
@@ -379,7 +383,7 @@
     <div class="row">
         <ul class="item-list">
             @foreach($drinks as $drink)
-                <li>
+                <li class="menulistitem">
                 <div style="margin-top: 1em">
                     <div class="item-card">
                         <div class="row">
@@ -442,7 +446,7 @@
     <div class="row">
         <ul class="item-list">
             @foreach($others as $other)
-                <li>
+                <li class="menulistitem">
                 <div style="margin-top: 1em">
                     <div class="item-card">
                         <div class="row">
@@ -533,6 +537,7 @@
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('js/magnific-popup-options.js')}}"></script>
 
+<script src="{{asset('js/adminpanel.js')}}"></script>
 
 <script src="{{asset('js/main.js')}}"></script>
 
