@@ -186,8 +186,12 @@
     </div>
 </div>
 
+<div><input id="searchbar" onkeyup="findProduct()" type="text"
+            name="search" placeholder="Produkt finden...">
+</div>
+
 <div class="container ">
-    <h1>Brotwaren</h1>
+    <h1 class="menulistitem">Brotwaren</h1>
     <div class="row">
         <ul class="item-list">
         @foreach($breadProducts as $breadProduct)
@@ -249,11 +253,11 @@
 </div>
 
 <div class="container">
-    <h1> Gebäck</h1>
+    <h1 class="menulistitem"> Gebäck</h1>
     <div class="row">
         <ul class="item-list">
             @foreach($pastries as $pastry)
-                <li>
+                <li class="menulistitem">
                 <div style="margin-top: 1em">
                     <div class="item-card" style="margin-right: auto; margin-left: 0">
                         <div class="row">
@@ -312,11 +316,11 @@
 
 
 <div class="container">
-    <h1> Süßspeisen</h1>
+    <h1 class="menulistitem"> Süßspeisen</h1>
     <div class="row">
         <ul class="item-list">
         @foreach($sweets as $sweet)
-            <li>
+                <li class="menulistitem">
             <div style="margin-top: 1em">
                 <div class="item-card">
                     <div class="row">
@@ -375,11 +379,11 @@
 
 
 <div class="container">
-    <h1> Getränke</h1>
+    <h1 class="menulistitem"> Getränke</h1>
     <div class="row">
         <ul class="item-list">
             @foreach($drinks as $drink)
-                <li>
+                <li class="menulistitem">
                 <div style="margin-top: 1em">
                     <div class="item-card">
                         <div class="row">
@@ -438,11 +442,11 @@
 
 
 <div class="container">
-    <h1> Sonstiges</h1>
+    <h1 class="menulistitem"> Sonstiges</h1>
     <div class="row">
         <ul class="item-list">
             @foreach($others as $other)
-                <li>
+                <li class="menulistitem">
                 <div style="margin-top: 1em">
                     <div class="item-card">
                         <div class="row">
@@ -533,6 +537,7 @@
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('js/magnific-popup-options.js')}}"></script>
 
+<script src="{{asset('js/adminpanel.js')}}"></script>
 
 <script src="{{asset('js/main.js')}}"></script>
 

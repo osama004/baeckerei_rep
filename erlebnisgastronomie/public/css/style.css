@@ -1963,7 +1963,9 @@ li.nav-item a {
     float: right;
 }
 .menulistitem{
+    list-style-type: none;
     margin-left: 15px;
+    display: list-item;
 }
 .hiddenform{
     display: none;
@@ -1976,6 +1978,18 @@ display: inline-block;
 .hausnr{
 width: 100px;
 }
+
+#searchbar{
+    margin-left: 23%;
+    padding:10px;
+    margin-bottom: 1em;
+}
+
+#list{
+    font-size:  1.5em;
+    margin-left: 90px;
+}
+
 
 
 
