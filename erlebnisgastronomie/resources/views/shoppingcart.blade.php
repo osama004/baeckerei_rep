@@ -189,18 +189,14 @@
                                <ul class="col-sm-6">
                                    <div class="total_area">
                                        <ul>
-                                           <li>Anzahl der Items: <span>{{$cartItems->totalQuantity}}</span></li>
+                                           <li>Anzahl der Produkte: <span>{{$cartItems->totalQuantity}}</span></li>
                                            <li>Gesamtpreis: <span>{{number_format($cartItems->totalPrice,2, ',')}}€</span></li>
                                        </ul>
                                    </div>
 
                                </ul>
                        </div>
-                       @if (Route::has('login'))
-                               <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'">Bestellen</button>
-                       @else
-                           <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('/login')}}'">Bestellen</button>
-                       @endif
+                           <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CheckoutProducts')}}'">Zur Kasse</button>
                    </div>
                </div>
            </div>

@@ -222,9 +222,7 @@ class ProductsController extends Controller
     }*/
 
     public function checkoutProducts(){
-
-        return view('checkoutproducts');
-
+        return view('checkout');
     }
 
 

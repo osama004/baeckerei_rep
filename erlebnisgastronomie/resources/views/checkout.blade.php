@@ -203,13 +203,7 @@
                                         <input type="text" id="hausnr"  class="form-control hausnr"/>
                                     </div>
                                 </div>
-
-
-                                @if (Route::has('login'))
-                                    <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'" >Zahlungspflichtig Bestellen</button>
-                                @else
-                                    <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('/login')}}'">Zahlungspflichtig Bestellen</button>
-                                @endif
+                                <button type="submit" class="btn btn-primary float-right" onclick="location.href='{{route('CreateOrder')}}'" >Zahlungspflichtig Bestellen</button>
                             </form>
                         </div>
                     </div>
