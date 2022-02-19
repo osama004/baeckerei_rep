@@ -150,7 +150,7 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('images/new_filler_1.jpg');">
+    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpg');">
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
