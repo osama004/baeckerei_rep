@@ -20,6 +20,11 @@ class Delivery_list extends Model
         'is_closed',
     ];
 
+    public function order(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Order::class, 'order_id', 'order_id');
+    }
+
     public function index() {
         // return view('allergens');
     }

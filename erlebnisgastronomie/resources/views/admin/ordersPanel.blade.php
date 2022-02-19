@@ -60,9 +60,13 @@
 
 <h1>Orders Panel</h1>
 
-@if(session('orderDeletionStatus'))
-<div class="alert alert-danger"> {{session('orderDeletionStatus')}} </div>
+@if(session('orderDeletionStatusOK'))
+<div class="alert alert-success"> {{session('orderDeletionStatusOK')}} </div>
 @endif
+@if(session('orderDeletionStatusNotOk'))
+<div class="alert alert-danger"> {{session('orderDeletionStatusNotOk')}} </div>
+@endif
+
 
 
 
