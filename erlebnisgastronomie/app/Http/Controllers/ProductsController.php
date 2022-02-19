@@ -175,12 +175,11 @@ class ProductsController extends Controller
                'is_delivery' => 1
            );
        }
-       else {
+       else { // 'pickup'
            $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
                'delivery_date' => $delivery_date, "price" => $cart->totalPrice,
                'fullName' => $fullName, 'email' => $email, 'phoneNumber' => $phoneNumber,
-               'noteToRestaurant' => $noteToRestaurant, 'zip' => $zip,
-               'street' => $street, 'city' => $city, 'stairs_houseNr' => $stairs_houseNr
+               'noteToRestaurant' => $noteToRestaurant ,
            );
        }
        // dd($newOrderArray);
