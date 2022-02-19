@@ -143,11 +143,11 @@
                     <li class="nav-item" href="{{route('shoppingcart')}}">
                         <a class="nav-link" href="{{route('shoppingcart')}}">
                             <i class="fas fa-shopping-cart">
-                                @if(Session::has('cart'))
-                                    <span id ="cartAjax" class="cart-with-numbers">
-                                        {{ Session::get('cart')->totalQuantity }}
-                                   </span>
-                                @endif
+                                <span id ="cartAjax" class="cart-with-numbers">
+                                        @if(Session::has('cart'))
+                                            {{ Session::get('cart')->totalQuantity }}
+                                        @endif
+                               </span>
                             </i>
                         </a>
                     </li>
