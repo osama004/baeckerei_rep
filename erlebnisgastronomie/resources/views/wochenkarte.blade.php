@@ -174,6 +174,9 @@
 
     <div class="container">
 
+        @foreach($weeklyProducts as $weeklyProduct)
+            <p>{{$weeklyProduct -> title}} </p>
+        @endforeach
         <div class="row no-gutters">
             <div class="col-md-6">
                 <div class="sched d-block d-lg-flex">

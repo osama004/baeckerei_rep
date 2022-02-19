@@ -199,5 +199,14 @@ class ProductsController extends Controller
         }
     }
 
+    public function showWeeklyProducts() {
+
+        $weeklyProducts = DB::table('products')->where('is_weekly_menu', '=', 1)
+        ->get()->toArray();
+           // dd($weeklyProducts);
+        return view('wochenkarte', compact('weeklyProducts'));
+
+    }
+
 
 }

@@ -27,9 +27,7 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
         return view('home');
     }) ->name('home');
 
-    Route::get('/wochenkarte', function () {
-        return view('wochenkarte');
-    }) ->name('weeklyCart');
+
 
     Route::get('/app', function () {
         return view('app');
@@ -44,7 +42,7 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
         return view('userprofile');
     });
     Route::get('product/checkoutProducts', [ProductsController::class, 'checkoutProducts'])->name('CheckoutProducts');
-
+    Route::get('product/weeklyProducts', [ProductsController::class, 'showWeeklyProducts'])->name('weeklyCart');
     /*Route::get('home', function () {
         return view('userprofile');
     });*/
