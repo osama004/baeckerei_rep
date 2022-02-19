@@ -148,7 +148,7 @@
 </header>
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('images/new_filler_1.jpg');">
+    <div class="slider-item" style="background-image: url('/images/new_filler_1.jpg');">
         <div class="container">
             <div class ="row">
                 <div class="col-md-6 offset-md-3">
@@ -228,8 +228,8 @@
                                     <input type="text" name="phone" class="form-control" required/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="msg">Notiz ans Restaurant</label>
-                                    <textarea name="msg" class="form-control" required></textarea>
+                                    <label for="msg">Notiz für das Restaurant</label>
+                                    <textarea name="msg" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <input type="radio" id="pickup" value="pickup" checked="checked" name="orderoption" onclick="hideAddress();">
