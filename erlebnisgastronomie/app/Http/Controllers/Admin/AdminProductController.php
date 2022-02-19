@@ -301,4 +301,12 @@ class AdminProductController extends Controller
         }
 
     }
+
+    public function searchProducts(Request $request)
+    {
+        $searchText = $request->get('searchText');
+        $products = Product::query()->where('title', 'Like', "%".$searchText."%")->paginate(5);
+       /// dd($products);
+        return view('admin.displayProducts', compact('products'));
+    }
 }

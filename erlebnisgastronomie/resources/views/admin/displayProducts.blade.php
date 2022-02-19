@@ -2,6 +2,11 @@
 
 @section('body')
     <h1 class="page-header">Dashboard</h1>
+    <div class="search-form pull-right">
+        <form action="{{route('SearchProducts')}}" method="GET" >
+            <input type="text" name="searchText" placeholder="Search"/>
+        </form>
+    </div>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
