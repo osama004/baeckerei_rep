@@ -230,15 +230,15 @@ class AdminProductController extends Controller
         }
     }
 
-    public function deleteOrder(Request $request, $product_id)
+    public function deleteOrder(Request $request, $order_id)
     {
 
         try {
-            $deleted = DB::table('orders')->where("order_id", $product_id)->delete();
+            $deleted =DB::table('orders')->where("order_id",$order_id)->delete();
             if ($deleted) {
-                return redirect()->back()->with('orderDeletionStatus', 'Order ' . $product_id . ' was successfully deleted');
+                return redirect()->back()->with('orderDeletionStatus', 'Order ' . $order_id . ' erfolgreich gelöscht!!');
             } else {
-                return redirect()->back()->with('orderDeletionStatus', 'Order ' . $product_id . ' was NOT deleted');
+                return redirect()->back()->with('orderDeletionStatus', 'Order ' . $order_id . ' nicht gelöscht');
             }
         } catch (ItemNotFoundException $e) {
             abort(404);

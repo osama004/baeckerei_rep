@@ -11,7 +11,7 @@
 
 
   <style>
-  
+
                   /* The payment window */
                 .payment-window {
                   display: none; /* Hidden by default */
@@ -26,7 +26,7 @@
                   background-color: rgb(0,0,0); /* Fallback color */
                   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
                 }
-                
+
                 /* payment window content */
                 .payment-window-content {
                   background-color: #fefefe;
@@ -35,7 +35,7 @@
                   border: 1px solid #888;
                   width: 45%;
                 }
-                
+
                 /*  payment window close button */
                 .payment-window-close {
                   color: #aaaaaa;
@@ -44,17 +44,17 @@
                   font-size: 28px;
                   font-weight: bold;
                 }
-                
-                
+
+
                 .payment-window-close:hover,
                 .payment-window-close:focus {
                   color: #aaaaaa;
                   text-decoration: none;
                   cursor: pointer;
                 }
-                                  
-                                  
-   
+
+
+
      </style>
 
 
@@ -74,35 +74,36 @@
             <th>Date</th>
             <th>Delivery Date</th>
             <th>Price</th>
-            <th>user_id</th>
+            <th>customer Name</th>
             <th>Status</th>
+            <th>payment_info</th>
             <th>Edit</th>
             <th>Remove</th>
         </tr>
         </thead>
         <tbody>
 
-        @foreach($orders as $order)  
+        @foreach($orders as $order)
         <tr>
             <td>{{$order->order_id}}</td>
-          
-            <td>{{$order->date}}</td>
-            <td>{{$order->del_date}}</td>
+
+            <td>{{$order->date_get}}</td>
+            <td>{{$order->delivery_date}}</td>
             <td>{{$order->price}}</td>
-            <td>{{$order->user_id}}</td>
+            <td>{{$order->fullName}}</td>
             <td>{{$order->status}}</td>
 
 
 
 
-  <td><a class="payment-info-button btn btn-success" 
+  <td><a class="payment-info-button btn btn-success"
   onclick="getPaymentInfo('{{$order->order_id}}','{{$order->status}}')"> Payment info </a></td>
-         
 
 
-            <td><a href="{{ route('adminEditOrderForm',['order_id' => $order->order_id ])}}" class="btn btn-primary">Edit</a></td>
 
-            <td><a href="{{ route('adminDeleteOrder',['id' => $order->order_id ])}}"  
+            <td><a href="{{ route('AdminEditOrderForm',['order_id' => $order->order_id ])}}" class="btn btn-primary">Edit</a></td>
+
+            <td><a href="{{ route('AdminDeleteOrder',['order_id' => $order->order_id ])}}"
                 onclick="return confirm('Are you sure you want to delete this order?')"
             class="btn btn-warning">Remove</a></td>
 
@@ -122,10 +123,10 @@
 
 
 
-    
+
         <!-- The payment window -->
         <div id="my-payment-window" class="payment-window">
-        
+
           <!-- status content -->
           <div class="payment-window-content">
             <span class="payment-window-close">&times;</span>
@@ -135,11 +136,11 @@
             <p></p>
             <p></p>
             <p></p>
-         
+
           </div>
-        
+
         </div>
-            
+
 
 
 
@@ -156,12 +157,12 @@
 
  function getPaymentInfo(order_id,status){
 
-      
+
         if(status === 'paid'){
- 
+
                   $.get( "http://localhost:8081/payment/getPaymentInfoByOrderId/"+order_id, function( data ) {
-                       
-                        // alert( "Data Loaded: " + data ); 
+
+                        // alert( "Data Loaded: " + data );
                          var paymentInfo = JSON.parse(data);
                           $( ".payment-window" ).show();
                           $( ".payment-window-content p:eq(0)" ).text( "ID: " + paymentInfo.id);
@@ -169,44 +170,44 @@
                           $( ".payment-window-content p:eq(2)" ).text( "Payer ID: " + paymentInfo.paypal_payer_id);
                           $( ".payment-window-content p:eq(3)" ).text( "Amount: $" + paymentInfo.amount);
                           $( ".payment-window-content p:eq(4)" ).text( "Date: " + paymentInfo.date);
-                    
+
                           });
-                  
-          
-          
+
+
+
         } else if(status === 'on_hold'){
-      
-                
+
+
                 $(".payment-window").show();
-                $( ".payment-window-content p:eq(0)" ).text( "Not Paid Yet");  
+                $( ".payment-window-content p:eq(0)" ).text( "Not Paid Yet");
                 $( ".payment-window-content p:eq(1)" ).text( "");
                 $( ".payment-window-content p:eq(2)" ).text( "");
                 $( ".payment-window-content p:eq(3)" ).text( "");
                 $( ".payment-window-content p:eq(4)" ).text( "");
-                    
+
 
         }else{
-        
+
                $( ".payment-window" ).show();
                $( ".payment-window-content p:eq(0)" ).text( "Undefined status");
                 $( ".payment-window-content p:eq(1)" ).text( "");
                 $( ".payment-window-content p:eq(2)" ).text( "");
                 $( ".payment-window-content p:eq(3)" ).text( "");
                 $( ".payment-window-content p:eq(4)" ).text( "");
-        
-        }  
-          
- }         
+
+        }
+
+ }
 
 
-        
+
         $(".payment-window-close").click(function(){
                $(".payment-window").hide();
-        
+
         });
-        
-        
- 
+
+
+
 
 
 
