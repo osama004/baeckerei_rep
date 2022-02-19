@@ -10,7 +10,7 @@
             <th>Image</th>
             <th>Name</th>
             <th>Description</th>
-            <th>is weekly_menu</th>
+            <th>Wochenkarte</th>
             <th>Price</th>
             <th>Edit Image</th>
             <th>Edit</th>
