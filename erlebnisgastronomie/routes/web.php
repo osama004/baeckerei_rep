@@ -115,6 +115,8 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
 
         // search Products
         Route::get('searchProduct', [AdminProductController::class, 'searchProducts']) ->name('SearchProducts');
+        // search Delivery Orders
+        //Route::get('searchProduct', [AdminProductController::class, 'searchDeliverOrders']) ->name('SearchDeliverOrders');
     });
 
 });
