@@ -177,7 +177,7 @@
                                     <div class="form-group">
                                         <label for="phone">Telefonnummer</label>
                                         <input type="text" name="phone" class="form-control"
-                                               value="{{$userData -> phone }}" required/>
+                                                required/>
                                     </div>
                                     <div class="form-group">
                                         <label for="msg">Notiz für das Restaurant</label>

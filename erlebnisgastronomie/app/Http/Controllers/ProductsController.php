@@ -6,6 +6,7 @@ use App\Cart;
 use App\Mail\OrderCreatedEmail;
 use App\Models\Allergen;
 use App\Models\Product;
+use App\UserCacheData;
 use DateTime;
 use Exception;
 use Illuminate\Support\Facades\Auth;
@@ -130,7 +131,7 @@ class ProductsController extends Controller
 
    public function createOrder(Request $request){
        $cart = Session::get('cart');//cart is not empty
-      // dd($request);
+       // dd($request);
        // dump($cart)
        $dateget = date('Y-m-d H:i:s');
        $delivery_date = date('Y-m-d'); // hardcoded
@@ -199,6 +200,8 @@ class ProductsController extends Controller
 
     public function checkoutProducts(){
         $cart = Session::get('cart');//cart is not empty
+        $preUserCacheData = Session::get('userCacheData');
+        $UserCacheData = new UserCacheData($preUserCacheData);
         if (!$cart) {
             $cart = new Cart($cart);
         }
