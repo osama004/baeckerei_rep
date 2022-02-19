@@ -51,6 +51,7 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul >
+               <li class="active "><a class="adminsidepanel" href="{{route('home')}}">Home Webseite<span class="sr-only">(current)</span></a></li>
                <li class="active "><a class="adminsidepanel" href="{{route('adminDisplayProducts')}}">Übersicht <span class="sr-only">(current)</span></a></li>
                 <li class="active "><a class="adminsidepanel" href="{{route('adminCreateProductForm')}}">Produkt hinzufügen</a></li>
                 <li class="active "><a class="adminsidepanel" href="{{route('OrdersPanelDelivery')}}">Bestellungen</a></li>
