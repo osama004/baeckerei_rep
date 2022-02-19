@@ -141,17 +141,27 @@ class ProductsController extends Controller
 
        $pickupOrDelivery = $request->input('orderoption'); // two values 'pickup' or 'delivery'
 
-
        $zip = $request->input('zip');
        $street = $request->input('street');
        $city = $request->input('city');
        $stairs_houseNr = $request->input('stairs_houseNr');
-       $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
-           'delivery_date' => $delivery_date, "price" => $cart->totalPrice,
-           'fullName' => $fullName, 'email' => $email, 'phoneNumber' => $phoneNumber,
-           'noteToRestaurant' => $noteToRestaurant, 'zip' => $zip,
-           'street' => $street, 'city' => $city, 'stairs_houseNr' => $stairs_houseNr
-       );
+       if ($pickupOrDelivery === 'delivery') {
+           $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
+               'delivery_date' => $delivery_date, "price" => $cart->totalPrice,
+               'fullName' => $fullName, 'email' => $email, 'phoneNumber' => $phoneNumber,
+               'noteToRestaurant' => $noteToRestaurant, 'zip' => $zip,
+               'street' => $street, 'city' => $city, 'stairs_houseNr' => $stairs_houseNr,
+               'is_delivery' => 1
+           );
+       }
+       else {
+           $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
+               'delivery_date' => $delivery_date, "price" => $cart->totalPrice,
+               'fullName' => $fullName, 'email' => $email, 'phoneNumber' => $phoneNumber,
+               'noteToRestaurant' => $noteToRestaurant, 'zip' => $zip,
+               'street' => $street, 'city' => $city, 'stairs_houseNr' => $stairs_houseNr
+           );
+       }
        // dd($newOrderArray);
 
        // insert order into Order table

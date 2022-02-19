@@ -53,7 +53,8 @@
             <ul >
                <li class="active "><a class="adminsidepanel" href="{{route('adminDisplayProducts')}}">Übersicht <span class="sr-only">(current)</span></a></li>
                 <li class="active "><a class="adminsidepanel" href="{{route('adminCreateProductForm')}}">Produkt hinzufügen</a></li>
-                <li class="active "><a class="adminsidepanel" href="{{route('ordersPanel')}}">Bestellungen</a></li>
+                <li class="active "><a class="adminsidepanel" href="{{route('OrdersPanelDelivery')}}">Bestellungen</a></li>
+                <li class="active "><a class="adminsidepanel" href="{{route('ordersPanelPickup')}}">Bestellungen Pickup</a></li>
             </ul>
             <ul class="nav nav-sidebar">
 

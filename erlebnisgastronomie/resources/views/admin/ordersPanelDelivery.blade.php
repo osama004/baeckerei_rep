@@ -58,7 +58,7 @@
      </style>
 
 
-<h1>Orders Panel</h1>
+<h1>Delivery Order Panel</h1>
 
 @if(session('orderDeletionStatusOK'))
 <div class="alert alert-success"> {{session('orderDeletionStatusOK')}} </div>

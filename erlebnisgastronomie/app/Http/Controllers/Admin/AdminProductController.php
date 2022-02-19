@@ -219,11 +219,29 @@ class AdminProductController extends Controller
     }
 
     //orders control panel (display all orders)
-    public function ordersPanel()
+    public function ordersPanelDelivery()
     {
         try {
-            $orders = DB::table('orders')->paginate(10);//print_r($orders);
-            return view('admin.ordersPanel', ["orders" => $orders]);
+            $orders = DB::table('orders')
+                ->where('is_delivery', '=', 1)
+                ->orderBy('date_get')
+                ->paginate(8);//print_r($orders);
+            return view('admin.ordersPanelDelivery', ["orders" => $orders]);
+        } catch (ItemNotFoundException $e) {
+            abort(404);
+        } catch (Throwable $e) {
+            abort(500);
+        }
+    }
+ //orders control panel (display all orders)
+    public function ordersPanelPickup()
+    {
+        try {
+            $orders = DB::table('orders')
+                ->where('is_delivery', '=', 0)
+                ->orderBy('date_get')
+                ->paginate(8);//print_r($orders);
+            return view('admin.ordersPanelPickup', ["orders" => $orders]);
         } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {

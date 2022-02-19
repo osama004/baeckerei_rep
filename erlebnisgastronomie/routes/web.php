@@ -96,8 +96,10 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
         Route::get('admin/deleteProduct/{product_id}',[AdminProductController::class, 'deleteProduct'] ) ->name('adminDeleteProduct');
         //display create product form
         Route::get('admin/createProductForm',[AdminProductController::class ,'createProductForm'] ) ->name('adminCreateProductForm');
-        //orders control panel
-        Route::get('admin/ordersPanel/',[AdminProductController::class, 'ordersPanel'] ) ->name("ordersPanel");
+        //orders control panel delivery
+        Route::get('admin/ordersPanel/',[AdminProductController::class, 'ordersPanelDelivery'] ) ->name("OrdersPanelDelivery");
+        //orders control panel pickup
+        Route::get('admin/ordersPanelPickup/',[AdminProductController::class, 'ordersPanelPickup'] ) ->name("ordersPanelPickup");
         //update product image
         Route::post('admin/updateProductImage/{product_id}',[AdminProductController::class, 'updateProductImage']) ->name("adminUpdateProductImage");
         //update product data
