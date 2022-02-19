@@ -157,12 +157,12 @@
                             @include('alerts.emptyCart')
                         </div>
                         <div class = "card-header">
-                            Ihr Warenkorb:
+                            Check out:
                         </div>
-                        @if($userData) <!-- if user ist logged in we have his infos -->
                             <div class="card-body">
                                 <form method="POST" action="{{route('CreateOrder')}}" enctype="multipart/form-data">
                                     @csrf
+                                    @if($userData) <!-- if user ist logged in we have his infos -->
                                     <div class="form-group">
                                         <label for="name">Name</label>
                                         <input onkeyup="lettersOnly(this)" type="text" name="fullName" class="form-control"
@@ -174,91 +174,91 @@
                                         <input type="text" name="email" class="form-control" required
                                                pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" value="{{ $userData->email }}"/>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="phone">Telefonnummer</label>
-                                        <input type="text" name="phone" class="form-control"
-                                                required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="msg">Notiz für das Restaurant</label>
-                                        <textarea name="msg" class="form-control"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="radio" id="pickup" value="pickup" checked="checked" name="orderoption" onclick="hideAddress();">
-                                        <label for="pickup"> Selbstabholung</label>
+                                    @else
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            @if(Session::has('userCacheData'))
+                                                <input onkeyup="lettersOnly(this)" type="text" name="fullName" class="form-control"
+                                                       value="{{Session::get('userCacheData') -> name}}" required/>
+                                            @else
+                                                <input onkeyup="lettersOnly(this)" type="text" name="fullName" class="form-control" required/>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">E-Mail-Addresse</label>
+                                            <!--<input type="text"name="email"class="form-control"/>-->
+                                            @if(Session::has('userCacheData'))
+                                                <input type="text" name="email" class="form-control" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b"
+                                                       value="{{Session::get('userCacheData') -> email}}"/>
+                                            @else
+                                                <input type="text" name="email" class="form-control" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b"/>
+                                            @endif
+                                        </div>
+                                    @endif
+                                        <div class="form-group">
+                                            <label for="phone">Telefonnummer</label>
+                                            @if(Session::has('userCacheData'))
+                                                <input type="text" name="phone" class="form-control" required
+                                                       value="{{Session::get('userCacheData') -> telephone}}"/>
+                                            @else
+                                                <input type="text" name="phone" class="form-control" required/>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="msg">Notiz für das Restaurant</label>
+                                            @if(Session::has('userCacheData'))
+                                                <textarea name="msg" class="form-control">{{Session::get('userCacheData') -> note}}</textarea>
+                                            @else
+                                                <textarea name="msg" class="form-control"></textarea>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="radio" id="pickup" value="pickup" checked="checked" name="orderoption" onclick="hideAddress();">
+                                            <label for="pickup"> Selbstabholung</label>
                                             <input type="radio" id="delivery" value="delivery" name="orderoption" onclick="showAddress();">
                                             <label for="delivery"> Lieferung</label>
-                                    </div>
-
-                                    <div id="addDiv" class="form-group addDiv hiddenform" >
-                                        <h5>Adresse:</h5><br>
-
-                                        <div class="addressform">
-                                            <label for="hausnr">PLZ</label>
-                                            <input type="text" id="zip" name="zip"  class="form-control" />
-                                            <label for="street">Straße</label>
-                                            <input type="text" id="street" name="street"  class="form-control"/>
                                         </div>
 
-                                        <div class="addressform">
-                                            <label for="hausnr">Ort</label>
-                                            <input type="text" id="city" name="city"  class="form-control"/>
-                                            <label for="hausnr">Stiege/Hausnummer</label>
-                                            <input type="text" id="hausnr" name="stairs_houseNr"  class="form-control hausnr"/>
+                                        <div id="addDiv" class="form-group addDiv hiddenform" >
+                                            <h5>Adresse:</h5><br>
+
+                                            <div class="addressform">
+                                                <label for="hausnr">PLZ</label>
+                                                @if(Session::has('userCacheData'))
+                                                    <input type="text" id="zip" name="zip" class="form-control"
+                                                           value="{{Session::get('userCacheData') -> zip}}"/>
+                                                @else
+                                                    <input type="text" id="zip" name="zip"  class="form-control"/>
+                                                @endif
+                                                <label for="street">Straße</label>
+                                                @if(Session::has('userCacheData'))
+                                                    <input type="text" id="street" name="street"  class="form-control"
+                                                           value="{{Session::get('userCacheData') -> street}}"/>
+                                                @else
+                                                    <input type="text" id="street" name="street"  class="form-control"/>
+                                                @endif
+                                            </div>
+                                            <div class="addressform">
+                                                <label for="hausnr">Ort</label>
+                                                @if(Session::has('userCacheData'))
+                                                    <input type="text" id="city" name="city"  class="form-control"
+                                                           value="{{Session::get('userCacheData') -> city}}"/>
+                                                @else
+                                                    <input type="text" id="city" name="city"  class="form-control"/>
+                                                @endif
+                                                <label for="hausnr">Stiege/Hausnummer</label>
+                                                @if(Session::has('userCacheData'))
+                                                    <input type="text" id="hausnr" name="stairs_houseNr" class="form-control hausnr"
+                                                           value="{{Session::get('userCacheData') -> stairsHomeNr}}"/>
+                                                @else
+                                                    <input type="text" id="hausnr"  class="form-control hausnr"/>
+                                                @endif
+                                            </div>
                                         </div>
-                                    </div>
                                     <button type="submit" name="submit" class="btn btn-primary float-right" >Zahlungspflichtig Bestellen</button>
                                 </form>
                             </div>
-                        @else
-                        <div class="card-body">
-                            <form method="POST" action="{{route('CreateOrder')}}" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input onkeyup="lettersOnly(this)" type="text" name="fullName" class="form-control" required/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">E-Mail-Addresse</label>
-                                    <!--<input type="text"name="email"class="form-control"/>-->
-                                    <input type="text" name="email" class="form-control" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Telefonnummer</label>
-                                    <input type="text" name="phone" class="form-control" required/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="msg">Notiz für das Restaurant</label>
-                                    <textarea name="msg" class="form-control"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <input type="radio" id="pickup" value="pickup" checked="checked" name="orderoption" onclick="hideAddress();">
-                                    <label for="pickup"> Selbstabholung</label>
-                                    <input type="radio" id="delivery" value="delivery" name="orderoption" onclick="showAddress();">
-                                    <label for="delivery"> Lieferung</label>
-                                </div>
-
-                                <div id="addDiv" class="form-group addDiv hiddenform" >
-                                    <h5>Adresse:</h5><br>
-
-                                    <div class="addressform">
-                                        <label for="hausnr">PLZ</label>
-                                        <input type="text" id="zip"  class="form-control"/>
-                                        <label for="street">Straße</label>
-                                        <input type="text" id="street"  class="form-control"/>
-                                    </div>
-
-                                    <div class="addressform">
-                                        <label for="hausnr">Ort</label>
-                                        <input type="text" id="city"  class="form-control"/>
-                                        <label for="hausnr">Stiege/Hausnummer</label>
-                                        <input type="text" id="hausnr"  class="form-control hausnr"/>
-                                    </div>
-                                </div>
-                                <button type="submit" name="submit" class="btn btn-primary float-right" >Zahlungspflichtig Bestellen</button>
-                            </form>
                         </div>
-                        @endif
                     </div>
                 </div>
             </div>

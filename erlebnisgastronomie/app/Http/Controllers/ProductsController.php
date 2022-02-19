@@ -131,6 +131,9 @@ class ProductsController extends Controller
 
    public function createOrder(Request $request){
        $cart = Session::get('cart');//cart is not empty
+       $preUserCacheData = $request->session()->get('userCacheData');
+       $userCacheData = new UserCacheData($preUserCacheData);
+        //dd($userCacheData);
        // dd($request);
        // dump($cart)
        $dateget = date('Y-m-d H:i:s');
@@ -140,12 +143,29 @@ class ProductsController extends Controller
        $phoneNumber = $request->input('phone');
        $noteToRestaurant = $request->input('msg');
 
+
+
        $pickupOrDelivery = $request->input('orderoption'); // two values 'pickup' or 'delivery'
 
        $zip = $request->input('zip');
        $street = $request->input('street');
        $city = $request->input('city');
        $stairs_houseNr = $request->input('stairs_houseNr');
+
+        // save data to cache
+       $userCacheData->name = $fullName;
+       $userCacheData->email = $email;
+       $userCacheData->telephone = $phoneNumber;
+       $userCacheData->note = $noteToRestaurant;
+       $userCacheData->street = $street;
+       $userCacheData->zip = $zip;
+       $userCacheData->city = $city  ;
+       $userCacheData->stairsHomeNr = $stairs_houseNr;
+        // save to a session key
+       $request->session()->put('userCacheData', $userCacheData);
+
+      // dd($userCacheData);
+
        if ($pickupOrDelivery === 'delivery') {
            $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
                'delivery_date' => $delivery_date, "price" => $cart->totalPrice,
@@ -200,8 +220,6 @@ class ProductsController extends Controller
 
     public function checkoutProducts(){
         $cart = Session::get('cart');//cart is not empty
-        $preUserCacheData = Session::get('userCacheData');
-        $UserCacheData = new UserCacheData($preUserCacheData);
         if (!$cart) {
             $cart = new Cart($cart);
         }
