@@ -160,128 +160,81 @@
         </div>
     </div>
 </div>
-<section class="section bg-light  top-slant-white bottom-slant-gray">
 
     <div class="clearfix mb-5 pb-5">
         <div class="container-fluid">
             <div class="row" data-aos="fade">
                 <div class="col-md-12 text-center heading-wrap">
-                    <h2>Unsere Kaffees</h2>
+                    <h2 class="menulistitem">Das wöchentliche Angebot:</h2>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container">
 
-        @foreach($weeklyProducts as $weeklyProduct)
-            <p>{{$weeklyProduct -> title}} </p>
-        @endforeach
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_4.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>KAFFEE FILLER EINS </h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$12.00</p>
+<div class="container ">
+    <div class="row">
+        <ul class="item-list">
+            @foreach($weeklyProducts as $weeklyProduct)
+                <li class="menulistitem">
+                    <div style="margin-top: 1em">
+                        <div class="item-card">
+                            <div class="row">
+                                {{ csrf_field() }}
+                                <div class="col-md-6 ml-auto mr-auto text-center">
+                                    <div class="text order-1 textbox">
+                                        <h5 class="itemtitle">{{$weeklyProduct->title}}  </h5>
+                                        <p>{{$weeklyProduct->description}}
+                                            <button class="infobutton">
+                                                <i class="fas fa-info-circle" data-toggle="modal"
+                                                   data-target="#myModal{{$weeklyProduct->product_id}}"></i>
+                                            </button>
+                                        </p >
+                                        <p class="h5" style="margin-top: -12px">
+                                            {{$weeklyProduct->price}} €
+                                            <button class="cartbutton ajaxGET" >
+                                                <i  class="fas fa-cart-arrow-down"> </i>
+                                                <i id="url" style="display: none">{{route('AddToCartProduct',['product_id'=>$weeklyProduct->product_id])}}</i>
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-
-                </div>
-
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('images/dishes_1.jpg');" data-aos="fade"></div>
-                    <div class="text">
-                        <h3>KAFFEE FILLER DREI</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$12.00</p>
-
+                </li>
+                <!-- modal popup-->
+                <div class="modal fade" id="myModal{{$weeklyProduct->product_id}}" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel">{{$weeklyProduct->title}}</h5>
+                                <i style="margin-left:1em; margin-top:5px">€{{$weeklyProduct->price}}</i>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{$weeklyProduct->description}}</p>
+                                <h5>Allergene:<br></h5>
+                                @foreach($allergens as $allergen)
+                                    @continue($allergen -> product_id != $weeklyProduct->product_id)
+                                    <p>{{$allergen -> name}}:  {{$allergen -> type}},    {{$allergen ->describe_type}}</p>
+                                @endforeach
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
-
-            </div>
-
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_2.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>KAFFEE FILLER ZWEI</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$18.00</p>
-
-                    </div>
-
-                </div>
-
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('images/dishes_3.jpg');" data-aos="fade"></div>
-                    <div class="text">
-                        <h3>KAFFEE FILLER VIER</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$16.00</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_4.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>KAFFEE FILLER FÜNF</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$12.00</p>
-                    </div>
-
-                </div>
-
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('images/dishes_1.jpg');" data-aos="fade"></div>
-                    <div class="text">
-                        <h3>KAFFEE FILLER SIEBEN</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$12.00</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('images/dishes_2.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>KAFFEE FILLER SECHS</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$18.00</p>
-
-                    </div>
-
-                </div>
-
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image" style="background-image: url('images/dishes_3.jpg');" data-aos="fade"></div>
-                    <div class="text">
-                        <h3>KAFFEE FILLER ACHT</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                        <p class="text-primary h3">$16.00</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-
+            @endforeach
+        </ul>
     </div>
-</section> <!-- .section -->
+</div>
+</div>
+
+
 @endsection
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>

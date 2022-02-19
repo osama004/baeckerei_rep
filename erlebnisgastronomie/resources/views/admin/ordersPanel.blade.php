@@ -96,7 +96,7 @@
 
 
 
-  <td><a class="payment-info-button btn btn-success"
+  <td><a class="btn btn-primary"
   onclick="getPaymentInfo('{{$order->order_id}}','{{$order->status}}')"> Payment info </a></td>
 
 

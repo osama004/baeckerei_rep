@@ -38,6 +38,7 @@
 
 <body>
 
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -53,9 +54,6 @@
                <li class="active "><a class="adminsidepanel" href="{{route('adminDisplayProducts')}}">Übersicht <span class="sr-only">(current)</span></a></li>
                 <li class="active "><a class="adminsidepanel" href="{{route('adminCreateProductForm')}}">Produkt hinzufügen</a></li>
                 <li class="active "><a class="adminsidepanel" href="{{route('ordersPanel')}}">Bestellungen</a></li>
-                <li class="active "><a class="adminsidepanel" href="#">Bearbeiten</a></li>
-                <li class="active "><a class="adminsidepanel" href="#">Users</a></li>
-                <li class="active "><a class="adminsidepanel" href="#">Analytics</a></li>
             </ul>
             <ul class="nav nav-sidebar">
 

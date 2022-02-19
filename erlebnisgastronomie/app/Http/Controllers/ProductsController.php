@@ -200,11 +200,18 @@ class ProductsController extends Controller
     }
 
     public function showWeeklyProducts() {
-
+        $allergens = DB::table('allergens')
+            ->join('ingredients_allergens', 'allergens.allergen_id', 'ingredients_allergens.allergen_id')
+            ->join('ingredients', 'ingredients_allergens.ingredient_id', 'ingredients.ingredient_id')
+            ->join('products_ingredients', 'ingredients.ingredient_id', 'products_ingredients.ingredient_id')
+            ->groupBy(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
+            ->orderBy('ingredients.name')
+            ->get(['ingredients.name', 'allergens.type', 'allergens.describe_type', 'products_ingredients.product_id'])
+            ->toArray();
         $weeklyProducts = DB::table('products')->where('is_weekly_menu', '=', 1)
         ->get()->toArray();
            // dd($weeklyProducts);
-        return view('wochenkarte', compact('weeklyProducts'));
+        return view('wochenkarte', compact('weeklyProducts','allergens'));
 
     }
 
