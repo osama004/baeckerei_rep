@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -233,18 +234,18 @@ class AdminProductController extends Controller
     public function deleteOrder(Request $request, $order_id)
     {
 
-        try {
-            $deleted =DB::table('orders')->where("order_id",$order_id)->delete();
+      //  try {
+           $deleted =DB::table('orders')->where("order_id",$order_id)->delete();
             if ($deleted) {
                 return redirect()->back()->with('orderDeletionStatus', 'Order ' . $order_id . ' erfolgreich gelöscht!!');
             } else {
                 return redirect()->back()->with('orderDeletionStatus', 'Order ' . $order_id . ' nicht gelöscht');
             }
-        } catch (ItemNotFoundException $e) {
+      /*  } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
             abort(500);
-        }
+        }*/
     }
 
     //display edit order form
@@ -265,11 +266,14 @@ class AdminProductController extends Controller
     {
 
         try {
-            $date = $request->input('date');
-            $del_date = $request->input('del_date');
+            $date_get = $request->input('date_get');
+            $delivery_date = $request->input('delivery_date');
             $status = $request->input('status');
             $price = $request->input('price');
-            $updateArray = array("date" => $date, "del_date" => $del_date, "status" => $status, "price" => $price);
+            $cusotmerName = $request->input('fullName');
+            $updateArray = array("date_get" => $date_get, "delivery_date" => $delivery_date, "status" => $status,
+                'fullName' => $cusotmerName,"price" => $price);
+           // dd($updateArray);
             DB::table('orders')->where('order_id', $order_id)->update($updateArray);
             return redirect()->route("ordersPanel");
         } catch (ItemNotFoundException $e) {

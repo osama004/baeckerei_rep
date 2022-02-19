@@ -110,6 +110,8 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
         Route::get('admin/editOrderForm/{order_id}', [AdminProductController::class, 'editOrderForm']) ->name( "AdminEditOrderForm");
         //delete order
         Route::get('admin/deleteOrder/{order_id}',[AdminProductController::class, 'deleteOrder'] ) ->name("AdminDeleteOrder");
+        //update order data
+        Route::post('admin/updateOrder/{order_id}', [AdminProductController::class , 'updateOrder']) ->name( "AdminUpdateOrder");
     });
 
 });
