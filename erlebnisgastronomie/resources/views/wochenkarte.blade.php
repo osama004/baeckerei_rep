@@ -232,7 +232,29 @@
         </ul>
     </div>
 </div>
-</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.ajaxGET').click(function(e){
+            e.preventDefault();
+            var url = $(this).find('#url').text();
+            var _token = $("input[name='_token']").val();
+            $.ajax({
+                method:"GET",
+                url:url,
+                data:{_token: _token},
+                success:function(data,status,XHR){
+                    //alert(data[1]['totalQuantity']);
+                    // var totalQuantity = data[1];
+                    $('#cartAjax').text(data[1]['totalQuantity']);
+                },
+                error:function(xhr,status,error){
+                    alert(error);
+                }
+            });
+        });
+    });
+</script>
 
 
 @endsection
