@@ -205,8 +205,7 @@ class ProductsController extends Controller
        //return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
 
        if ( $pickupOrDelivery === 'pickup') {
-           return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen!!
-            Wir willkommen Sie herzlich bei unserer Filiale");
+           return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen!");
        }
        else { // it is a deliver ,so there is a payment in advance
            $request->session()->put('payment_info' , $newOrderArray);
