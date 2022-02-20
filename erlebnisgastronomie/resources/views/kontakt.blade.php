@@ -164,9 +164,6 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-
-
-
     <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpg');">
        <div class="container">
            <div class ="row">

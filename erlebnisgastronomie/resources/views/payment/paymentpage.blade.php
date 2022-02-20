@@ -1,5 +1,4 @@
 
-@extends('layouts.index')
 
     <!DOCTYPE html>
 <html lang="en">
@@ -31,123 +30,14 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
-@section('content')
-<header role="banner">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+
+<div class="slider-wrap">
+    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpg');">
         <div class="container">
-            <a class="navbar-brand" href="/">Bäckquem</a>
-            <a href="https://www.twitter.com" class="p-2" target="_blank" rel="noopener noreferrer"><span class="fa fa-twitter"></span></a>
-            <a href="https://www.facebook.com" class="p-2" target="_blank" rel="noopener noreferrer"><span class="fa fa-facebook"></span></a>
-            <a href="https://www.instagram.com" class="p-2" target="_blank" rel="noopener noreferrer"><span class="fa fa-instagram"></span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExample05">
-                <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('kaffee&products')}}">Kaffee & Produkte</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('weeklyCart')}}">Wochenkarte</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('regionalProducts')}}">Regionale Produkte</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="app">App</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('contact')}}">Kontakt</a>
-                    </li>
-
-                    <div class="divider"></div>
-
-                    @guest
-                        @if (Route::has('login'))
-                            @if (Route::has('register'))
-                                <li class="nav-item dropdown">
-                                    <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <i class="fas fa-user"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{route('/login')}}" >
-                                            Login
-                                        </a>
-
-                                        <a class="dropdown-item" href="/register" >
-                                            Registrieren
-                                        </a>
-                                    </div>
-                                </li>
-                            @endif
-                        @endif
-
-                    @else
-                        <li class="nav-item dropdown">
-                            <a  style="text-transform:capitalize"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fas fa-user"></i>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('/userprofile')}}" >
-                                    Mein Profil
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout')}}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Ausloggen') }}
-                                </a>
-                                @if($userData -> isAdmin())
-                                    <a class="dropdown-item" href="{{route('adminDisplayProducts')}}">
-                                        Admin Dashboard
-                                    </a>
-                                @endif
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                    <div class="divider"></div>
-
-                    <li class="nav-item" href="{{route('shoppingcart')}}">
-                        <a class="nav-link" href="{{route('shoppingcart')}}">
-                            <i class="fas fa-shopping-cart" style =  "color: #A1E944">
-                                @if(Session::has('cart'))
-                                    <span id ="cartAjax" class="cart-with-numbers">
-                                    {{ Session::get('cart')->totalQuantity }}
-                               </span>
-                                @endif
-                            </i>
-                        </a>
-
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+            <div class ="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card">
 <section id="cart_items">
     <div class="container">
         <div class="breadcrumbs">
@@ -163,12 +53,12 @@
 
                     <div class="col-sm-12 clearfix">
                         <div class="bill-to">
-                            <p> Shipping/Bill To</p>
+                            <p> Lieferung/Rechnung an:</p>
                             <div class="form-one">
                                            <div class="total_area">
                                                     <ul>
 
-                                                        <li>Payment Status
+                                                        <li>Payment Status:
                                                         @if($payment_info['status'] == 'on_hold')
 
                                                          <span>noch nicht bezahlt</span>
@@ -176,8 +66,8 @@
                                                         @endif
 
                                                         </li>
-                                                        <li>Shipping Cost <span>Free</span></li>
-                                                        <li>Total <span>{{$payment_info['price']}}</span></li>
+                                                        <li>Liefergebühr: <span>0€</span></li>
+                                                        <li>Gesamtkosten: <span>{{$payment_info['price']}}€</span></li>
                                                     </ul>
                                                     <a class="btn btn-default update" href="">Update</a>
                                                     <a class="btn btn-default check_out" id="paypal-button" ></a>
@@ -194,11 +84,14 @@
             </div>
 
     </div>
+
 </section> <!--/#payment-->
-
-
-
-@endsection
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script>
