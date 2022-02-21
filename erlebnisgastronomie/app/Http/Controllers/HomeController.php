@@ -47,13 +47,13 @@ class HomeController extends Controller
 
     public function indexRegister()
     {
-        //try {
+        try {
             return view('auth.register');
-      /*  }catch (ItemNotFoundException $e) {
+        } catch (ItemNotFoundException $e) {
             abort(404);
         } catch (Throwable $e) {
             abort(500);
-        }*/
+        }
     }
 
 
