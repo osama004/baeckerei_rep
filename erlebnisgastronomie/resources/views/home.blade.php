@@ -152,7 +152,7 @@
 <!-- END header -->
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpg');">
+    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpeg');">
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
@@ -177,7 +177,7 @@
                 <p>Obcaecati nisi ipsum possimus necessitatibus tempore, illo id facere magni quisquam quam quaerat accusamus dolores?</p>
 
                 <video class="homevideo" controls>
-                    <source src="{{asset('videos/homevideo.mp4')}}" type="video/mp4">
+                    <source src="{{asset('videos/home_video.mp4')}}" type="video/mp4">
                 </video>
             </div>
 

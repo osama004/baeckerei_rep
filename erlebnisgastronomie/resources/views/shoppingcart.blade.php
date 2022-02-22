@@ -148,7 +148,7 @@
 </header>
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpg');">
+    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpeg');">
        <div class="container">
            <div class ="row">
                <div class="col-md-6 offset-md-3">
@@ -156,6 +156,10 @@
                        <div >
                            @include('alerts.emptyCart')
                            @include('alerts.checkCart')
+                       </div>
+                       <div>
+                           @include('alerts.success')
+                           @include('alerts.alreadyPayed')
                        </div>
                        <div class = "card-header">
                            Ihr Warenkorb:

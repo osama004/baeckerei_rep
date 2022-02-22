@@ -33,19 +33,13 @@
 
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpg');">
+    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpeg');">
         <div class="container">
             <div class ="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="card">
 <section id="cart_items">
     <div class="container">
-        <div class="breadcrumbs">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Shopping Cart</li>
-            </ol>
-        </div>
 
 
             <div class="shopper-informations">
@@ -53,25 +47,23 @@
 
                     <div class="col-sm-12 clearfix">
                         <div class="bill-to">
-                            <p> Lieferung/Rechnung an:</p>
+                            <p>Lieferung/Rechnung an:</p>
                             <div class="form-one">
                                            <div class="total_area">
                                                     <ul>
 
                                                         <li>Payment Status:
                                                         @if($payment_info['status'] == 'on_hold')
-
                                                          <span>noch nicht bezahlt</span>
-
                                                         @endif
-
                                                         </li>
-                                                        <li>Liefergebühr: <span>0€</span></li>
-                                                        <li>Gesamtkosten: <span>{{$payment_info['price']}}€</span></li>
+                                                        <li>Liefergebühr: <span>0,00€</span></li>
+                                                        <li>Gesamtkosten: <span>{{number_format($payment_info['price'],2, ',')}}€</span></li>
                                                     </ul>
-                                                    <a class="btn btn-default update" href="">Update</a>
                                                     <a class="btn btn-default check_out" id="paypal-button" ></a>
                                                 </div>
+
+
 
                             </div>
                             <div class="form-two">

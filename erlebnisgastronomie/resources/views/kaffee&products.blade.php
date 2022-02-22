@@ -158,13 +158,10 @@
 </header>
 
 <!-- END header -->
-<div >
-    @include('alerts.success')
-    @include('alerts.alreadyPayed')
-</div>
+
 
 <div class="slider-wrap">
-    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpg');">
+    <div class="slider-item" style="background-image: url('/storage/images/new_filler_1.jpeg');">
         <div class="container">
             <div class="row slider-text align-items-center justify-content-center">
                 <div class="col-md-8 text-center col-sm-12 ">
@@ -182,6 +179,7 @@
         <div class="row" data-aos="fade">
             <div class="col-md-12 text-center heading-wrap">
                 <h2>Unsere Speisekarte</h2>
+
             </div>
         </div>
     </div>
