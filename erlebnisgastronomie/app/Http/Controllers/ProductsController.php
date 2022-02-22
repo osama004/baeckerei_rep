@@ -202,13 +202,8 @@ class ProductsController extends Controller
        //Session::flush(); // it removes every thing from the session and the user will be logged out
        //return redirect()->route("kaffee&products")->withsuccess("Ihre Bestellung wurde aufgenommen");
 
-       if ( $pickupOrDelivery === 'pickup') {
-           return redirect()->route("shoppingcart")->withsuccess("Ihre Bestellung wurde aufgenommen!");
-       }
-       else { // it is a deliver ,so there is a payment in advance
-           $request->session()->put('payment_info' , $newOrderArray);
-           return redirect()->route("ShowPaymentPage");
-       }
+       return redirect()->route("shoppingcart")->withsuccess("Ihre Bestellung wurde aufgenommen!");
+
 
 
    }
