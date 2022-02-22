@@ -307,7 +307,7 @@ class AdminProductController extends Controller
         $searchText = $request->get('searchText');
         $searchText = strtolower($searchText);
         //$products = Product::query()->where('title', 'Like', "%".$searchText."%")->paginate(5);
-        $products = Product::query()->where(DB::raw('lower(title)'), 'Like', "%".$searchText."%")->paginate(5);
+        $products = Product::query()->where(DB::raw('lower(title)'), 'Like', "%".$searchText."%")->orderBy('title')->paginate(5);
         //dd($products);
         return view('admin.displayProducts', compact('products'));
     }

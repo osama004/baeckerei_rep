@@ -108,7 +108,7 @@
             <td><a href="{{ route('AdminEditOrderForm',['order_id' => $order->order_id ])}}" class="btn btn-primary">Edit</a></td>
 
             <td><a href="{{ route('AdminDeleteOrder',['order_id' => $order->order_id ])}}"
-                onclick="return confirm('Are you sure you want to delete this order?')"
+                onclick="return confirm('Sind Sie sicher, dass Sie die Bestellung löschen wollen?')"
             class="btn btn-warning">Remove</a></td>
 
 

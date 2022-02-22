@@ -31,7 +31,7 @@ Route::group(['middleware'=>'HtmlMinifier'], function(){
 
     Route::get('/app', function () {
         return view('app');
-    });
+    }) ->name('App');
     Route::get('/regionales', [RegionalProductsController::class , 'index']) ->name('regionalProducts');
 
     Route::get('/kontakt', function () {

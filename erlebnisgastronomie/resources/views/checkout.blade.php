@@ -69,7 +69,7 @@
                     <div class="divider"></div>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="app">App</a>
+                        <a class="nav-link" href="{{route('App')}}">App</a>
                     </li>
 
                     <div class="divider"></div>

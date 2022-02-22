@@ -143,8 +143,6 @@ class ProductsController extends Controller
        $phoneNumber = $request->input('phone');
        $noteToRestaurant = $request->input('msg');
 
-
-
        $pickupOrDelivery = $request->input('orderoption'); // two values 'pickup' or 'delivery'
 
        $zip = $request->input('zip');
@@ -179,7 +177,7 @@ class ProductsController extends Controller
            $newOrderArray = array("status" => "on_hold", 'date_get' => $dateget,
                'delivery_date' => $delivery_date, "price" => $cart->totalPrice,
                'fullName' => $fullName, 'email' => $email, 'phoneNumber' => $phoneNumber,
-               'noteToRestaurant' => $noteToRestaurant ,
+               'noteToRestaurant' => $noteToRestaurant
            );
        }
        // dd($newOrderArray);

@@ -11,15 +11,15 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>#id</th>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Description</th>
+            <th>Produkt_NR</th>
+            <th>Bild</th>
+            <th>Produkt_Name</th>
+            <th>Beschreibung</th>
             <th>Wochenkarte</th>
-            <th>Price</th>
-            <th>Edit Image</th>
-            <th>Edit</th>
-            <th>Remove</th>
+            <th>Preis</th>
+            <th>Bild bearbeiten</th>
+            <th>Produkt bearbeiten</th>
+            <th>Löschen</th>
         </tr>
         </thead>
         <tbody>
