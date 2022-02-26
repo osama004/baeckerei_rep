@@ -25,9 +25,11 @@ use \App\Http\Controllers\Payment\PaymentsController;
 Route::group(['middleware'=>'HtmlMinifier'], function(){
     Route::get('/', function () {
         return view('home');
+    });
+
+    Route::get('/home', function () {
+        return view('home');
     }) ->name('home');
-
-
 
     Route::get('/app', function () {
         return view('app');
