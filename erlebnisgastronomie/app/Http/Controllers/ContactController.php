@@ -22,7 +22,8 @@ class ContactController extends Controller
             'msg' => $request->msg
         ];
 
-        Mail::to('testdiplomprojekt@gmail.com')->send(new ContactMail($details));
+        Mail::to('edibaeckerei@gmail.com')->send(new ContactMail($details));
+    //    Mail::to('testdiplomprojekt@gmail.com')->send(new ContactMail($details));
         return back()->with('message_sent','Danke! Ihre Nachricht wurde erfolgreich übermittelt.');
     }
 }
